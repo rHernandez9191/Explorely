@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/registrarNegocio.css " />
+    <link rel="stylesheet" href="/js/main.js" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <div class="contenedor">
+        <a href="#"><img src="/img/logo.png" alt="logo" class="logo" /></a>
+        <h2>EXPLORELY</h2>
+        <img src="/img/carritoCompras.png" class="carrito" alt="" />
+        <button class="hamburger">
+          <div class="barra"></div>
+        </button>
+      </div>
+    </header>
+    <div id="carrito-popup" class="carrito-popup">
+      <!-- Contenido del cuadro emergente -->
+    </div>
+    <nav class="movil-nav">
+      <a href="paginaBusqueda.html">Inicio</a>
+      <a href="reservas.html">Reservas</a>
+      <a href="registrarPagos.html">Metodos de Pago</a>
+      <a href="registrarNegocio.html">Regitrar negocios</a>
+      <a href="index.html">Cerrar Sesion</a>
+    </nav>
+    <main>
+      <div class="wrapper">
+        <h1 id="ttlFormulario">Registrar Negocio</h1>
+        <div class="formContainer">
+          <div class="formIzquierda">
+            <form action="">
+              <select name="" id="txttipoIdentificacion">
+                <option value="1">Hospedaje</option>
+                <option value="2">Transporte</option>
+                <option value="3">Alimentacion</option>
+                <option value="4">Aventura</option>
+              </select>
+              <input
+                type="text"
+                id="txtidentificacion"
+                placeholder="Identificacion"
+              />
+              <input
+                type="text"
+                id="txtnombre"
+                placeholder="Nombre de Empresa"
+              />
+              <input
+                type="text"
+                id="txtencargado1"
+                placeholder="Encargado pricipal"
+              />
+              <input
+                type="text"
+                id="txtencargado2"
+                placeholder="Encargado secundario"
+              />
+              <fieldset id="txtempresa">
+                <legend id="lblempresa">Tipo de Empresa</legend>
+                <label for="rbtPequenaEmpresa" class="container">
+                  Pequeña
+                  <input
+                    type="radio"
+                    id="rbtPequena"
+                    value="Pequena"
+                    name="rbtEmpresa"
+                  />
+                  <span class="checkmark"></span>
+                </label>
+                <label for="rbtFemenino" class="container">
+                  Mediana
+                  <input
+                    type="radio"
+                    id="rbtMediana"
+                    value="Mediana"
+                    name="rbtEmpresa"
+                  />
+                  <span class="checkmark"></span>
+                </label>
+                <label for="rbtpyme" class="container">
+                  PYME
+                  <input
+                    type="radio"
+                    id="rbtpyme"
+                    value="PYME"
+                    name="rbtEmpresa"
+                  />
+                  <span class="checkmark"></span>
+                </label>
+              </fieldset>
+              <button
+                type="button"
+                class="btnSubirFoto"
+                onclick="AbrirCloudinary('imgUser')"
+              >
+                Subir Foto
+              </button>
+            </form>
+          </div>
+          <div class="formDerecha">
+            <form action="">
+              <input type="email" id="txtEmail" placeholder="Email" />
+              <input type="password" id="txtPass" placeholder="Contraseña" />
+              <input
+                type="password"
+                id="txtPass2"
+                placeholder="Confirmar Contraseña"
+              />
+              <label for="txtnacimiento" id="lblnacimiento"
+                >Fecha de Constitucion</label
+              >
+              <input type="date" id="txtconstitucion" />
+              <select name="" id="txttipoIdentificacion" required>
+                <option value="">-Provincia-</option>
+                <option value="1">San José</option>
+                <option value="2">Alajuela</option>
+                <option value="3">Cartago</option>
+                <option value="4">Heredia</option>
+                <option value="5">Guanacaste</option>
+                <option value="6">Puntarenas</option>
+                <option value="7">Limón</option>
+              </select>
+              <input type="text" id="txtcanto" placeholder="Canton" />
+              <textarea
+                name=""
+                id="txtnegocio"
+                cols="30"
+                rows="10"
+                placeholder="Descripsion de su negocio"
+                required
+              ></textarea>
+              <button type="button" class="btn" onclick="redireccionar()">
+                Registrar
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="https://upload-widget.cloudinary.com/2.10.1/global/all.js"></script>
+    <script src="/js/subirImagenService.js"></script>
+    <script src="/js/main.js"></script>
+  </body>
+</html>

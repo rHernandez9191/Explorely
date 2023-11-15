@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:700|Poppins:400");
+
+body {
+  font-family: "Poppins";
+  font-weight: 400;
+}
+
+:root {
+  --text: #020303;
+}
+:root {
+  --background: #f8fbfc;
+}
+:root {
+  --primary: #dcbcb2;
+}
+:root {
+  --secondary: #d6dfb9;
+}
+:root {
+  --accent: #8c5240;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--background);
+}
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .logo {
+  position: relative;
+  max-width: 80px;
+}
+header ul {
+  position: relative;
+  display: flex;
+}
+header ul li {
+  list-style: none;
+}
+header ul li a {
+  text-decoration: none;
+  display: inline-block;
+  color: var(--accent);
+  font-weight: 400;
+  margin-left: 40px;
+}
+.cuerpoPrincipal {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cuerpoPrincipal .cuadroTexto {
+  position: relative;
+  max-width: 600px;
+}
+.cuerpoPrincipal .cuadroTexto h2 {
+  color: var(--accent);
+  font-size: 4em;
+  line-height: 1.4em;
+  font-weight: 400;
+}
+.cuerpoPrincipal .cuadroTexto p {
+  color: var(--text);
+}
+.cuerpoPrincipal .cuadroTexto a {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 8px 20px;
+  background-color: var(--primary);
+  color: var(--text);
+  border-radius: 40px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+.cuerpoPrincipal .cuadroImagen {
+  width: 500px;
+  display: flex;
+  justify-content: flex-end;
+}
+.cuerpoPrincipal .cuadroImagen img {
+  max-width: 640px;
+}
+.circulo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #017143;
+  clip-path: circle(600px at right 700px);
+}

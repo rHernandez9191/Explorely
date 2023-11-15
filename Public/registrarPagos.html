@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/pagos.css" />
+    <link rel="stylesheet" href="/js/main.js" />
+    <title>Pagos</title>
+  </head>
+  <body>
+    <header>
+      <div class="contenedor">
+        <a href="#"><img src="/img/logo.png" alt="logo" class="logo" /></a>
+        <h2>EXPLORELY</h2>
+        <img src="/img/carritoCompras.png" class="carrito" alt="" />
+        <button class="hamburger">
+          <div class="barra"></div>
+        </button>
+      </div>
+    </header>
+    <div id="carrito-popup" class="carrito-popup">
+      <!-- Contenido del cuadro emergente -->
+    </div>
+    <main>
+      <div class="wrapper">
+        <h1>Registrar metodo de pago</h1>
+        <form action="#">
+          <input
+            type="text"
+            id="titular"
+            name="titular"
+            placeholder="Nombre del titular"
+            maxlength="40"
+            required
+          />
+          <select id="tipo-tarjeta" name="tipo-tarjeta" required>
+            <option value="">-Seleccione-</option>
+            <option value="mastercard">MasterCard</option>
+            <option value="amex">American Express</option>
+            <option value="discover">Discover</option>
+            <option value="visa">Visa</option>
+          </select>
+
+          <input
+            type="text"
+            id="numero-tarjeta"
+            name="numero-tarjeta"
+            placeholder="Ingrese el número de tarjeta"
+            maxlength="16"
+          />
+
+          <input
+            type="number"
+            id="caducidad-dia"
+            name="caducidad-dia"
+            placeholder="Día"
+            maxlength="2"
+            size="2"
+          />
+          <input
+            type="number"
+            id="caducidad-mes"
+            name="caducidad-mes"
+            placeholder="Mes"
+            maxlength="2"
+            size="2"
+          />
+          <input
+            type="number"
+            id="caducidad-ano"
+            name="caducidad-ano"
+            placeholder="Año"
+            maxlength="2"
+            size="2"
+          />
+
+          <button type="button" class="btn" onclick="redireccionar()">
+            Registrar
+          </button>
+        </form>
+      </div>
+      <nav class="movil-nav">
+        <a href="paginaBusqueda.html">Inicio</a>
+        <a href="reservas.html">Reservas</a>
+        <a href="registrarPagos.html">Metodos de Pago</a>
+        <a href="registrarNegocio.html">Regitrar negocios</a>
+        <a href="index.html">Cerrar Sesion</a>
+      </nav>
+    </main>
+    <script src="/js/main.js"></script>
+  </body>
+</html>

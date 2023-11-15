@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:700|Poppins:400");
+:root {
+  --text: #020303;
+}
+:root {
+  --background: #f8fbfc;
+}
+:root {
+  --primary: #dcbcb2;
+}
+:root {
+  --secondary: #d6dfb9;
+}
+:root {
+  --accent: #8c5240;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins";
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("/img/fondoRegistrarse.jpg");
+  background-size: cover;
+  min-height: 100vh;
+}
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .logo {
+  position: relative;
+  max-width: 80px;
+}
+.wrapper {
+  width: 420px;
+  background-color: var(--secondary);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  color: var(--accent);
+  border-radius: 10px;
+  padding: 30px 40px;
+}
+.wrapper h1 {
+  font-size: 36px;
+  text-align: center;
+}
+.wrapper .caja-input {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  margin: 30px 0;
+}
+.caja-input input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 40px;
+  font-size: 16px;
+  color: var(--accent);
+  padding: 20px 45px 20px 20px;
+}
+.caja-input input::placeholder {
+  color: var(--accent);
+}
+.caja-input i {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+}
+.wrapper .recordar {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14.5px;
+  margin: -15px 0 15px;
+}
+.recordar label input {
+  accent-color: var(--accent);
+  margin-right: 3px;
+}
+.recordar a {
+  color: var(--accent);
+  text-decoration: none;
+}
+.recordar a:hover {
+  text-decoration: underline;
+}
+.wrapper .btn {
+  width: 100%;
+  height: 45px;
+  background-color: var(--accent);
+  border: none;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  color: #f8fbfc;
+}
+.wrapper .link-registrarse {
+  font-size: 14.5px;
+  text-align: center;
+  margin-top: 20px;
+  margin: 20px 0 15px;
+}
+.link-registrarse p a {
+  color: var(--background);
+  padding-left: 10px;
+  text-decoration: none;
+  font-weight: 600;
+}
+.link-registrarse p a:hover {
+  text-decoration: underline;
+}
+.caja {
+  font-weight: bold;
+}

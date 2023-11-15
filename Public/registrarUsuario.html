@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/registrarUsuario.css" />
+  </head>
+
+  <body>
+    <header>
+      <a href="index.html">
+        <img src="/img/logo.png" class="logo" />
+      </a>
+    </header>
+    <div id="carrito-popup" class="carrito-popup">
+      <!-- Contenido del cuadro emergente -->
+    </div>
+    <nav class="movil-nav">
+      <a href="paginaBusqueda.html">Inicio</a>
+      <a href="reservas.html">Reservas</a>
+      <a href="registrarPagos.html">Metodos de Pago</a>
+      <a href="registrarNegocio.html">Regitrar negocios</a>
+      <a href="index.html">Cerrar Sesion</a>
+    </nav>
+    <main>
+      <div class="wrapper">
+        <h1 id="ttlFormulario">Registrarse</h1>
+        <div class="formContainer">
+          <div class="formIzquierda">
+            <form action="">
+              <select name="" id="txttipoIdentificacion">
+                <option value="">-Tipo de identificacion-</option>
+                <option value="1">Fisica</option>
+                <option value="2">Juridica</option>
+                <option value="3">Dimex</option>
+                <option value="4">Pasaporte</option>
+              </select>
+              <input
+                type="text"
+                id="txtidentificacion"
+                placeholder="Identificacion"
+              />
+              <input type="text" id="txtnombre" placeholder="Nombre" />
+              <input
+                type="text"
+                id="txtapellido1"
+                placeholder="Primer Apellido"
+              />
+              <input
+                type="text"
+                id="txtapellido2"
+                placeholder="Segundo Apellido"
+              />
+              <fieldset id="txtsexo">
+                <legend id="lblSexo">Sexo</legend>
+                <label for="rbtMasculino" class="container">Masculino</label>
+                <input
+                  type="radio"
+                  id="rbtMasculino"
+                  value="Masculino"
+                  name="rbtSexo"
+                />
+                <span class="checkmark"></span>
+
+                <label for="rbtFemenino" class="container">Femenino</label>
+                <input
+                  type="radio"
+                  id="rbtFemenino"
+                  value="Femenino"
+                  name="rbtSexo"
+                />
+                <span class="checkmark"></span>
+                <label for="rbtOtro" class="container">Otro</label>
+                <input type="radio" id="rbtOtro" value="Otro" name="rbtSexo" />
+                <span class="checkmark"></span>
+              </fieldset>
+            </form>
+          </div>
+          <div class="formDerecha">
+            <form action="">
+              <input type="text" id="txtEmail" placeholder="Email" />
+              <input type="password" id="txtPass" placeholder="Contraseña" />
+              <input
+                type="password"
+                id="txtPass2"
+                placeholder="Confirmar Contraseña"
+              />
+              <fieldset>
+                <legend id="#">Fecha de nacimiento</legend>
+                <input type="date" id="txtnacimiento" />
+              </fieldset>
+              <button
+                type="button"
+                class="btnSubirFoto"
+                onclick="AbrirCloudinary('imgUser')"
+              >
+                Foto del documeto de indentidad
+              </button>
+              <button type="button" class="btn" onclick="redireccionar()">
+                Registrar
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="https://upload-widget.cloudinary.com/2.10.1/global/all.js"></script>
+    <script src="/js/subirImagenService.js"></script>
+    <script src="/js/main.js"></script>
+  </body>
+</html>
