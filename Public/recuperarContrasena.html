@@ -18,10 +18,10 @@
         <form action="">
           <h1>Recuperar contraseña</h1>
           <div class="caja-input">
-            <input type="text" placeholder="Ingrese su correo " required />
-            <button type="button" class="btn" onclick="">Enviar codigo</button>
-            <input type="text" placeholder="Ingrese el codigo" />
-            <button type="button" class="btn verify-code" onclick="">
+            <input type="text" id="mail" placeholder="Ingrese su correo " required />
+            <button type="button" class="btn" onclick="validaCorreo()">Enviar codigo</button>
+            <input type="text" id="codigo" placeholder="Ingrese el codigo" />
+            <button type="button" class="btn verify-code" onclick="validaCodigo()">
               Verificar código
             </button>
           </div>
@@ -43,5 +43,7 @@
       </div>
     </form>
   </div>
+  <script src="./js/validaciones.js"></script>
   <script src="./js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </html>
