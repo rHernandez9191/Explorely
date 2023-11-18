@@ -44,4 +44,22 @@ const validaCodigo = ()=> {
 
 }
 
+let pass1 = document.getElementById('nuevoPass')
+let pass2 = document.getElementById('nuevoPass2')
+
+
+const verificarPass = () => {
+
+    let contraseña = pass1.value
+    let nuevaContraseña = pass2.value
+
+    if (contraseña == '' || contraseña == null || contraseña == undefined) {
+        MensajeError('Esciba su nueva contraseña');
+        
+    }else if (nuevaContraseña == '' || nuevaContraseña == null || nuevaContraseña == undefined) {
+        MensajeError('Repetir su contraseña')
+    }
+
+}
+
 
