@@ -15,8 +15,8 @@ let inputFechaConstitucion = document.getElementById('lblConstitucion');
 let inputProvincia = document.getElementById('slctProvincia');
 let inputCanton = document.getElementById('txtCanton');
 let inputDescripcion = document.getElementById('txtDescripcion');
-//let inputRol = document.getElementById('txtRol');
-//let inputEstado = document.getElementById('txtestado');
+let inputRol = document.getElementById('txtRol');
+let inputEstado = document.getElementById('txtestado');
 let input_id = document.getElementById('txt_id');
 let inputImgUser = document.getElementById('imgUser');
 
@@ -43,21 +43,21 @@ const RegistrarDatos = async () => {
     let sPass = inputPassword1.value;
     let sPassConfirmacion = inputPassword2.value;
     let dConstitucion = inputFechaConstitucion.value;
-    //let nRol = Number(inputRol.value);
-    //let nEstado = Number(inputEstado.value);
-    //let sFotoPerfil = inputImgUser.src;
+    let nRol = Number(inputRol.value);
+    let nEstado = Number(inputEstado.value);
+    let sFotoPerfil = inputImgUser.src;
 
     //aca seguirian los subdocumentos version 1
     
-    //let s_id = input_id.value;
+    let s_id = input_id.value;
 
-    if (ValidarDatos(sTipoNegocio, sIdentificacion, sNombreNegocio, sEncargado1, sEncargado2, sEmail, sPass, sPassConfirmacion, dConstitucion, /*nRol nEstado, sFotoPerfil*/) == false) {
+    if (ValidarDatos(sTipoNegocio, sIdentificacion, sNombreNegocio, sEncargado1, sEncargado2, sEmail, sPass, sPassConfirmacion, dConstitucion,nRol, nEstado, sFotoPerfil) == false) {
         return;
     }
 
     let res = null;
     let dataBody = {
-        //'_id': s_id,
+        '_id': s_id,
         'TipoServicio': sTipoNegocio,
         'Identificacion': sIdentificacion,
         'NombreEmpresa': sNombreNegocio,
@@ -70,17 +70,17 @@ const RegistrarDatos = async () => {
         'Provincia': sTipoProvincia,
         'Canton': sTipoCanton,
         'Descripcion': sTipoDescripcion,
-        //'Rol': nRol,
-        //'FotoPerfil': sFotoPerfil
+        'Rol': nRol,
+        'FotoPerfil': sFotoPerfil
     };
 
-    res = await ProcessPOSTSocio('RegistrarSocio', dataBody, null);
+    //res = await ProcessPOSTSocio('RegistrarSocio', dataBody, null);
     
-    /*if (s_id != null && s_id != '' && s_id != undefined) {
+    if (s_id != null && s_id != '' && s_id != undefined) {
         res = await ProcessPUTSocio('ModificarSocio', dataBody, null);
     } else {
         res = await ProcessPOSTSocio('RegistrarSocio', dataBody, null);
-    }*/
+    }
 
     if (res == null || res == undefined) {
         ImprimirMsjsError('Ocurrio un error inesperado');
@@ -93,11 +93,11 @@ const RegistrarDatos = async () => {
             text: res.msj,
             confirmButtonText: 'Ok'
         }).then( resSwetAlert => {
-            location.href = 'Reporteria.html'
+            location.href = 'index.html'
         });
     }
 };
-const ValidarDatos = (pTipoServicio, pIdentificacion, pNombreEmpresa, pEncargado1, pEncargado2, /*pTipoEmpresa,*/ pEmail, pPass, pPassConfirmacion, pFechaConstitucion, pProvincia, pCanton, pDescripcion, /*pRol, pEstado*/ pFotoPerfil)  => {
+const ValidarDatos = (pTipoServicio, pIdentificacion, pNombreEmpresa, pEncargado1, pEncargado2, pTipoEmpresa, pEmail, pPass, pPassConfirmacion, pFechaConstitucion, pProvincia, pCanton, pDescripcion, pRol, pEstado, pFotoPerfil)  => {
     if (pTipoServicio == '' || pTipoServicio == null || pTipoServicio == undefined) {
         /*resaltarLabelInvalido('lbltipoIdentificacion');*/
         resaltarInputInvalido('txtTipoServicio');
@@ -128,12 +128,12 @@ const ValidarDatos = (pTipoServicio, pIdentificacion, pNombreEmpresa, pEncargado
         ImprimirMsjsError('Por favor ingrese el encargado secundario');
         return false;
     }
-    /*if (pTipoEmpresa == '' || pTipoEmpresa == null || pTipoEmpresa == undefined) {
-        resaltarLabelInvalido('lblempresa');
+    if (pTipoEmpresa == '' || pTipoEmpresa == null || pTipoEmpresa == undefined) {
+        //resaltarLabelInvalido('lblempresa');
         resaltarInputInvalido('txtempresa');
         ImprimirMsjsError('Por favor indique el tipo de empresa');
         return false;
-    }*/
+    }
     if (pEmail == null || pEmail == '' || pEmail == undefined) {
         //resaltarLabelInvalido('lblEmail');
         resaltarInputInvalido('txtEmail');
@@ -160,13 +160,13 @@ const ValidarDatos = (pTipoServicio, pIdentificacion, pNombreEmpresa, pEncargado
         ImprimirMsjsError('Por favor ingrese ambas Contraseñas iguales');
         return false;
     }
-    /*if (pFechaConstitucion == '' || pFechaConstitucion == null || pFechaConstitucion == undefined || new Date(pFechaConstitucion) >= new Date()) {
-        resaltarLabelInvalido('lblConstitucion');
-        resaltarInputInvalido('txtnacimiento');
+    if (pFechaConstitucion == '' || pFechaConstitucion == null || pFechaConstitucion == undefined || new Date(pFechaConstitucion) >= new Date()) {
+        resaltarLabelInvalido('txtConstitucion');
+        resaltarInputInvalido('lblConstitucion');
         ImprimirMsjsError('Por favor ingrese una fecha de constitucion menor a hoy');
         return false;
-    }*/
-    /*if (pProvincia == null || pProvincia == undefined || pProvincia == '') {
+    }
+    if (pProvincia == null || pProvincia == undefined || pProvincia == '') {
         ImprimirMsjsError('Seleccione su provincia');
         //resaltarLabelInvalido('lbledad');
         resaltarInputInvalido('slctProvincia');
@@ -184,12 +184,12 @@ const ValidarDatos = (pTipoServicio, pIdentificacion, pNombreEmpresa, pEncargado
         resaltarInputInvalido('txtDescripcion');
         return false;
     }
-    /*if (pRol == null || pRol == '' || pRol == undefined || pRol == 0) {
+    if (pRol == null || pRol == '' || pRol == undefined || pRol == 0) {
         //resaltarLabelInvalido('lblRol');
         resaltarInputInvalido('txtRol');
         ImprimirMsjsError('Por favor indique un Rol');
         return false;
-    }*/
+    }
     return true;
 }
 

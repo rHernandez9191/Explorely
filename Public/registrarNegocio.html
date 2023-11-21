@@ -34,7 +34,8 @@
         <div class="formContainer">
           <div class="formIzquierda">
             <form action="">
-              <select name="" id="txtTipoServicio">
+              <select id="txtTipoServicio">
+                <option value="">-Seleccione-</option>
                 <option value="1">Hospedaje</option>
                 <option value="2">Transporte</option>
                 <option value="3">Alimentacion</option>
@@ -60,39 +61,19 @@
                 id="txtEncargado2"
                 placeholder="Encargado secundario"
               />
-              <fieldset id="txtempresa">
-                <legend id="lblempresa">Tipo de Empresa</legend>
-                <label for="rbtPequenaEmpresa" class="container">
-                  Pequeña
-                  <input
-                    type="radio"
-                    id="rbtPequena"
-                    value="Pequena"
-                    name="rbtEmpresa"
-                  />
-                  <span class="checkmark"></span>
-                </label>
-                <label for="rbtFemenino" class="container">
-                  Mediana
-                  <input
-                    type="radio"
-                    id="rbtMediana"
-                    value="Mediana"
-                    name="rbtEmpresa"
-                  />
-                  <span class="checkmark"></span>
-                </label>
-                <label for="rbtpyme" class="container">
-                  PYME
-                  <input
-                    type="radio"
-                    id="rbtpyme"
-                    value="PYME"
-                    name="rbtEmpresa"
-                  />
-                  <span class="checkmark"></span>
-                </label>
-              </fieldset>
+              <select id="txtempresa">
+                <option value="">-Seleccione tipo de Empresa-</option>
+                <option value="1">Pequeña</option>
+                <option value="2">Mediana</option>
+                <option value="3">PYME</option>
+              </select>
+              <input type="email" id="txtEmail" placeholder="Email" />
+              <input type="password" id="txtPass" placeholder="Contraseña" />
+              <input
+                type="password"
+                id="txtPass2"
+                placeholder="Confirmar Contraseña"
+              />
               <button
                 type="button"
                 class="btnSubirFoto"
@@ -104,18 +85,10 @@
           </div>
           <div class="formDerecha">
             <form action="">
-              <input type="email" id="txtEmail" placeholder="Email" />
-              <input type="password" id="txtPass" placeholder="Contraseña" />
-              <input
-                type="password"
-                id="txtPass2"
-                placeholder="Confirmar Contraseña"
-              />
-              <label for="txtnacimiento" id="lblConstitucion"
-                >Fecha de Constitucion</label
-              >
+              <label for="lblConstitucion" id="txtConstitucion"
+                >Fecha de Constitucion</label>
               <input type="date" id="lblConstitucion" />
-              <select name="" id="slctProvincia" >
+              <select id="slctProvincia">
                 <option value="">-Provincia-</option>
                 <option value="1">San José</option>
                 <option value="2">Alajuela</option>
@@ -126,7 +99,18 @@
                 <option value="7">Limón</option>
               </select>
               <input type="text" id="txtCanton" placeholder="Canton" />
-              <textarea
+              <label for="txtestado">Estado</label>
+              <select name="" id="txtestado">
+                <option value="1" checked>Activo</option>
+                <option value="0">Inactivo</option>
+              </select>
+              <label for="txtRol" id="lblRol">Rol</label>
+                  <select name="" id="txtRol">
+                   <option value="" checked>--Seleccione--</option>
+                    <option value="1" checked>Administrador</option>
+                    <option value="2">Cliente</option>
+                  </select>
+                <textarea
                 name=""
                 id="txtDescripcion"
                 cols="30"
