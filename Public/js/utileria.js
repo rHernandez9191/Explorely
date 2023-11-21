@@ -56,7 +56,7 @@ function resaltarLabelInvalido(plabelID) {
         obj.style = orig;
     }, 5000);
 }
-function resaltarInputInvalido(pinputID) {
+/*function resaltarInputInvalido(pinputID) {
     var obj = document.getElementById(pinputID);
     var orig = obj.style;
     obj.style = 'border: 1px solid red;'
@@ -64,4 +64,57 @@ function resaltarInputInvalido(pinputID) {
     setTimeout(function () {
         obj.style = orig;
     }, 5000);
+}*/
+
+//Utileria para los datos de socio
+
+function ObtenerTipoServicio(ptipoId) {
+    switch (ptipoId) {
+        case 1:
+            return 'Hospedaje';
+        case 2:
+            return 'Transporte';
+        case 3:
+            return 'Alimentación';
+        case 4:
+            return 'Aventura';
+
+        default:
+            return 'Sin identificacion';
+    }
+}
+
+function ObtenerProvincia(ptipoProvincia) {
+    switch (ptipoProvincia) {
+        case 1:
+            return 'San José';
+        case 2:
+            return 'Alajuela';
+        case 3:
+            return 'Cartago';
+        case 4:
+            return 'Heredia';
+        case 5:
+            return 'Guanacaste';
+        case 6:
+            return 'Puntarenas';
+        case 7:
+            return 'Limón';
+        default:
+            return 'Sin identificacion';
+    }
+}
+
+function ObtenerTipoEmpresa(ptipoId) {
+    switch (ptipoId) {
+        case 1:
+            return 'Pequeña';
+        case 2:
+            return 'Mediana';
+        case 3:
+            return 'PYME';
+
+        default:
+            return 'Sin identificacion';
+    }
 }

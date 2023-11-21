@@ -34,7 +34,7 @@
         <div class="formContainer">
           <div class="formIzquierda">
             <form action="">
-              <select name="" id="txttipoIdentificacion">
+              <select name="" id="txtTipoServicio">
                 <option value="1">Hospedaje</option>
                 <option value="2">Transporte</option>
                 <option value="3">Alimentacion</option>
@@ -47,17 +47,17 @@
               />
               <input
                 type="text"
-                id="txtnombre"
+                id="txtNombreEmpresa"
                 placeholder="Nombre de Empresa"
               />
               <input
                 type="text"
-                id="txtencargado1"
+                id="txtEncargado1"
                 placeholder="Encargado pricipal"
               />
               <input
                 type="text"
-                id="txtencargado2"
+                id="txtEncargado2"
                 placeholder="Encargado secundario"
               />
               <fieldset id="txtempresa">
@@ -111,11 +111,11 @@
                 id="txtPass2"
                 placeholder="Confirmar Contraseña"
               />
-              <label for="txtnacimiento" id="lblnacimiento"
+              <label for="txtnacimiento" id="lblConstitucion"
                 >Fecha de Constitucion</label
               >
-              <input type="date" id="txtconstitucion" />
-              <select name="" id="txttipoIdentificacion" required>
+              <input type="date" id="lblConstitucion" />
+              <select name="" id="slctProvincia" >
                 <option value="">-Provincia-</option>
                 <option value="1">San José</option>
                 <option value="2">Alajuela</option>
@@ -125,16 +125,16 @@
                 <option value="6">Puntarenas</option>
                 <option value="7">Limón</option>
               </select>
-              <input type="text" id="txtcanto" placeholder="Canton" />
+              <input type="text" id="txtCanton" placeholder="Canton" />
               <textarea
                 name=""
-                id="txtnegocio"
+                id="txtDescripcion"
                 cols="30"
                 rows="10"
                 placeholder="Descripsion de su negocio"
                 required
               ></textarea>
-              <button type="button" class="btn" onclick="redireccionar()">
+              <button type="button" class="btn" id="btnRegistrar">
                 Registrar
               </button>
             </form>
@@ -147,5 +147,9 @@
     <script src="https://upload-widget.cloudinary.com/2.10.1/global/all.js"></script>
     <script src="./js/subirImagenService.js"></script>
     <script src="./js/main.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./js/utileria.js"></script>
+    <script src="./js/Services/GeneralService.js"></script>
+    <script src="./js/Controllers/GestionoSocioController.js"></script>
   </body>
 </html>
