@@ -28,8 +28,8 @@ const  RedireccionarUsuario = (PersonaDB) => {
 };
 
 const IniciarSesion = async () => {
-    const user = inputUser.value;
-    const pass = inputPass.value;
+    const user = usuario.value;
+    const pass = contraseña.value;
 
     if (!ValidarInputs(user, pass)) {
         return;
