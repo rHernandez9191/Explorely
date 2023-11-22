@@ -1,7 +1,7 @@
 'use strict';
 
 
-let botonRegistrar = document.getElementById('btnRegistrar');
+
 let inputTipoServicio = document.getElementById('txtTipoServicio');
 let inputIdentificacion = document.getElementById('txtidentificacion');
 let inputNombreEmpresa = document.getElementById('txtNombreEmpresa');
@@ -19,6 +19,7 @@ let inputRol = document.getElementById('txtRol');
 let inputEstado = document.getElementById('txtestado');
 let input_id = document.getElementById('txt_id');
 let inputImgUser = document.getElementById('imgUser');
+let botonRegistrar = document.getElementById('btnRegistrar');
 
 
 const RegistrarDatos = async () => {
@@ -45,13 +46,13 @@ const RegistrarDatos = async () => {
     let dConstitucion = inputFechaConstitucion.value;
     let nRol = Number(inputRol.value);
     let nEstado = Number(inputEstado.value);
-    let sFotoPerfil = inputImgUser.src;
+    //let sFotoPerfil = inputImgUser.src;
 
     //aca seguirian los subdocumentos version 1
     
-    let s_id = input_id.value;
+    
 
-    if (ValidarDatos(sTipoNegocio, sIdentificacion, sNombreNegocio, sEncargado1, sEncargado2, sEmail, sPass, sPassConfirmacion, dConstitucion,nRol, nEstado, sFotoPerfil) == false) {
+    if (ValidarDatos(sTipoNegocio, sIdentificacion, sNombreNegocio, sEncargado1, sEncargado2, sTipoEmpresa, sEmail, sPass, sPassConfirmacion, dConstitucion,nRol, nEstado, /*sFotoPerfil*/) == false) {
         return;
     }
 
@@ -75,7 +76,8 @@ const RegistrarDatos = async () => {
     };
 
     //res = await ProcessPOSTSocio('RegistrarSocio', dataBody, null);
-    
+    let s_id = input_id.value;
+
     if (s_id != null && s_id != '' && s_id != undefined) {
         res = await ProcessPUTSocio('ModificarSocio', dataBody, null);
     } else {

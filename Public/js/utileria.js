@@ -47,7 +47,7 @@ function ImprimirMsjsSuccess(pMsj) {
         text: pMsj
     });
 }
-function resaltarLabelInvalido(plabelID) {
+/*function resaltarLabelInvalido(plabelID) {
     var obj = document.getElementById(plabelID);
     var orig = obj.style;
     obj.style = 'color:red;'
@@ -55,8 +55,8 @@ function resaltarLabelInvalido(plabelID) {
     setTimeout(function () {
         obj.style = orig;
     }, 5000);
-}
-/*function resaltarInputInvalido(pinputID) {
+}*/
+function resaltarInputInvalido(pinputID) {
     var obj = document.getElementById(pinputID);
     var orig = obj.style;
     obj.style = 'border: 1px solid red;'
@@ -64,7 +64,7 @@ function resaltarLabelInvalido(plabelID) {
     setTimeout(function () {
         obj.style = orig;
     }, 5000);
-}*/
+}
 
 //Utileria para los datos de socio
 
@@ -105,8 +105,8 @@ function ObtenerProvincia(ptipoProvincia) {
     }
 }
 
-function ObtenerTipoEmpresa(ptipoId) {
-    switch (ptipoId) {
+function ObtenerTipoEmpresa(pTipoEmpresa) {
+    switch (pTipoEmpresa) {
         case 1:
             return 'Pequeña';
         case 2:
