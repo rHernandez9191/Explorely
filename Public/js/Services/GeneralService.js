@@ -20,7 +20,7 @@ const ProcessPOST = async (pRouterName, pData, pSubDocumentos) => {
     let res = await ProcessAction('POST', pRouterName, pData);
     if (pRouterName == 'RegistrarPersona') {
         if (res.resultado == false) {
-            switch (res.code) {
+            switch (res.error.code) {
                 case 11000:
                     res.msj = 'No se pudo registrar la persona, ya que existe una persona con esa misma identificacion o correo';
                     console.log('No se pudo registrar codigo 11000');
@@ -38,7 +38,7 @@ const ProcessPUT = async (pRouterName, pData, pSubDocumentos) => {
     let res = await ProcessAction('PUT', pRouterName, pData);
     if (pRouterName == 'ModificarPersona') {
         if (res.resultado == false) {
-            switch (res.code) {
+            switch (res.error.code) {
                 case 11000:
                     res.msj = 'No se pudo actualizar la persona, ya que existe una persona con esa misma identificacion o correo';
                     console.log('No se pudo registrar codigo 11000');
@@ -100,7 +100,7 @@ const ProcessPOSTSocio = async (pRouterName, pData, pSubDocumentos) => {
     let res = await ProcessAction('POST', pRouterName, pData);
     if (pRouterName == 'RegistrarSocio') {
         if (res.resultado == false) {
-            switch (res.code) {
+            switch (res.error.code) {
                 case 11000:
                     res.msj = 'No se pudo registrar el socio, ya que existe una persona con esa misma identificacion o correo';
                     console.log('No se pudo registrar codigo 11000');
@@ -118,7 +118,7 @@ const ProcessPUTSocio = async (pRouterName, pData, pSubDocumentos) => {
     let res = await ProcessAction('PUT', pRouterName, pData);
     if (pRouterName == 'ModificarSocio') {
         if (res.resultado == false) {
-            switch (res.code) {
+            switch (res.error.code) {
                 case 11000:
                     res.msj = 'No se pudo actualizar la persona, ya que existe una persona con esa misma identificacion o correo';
                     console.log('No se pudo registrar codigo 11000');
