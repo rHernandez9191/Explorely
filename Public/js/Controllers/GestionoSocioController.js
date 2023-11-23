@@ -67,11 +67,13 @@ const RegistrarDatos = async () => {
         'TipoEmpresa': sTipoEmpresa,
         'Email': sEmail,
         'Password': sPass,
+        'Password2': sPassConfirmacion,
         'FechaConstitucion': new Date(dConstitucion),
         'Provincia': sTipoProvincia,
         'Canton': sTipoCanton,
         'Descripcion': sTipoDescripcion,
         'Rol': nRol,
+        'Estado': nEstado,
         'FotoPerfil': sFotoPerfil
     };
 
