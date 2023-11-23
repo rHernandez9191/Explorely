@@ -7,7 +7,7 @@ let inputIdentificacion = document.getElementById('txtidentificacion');
 let inputNombreEmpresa = document.getElementById('txtNombreEmpresa');
 let inputEncargado1 = document.getElementById('txtEncargado1');
 let inputEncargado2 = document.getElementById('txtEncargado2');
-let TipoEmpresa = document.getElementsByName('txtempresa');
+let TipoEmpresa = document.getElementById('txtempresa');
 let inputEmail = document.getElementById('txtEmail');
 let inputPassword1 = document.getElementById('txtPass');
 let inputPassword2 = document.getElementById('txtPass2');
@@ -46,13 +46,14 @@ const RegistrarDatos = async () => {
     let dConstitucion = inputFechaConstitucion.value;
     let nRol = Number(inputRol.value);
     let nEstado = Number(inputEstado.value);
-    //let sFotoPerfil = inputImgUser.src;
+    
+    let sFotoPerfil = null;
 
     //aca seguirian los subdocumentos version 1
     
-    
+    let s_id = input_id.value;
 
-    if (ValidarDatos(sTipoNegocio, sIdentificacion, sNombreNegocio, sEncargado1, sEncargado2, sTipoEmpresa, sEmail, sPass, sPassConfirmacion, dConstitucion,nRol, nEstado, /*sFotoPerfil*/) == false) {
+    if (ValidarDatos(sTipoNegocio, sIdentificacion, sNombreNegocio, sEncargado1, sEncargado2, sTipoEmpresa, sEmail, sPass, sPassConfirmacion, dConstitucion, sTipoProvincia, sTipoCanton, nRol, sTipoDescripcion, nEstado, /*sFotoPerfil*/) == false) {
         return;
     }
 
@@ -78,12 +79,11 @@ const RegistrarDatos = async () => {
     };
 
     //res = await ProcessPOSTSocio('RegistrarSocio', dataBody, null);
-    let s_id = input_id.value;
 
     if (s_id != null && s_id != '' && s_id != undefined) {
-        res = await ProcessPUTSocio('ModificarSocio', dataBody, null);
+        res = await ProcessPUT('ModificarSocio', dataBody, null);
     } else {
-        res = await ProcessPOSTSocio('RegistrarSocio', dataBody, null);
+        res = await ProcessPOST('RegistrarSocio', dataBody, null);
     }
 
     if (res == null || res == undefined) {
@@ -100,8 +100,8 @@ const RegistrarDatos = async () => {
             location.href = 'index.html'
         });
     }
-};
-const ValidarDatos = (pTipoServicio, pIdentificacion, pNombreEmpresa, pEncargado1, pEncargado2, pTipoEmpresa, pEmail, pPass, pPassConfirmacion, pFechaConstitucion, pProvincia, pCanton, pDescripcion, pRol, pEstado, pFotoPerfil)  => {
+};    
+const ValidarDatos = (pTipoServicio, pIdentificacion, pNombreEmpresa, pEncargado1, pEncargado2, pTipoEmpresa, pEmail, pPass, pPassConfirmacion, pFechaConstitucion, pProvincia, pCanton, pRol, pDescripcion, pEstado, pFotoPerfil)  => {
     if (pTipoServicio == '' || pTipoServicio == null || pTipoServicio == undefined) {
         /*resaltarLabelInvalido('lbltipoIdentificacion');*/
         resaltarInputInvalido('txtTipoServicio');
@@ -165,7 +165,7 @@ const ValidarDatos = (pTipoServicio, pIdentificacion, pNombreEmpresa, pEncargado
         return false;
     }
     if (pFechaConstitucion == '' || pFechaConstitucion == null || pFechaConstitucion == undefined || new Date(pFechaConstitucion) >= new Date()) {
-        resaltarLabelInvalido('txtConstitucion');
+        //resaltarLabelInvalido('lblConstitucion');
         resaltarInputInvalido('lblConstitucion');
         ImprimirMsjsError('Por favor ingrese una fecha de constitucion menor a hoy');
         return false;
@@ -182,16 +182,16 @@ const ValidarDatos = (pTipoServicio, pIdentificacion, pNombreEmpresa, pEncargado
         resaltarInputInvalido('txtCanton');
         return false;
     }
-    if (pDescripcion == null || pDescripcion == undefined || pDescripcion == '') {
-        ImprimirMsjsError('Ingrese una descripcion');
-        //resaltarLabelInvalido('lbledad');
-        resaltarInputInvalido('txtDescripcion');
-        return false;
-    }
     if (pRol == null || pRol == '' || pRol == undefined || pRol == 0) {
         //resaltarLabelInvalido('lblRol');
         resaltarInputInvalido('txtRol');
         ImprimirMsjsError('Por favor indique un Rol');
+        return false;
+    }
+    if (pDescripcion == null || pDescripcion == undefined || pDescripcion == '') {
+        ImprimirMsjsError('Ingrese una descripcion');
+        //resaltarLabelInvalido('lbledad');
+        resaltarInputInvalido('txtDescripcion');
         return false;
     }
     return true;

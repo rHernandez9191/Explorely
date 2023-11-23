@@ -2,7 +2,7 @@
 
 let listaSocios = [];
 const GetListaSocios = async () => {
-    let res = await ProcessGETSocio('ListarSocios', null);
+    let res = await ProcessGET('ListarSocios', null);
     if (res != null && res.resultado == true) {
         listaSocios = res.ListaSociosBD;
         ImprimirDatos();
