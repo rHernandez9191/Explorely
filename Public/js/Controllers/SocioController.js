@@ -34,6 +34,8 @@ const ImprimirDatos = () => {
         let celdaDescripcion = fila.insertCell();
         let celdaEstado = fila.insertCell();
         let celdaRol = fila.insertCell();
+        let celdaPrecio = fila.insertCell();
+        let celdaCantPersonas = fila.insertCell();
         let celdaAcciones = fila.insertCell();
 
         celdaTipoServicio.innerHTML = ObtenerTipoServicio(listaSocios[i].TipoServicio);
@@ -49,6 +51,8 @@ const ImprimirDatos = () => {
         celdaDescripcion.innerHTML = listaSocios[i].Descripcion;
         celdaEstado.innerHTML = ObtenerEstado(listaSocios[i].Estado);
         celdaRol.innerHTML = ObtenerRol(listaSocios[i].Rol);
+        celdaPrecio.innerHTML = ObtenerPrecio(listaSocios[i].Precio);
+        celdaCantPersonas.innerHTML = ObtenerCantPersonas(listaSocios[i].CantPersonas);
         
         let fechaNac = new Date(listaSocios[i].FechaConstitucion.replace('Z', ''));
         celdaFechaConstitucion.innerHTML = fechaNac.getDate() + '/' + (fechaNac.getMonth() + 1) + '/' + fechaNac.getFullYear();

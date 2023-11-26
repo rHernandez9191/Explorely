@@ -23,6 +23,8 @@ router.post('/RegistrarSocio', (req, res) => {
         Descripcion: body.Descripcion,
         Estado: 1,
         Rol: body.Rol,
+        CantPersonas: body.CantPersonas,
+        Precio: body.Precio,
         FotoPerfil: body.FotoPerfil
     });
 

@@ -20,6 +20,8 @@ let inputEstado = document.getElementById('txtestado');
 let input_id = document.getElementById('txt_id');
 let inputImgUser = document.getElementById('imgUser');
 let botonRegistrar = document.getElementById('btnRegistrar');
+let inputPrecio = document.getElementById('txtprecio');
+let inputCantPersonas = document.getElementById('txtCantPersonas');
 
 
 const RegistrarDatos = async () => {
@@ -46,6 +48,8 @@ const RegistrarDatos = async () => {
     let dConstitucion = inputFechaConstitucion.value;
     let nRol = Number(inputRol.value);
     let nEstado = Number(inputEstado.value);
+    let sCantPersonas = inputCantPersonas.value;
+    let sPrecio = inputPrecio.value;
     
     let sFotoPerfil = null;
 
@@ -53,7 +57,7 @@ const RegistrarDatos = async () => {
     
     let s_id = input_id.value;
 
-    if (ValidarDatos(sTipoNegocio, sIdentificacion, sNombreNegocio, sEncargado1, sEncargado2, sTipoEmpresa, sEmail, sPass, sPassConfirmacion, dConstitucion, sTipoProvincia, sTipoCanton, nRol, sTipoDescripcion, nEstado, /*sFotoPerfil*/) == false) {
+    if (ValidarDatos(sTipoNegocio, sIdentificacion, sNombreNegocio, sEncargado1, sEncargado2, sTipoEmpresa, sEmail, sPass, sPassConfirmacion, dConstitucion, sTipoProvincia, sTipoCanton, nRol, sTipoDescripcion, nEstado, sCantPersonas, sPrecio /*sFotoPerfil*/) == false) {
         return;
     }
 
@@ -75,6 +79,8 @@ const RegistrarDatos = async () => {
         'Descripcion': sTipoDescripcion,
         'Rol': nRol,
         'Estado': nEstado,
+        'CantPersonas': sCantPersonas,
+        'Precio': sPrecio,
         'FotoPerfil': sFotoPerfil
     };
 

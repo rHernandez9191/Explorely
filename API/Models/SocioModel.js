@@ -16,6 +16,8 @@ const schemaSocio = mongoose.Schema({
     Descripcion: { type: String, required: true, unique: false },
     Estado: { type: Number, required: true, unique: false },
     Rol: { type: Number, required: true, unique: false },
+    CantPersonas: { type: String, required: true, unique: false },
+    Precio: { type: String, required: true, unique: false },
     FotoPerfil: { type: String, required: false, unique: false }
 });
 
