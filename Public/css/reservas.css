@@ -208,6 +208,24 @@ img {
   border-radius: 10px;
 }
 
+.BotonesPerfil button {
+  background-color: var(--accent);
+  color: var(--secondary);
+  padding: 6px 12px;
+  width: 80px;
+  border: none;
+  cursor: pointer;
+  bottom: 10px;
+  left: 10px;
+  border-radius: 10px;
+}
+
+.BotonesPerfil{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
 .rentas i.bx.bxs-trash-alt {
   position: absolute;
   bottom: 10px;
