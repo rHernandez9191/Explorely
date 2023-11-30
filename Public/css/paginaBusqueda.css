@@ -124,7 +124,7 @@ header .logo {
   background-color: #a37466;
 }
 .carrito-popup {
-  display: none;
+  display: flex;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -278,3 +278,4 @@ img {
   min-height: 15px;
   width: 15px;
 }
+
