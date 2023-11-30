@@ -133,9 +133,12 @@ router.get('/AutenticarPersona', function (req, res) {
 router.put('/ModificarPersona', (req, res) => {
     let body = req.body;
     Persona.updateOne({ _id: body._id }, {
-            $set: body
-            
-        })
+        $set: body
+        // $set: {
+        //     Nombre: body.Nombre,
+        //     Edad: body.Edad
+        // }
+    })
         .then((info) => {
             res.json({
                 resultado: true,
@@ -154,10 +157,10 @@ router.put('/ModificarPersona', (req, res) => {
 router.put('/InactivarPersona', (req, res) => {
     let body = req.body;
     Persona.updateOne({ _id: body._id }, {
-            $set: {
-                Estado: 0
-            }
-        })
+        $set: {
+            Estado: 0
+        }
+    })
         .then((info) => {
             res.json({
                 resultado: true,
@@ -176,20 +179,20 @@ router.put('/InactivarPersona', (req, res) => {
 //Delete
 router.delete('/EliminarPersona', (req, res) => {
     let body = req.body;
-    Persona.deleteOne({_id: body._id})
-    .then((info) => {
-        res.json({
-            resultado: true,
-            msj: 'Los datos se eliminaron de manera correcta',
-            info
+    Persona.deleteOne({ _id: body._id })
+        .then((info) => {
+            res.json({
+                resultado: true,
+                msj: 'Los datos se eliminaron de manera correcta',
+                info
+            });
+        })
+        .catch((error) => {
+            res.json({
+                resultado: false,
+                msj: 'No se pudo eliminar a la persona, ocurrio el siguiente error: ',
+                error
+            });
         });
-    })
-    .catch((error) => {
-        res.json({
-            resultado: false,
-            msj: 'No se pudo eliminar a la persona, ocurrio el siguiente error: ',
-            error
-        });
-    });
 });
 module.exports = router;

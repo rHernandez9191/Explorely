@@ -14,16 +14,7 @@ const schemaPersona = mongoose.Schema({
     Email: { type: String, required: true, unique: true },
     Password: { type: String, required: true, unique: false },
     Rol: { type: Number, required: true, unique: false },
-    FotoPerfil: { type: String, required: false, unique: false },
-    Tarjetas: [
-        {
-            Nombre: { type: String, required: true, unique: false },
-            Apellido: { type: String, required: true, unique: false },
-            NumTarjeta: { type: String, required: true, unique: false },
-            FechaVencimiento: { type: String, required: true, unique: false },
-            TipoTarjeta: { type: String, required: true, unique: false },
-        }
-    ]
+    FotoPerfil: { type: String, required: false, unique: false }
 });
 
 module.exports = mongoose.model('Persona', schemaPersona, 'Personas');

@@ -4,45 +4,53 @@ let inputUser = document.getElementById('usuario');
 let inputPass = document.getElementById('contraseña');
 
 
+
 const ValidarInputs = (pUser, pPass) => {
-    if (!pUser || !pPass) {        
+    if (pUser == null || pUser == undefined || pUser == '') {        
         swal.fire({
             icon:'error',
             title:'Error',
-            text:'Usuario y contraseña son requeridos!'
+            text:'Usuario es requerido!'
+        });
+        return false;
+    }
+    if (pPass == null || pPass == undefined || pPass == '') {        
+        swal.fire({
+            icon:'error',
+            title:'Error',
+            text:'Contraseña es requerida!'
         });
         return false;
     }
     return true;
 };
 
-
 const  RedireccionarUsuario = (PersonaDB) => {
     let nombreRol = ObtenerRol(PersonaDB.Rol);
     if (nombreRol == 'Client') {
-        location.href = 'paginaBusqueda.html';
+        location.href = 'IndexCliente.html';
     }
     if (nombreRol == 'Admin') {
-        location.href = 'index.html';
+        location.href = 'IndexAdmin.html';
     }
 };
 
 const IniciarSesion = async () => {
-    const user = usuario.value;
-    const pass = contraseña.value;
+    let user = inputUser.value;
+    let pass = inputPass.value;
 
-    if (!ValidarInputs(user, pass)) {
+    if (ValidarInputs(user, pass) == false) {
         return;
     }
 
-    const params = {
+    let params = {
         'Email': user,
         'Password': pass
     };
 
-    const res = await ProcessGET('AutenticarPersona', params);
+    let res = await ProcessGET('AutenticarPersona', params);
 
-    if (res && res.resultado && res.PersonaDB) {
+    if (res != null && res.resultado == true && res.PersonaDB != null) {
         RedireccionarUsuario(res.PersonaDB);
         SetSesionActiva(res.PersonaDB);
     } else {

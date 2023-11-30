@@ -47,15 +47,15 @@ function ImprimirMsjsSuccess(pMsj) {
         text: pMsj
     });
 }
-/*function resaltarLabelInvalido(plabelID) {
+const resaltarLabelInvalido = (plabelID) => {
     var obj = document.getElementById(plabelID);
     var orig = obj.style;
     obj.style = 'color:red;'
 
-    setTimeout(function () {
+    setTimeout(() => {
         obj.style = orig;
     }, 5000);
-}*/
+}
 function resaltarInputInvalido(pinputID) {
     var obj = document.getElementById(pinputID);
     var orig = obj.style;
