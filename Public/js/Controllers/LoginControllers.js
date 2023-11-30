@@ -28,10 +28,10 @@ const ValidarInputs = (pUser, pPass) => {
 const  RedireccionarUsuario = (PersonaDB) => {
     let nombreRol = ObtenerRol(PersonaDB.Rol);
     if (nombreRol == 'Client') {
-        location.href = 'IndexCliente.html';
+        location.href = 'paginaBusqueda.html';
     }
     if (nombreRol == 'Admin') {
-        location.href = 'IndexAdmin.html';
+        location.href = 'indexAdminProvisional.html';
     }
 };
 
