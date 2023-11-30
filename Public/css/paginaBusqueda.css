@@ -192,6 +192,7 @@ header .logo {
   height: 4.5rem;
   width: 4.5rem;
   border-radius: 1rem;
+  margin-left: 5px;
 }
 
 .navegacion {
