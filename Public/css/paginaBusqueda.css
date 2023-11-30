@@ -124,19 +124,76 @@ header .logo {
   background-color: #a37466;
 }
 .carrito-popup {
+  box-sizing: border-box;
   display: flex;
+  width: 500px;
+  height: 500px;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background: white;
-  width: 300px;
-  padding: 200px;
+  padding: 25px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
   z-index: 999;
   transition: opacity 0.3s ease-in-out;
   opacity: 0;
 }
+
+.carritoVacio{
+  color: #8c5240;
+  display: none;
+}
+
+.carritoProductos{
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  height: 100px;
+
+}
+
+.carritoProducto{
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  height: 150px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: lightgray;
+  margin-top: 10px;
+}
+
+#btnEliminar {
+  color: #f8fbfc;
+  border-radius: 5px;
+  background-color: #dcbcb2;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+}
+#btnComprar{
+  color: #f8fbfc;
+  border-radius: 5px;
+  background-color: #dcbcb2;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  margin: 5px;
+}
+
+#btnEliminar:hover, #btnComprar:hover{
+  background-color: #8c5240;
+}
+
+.carritoImg {
+  height: 4.5rem;
+  width: 4.5rem;
+  border-radius: 1rem;
+}
+
 .navegacion {
   width: 400px;
   height: 70px;
