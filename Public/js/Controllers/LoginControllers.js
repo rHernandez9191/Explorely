@@ -28,7 +28,7 @@ const ValidarInputs = (pUser, pPass) => {
 const  RedireccionarUsuario = (PersonaDB) => {
     let nombreRol = ObtenerRol(PersonaDB.Rol);
     if (nombreRol == 'Client') {
-        location.href = 'paginaBusqueda.html?_id' + listaPersonas[i]._id; //Alerta, agregué ID al enlace
+        location.href = 'paginaBusqueda.html'  //Alerta, agregué ID al enlace
     }
     if (nombreRol == 'Admin') {
         location.href = 'indexAdminProvisional.html';
