@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:700|Poppins:400");
+
+body {
+  font-family: "Poppins";
+  font-weight: 400;
+  background-color: var(--background);
+}
+
+:root {
+  --text: #020303;
+}
+:root {
+  --background: #f8fbfc;
+}
+:root {
+  --primary: #dcbcb2;
+}
+:root {
+  --secondary: #d6dfb9;
+}
+:root {
+  --accent: #8c5240;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  text-decoration: none;
+}
+.sidebar {
+  width: 345px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: var(--primary);
+  z-index: 100;
+}
+.sidebar-brand {
+  height: 90px;
+  padding: 1rem 0rem 1rem 2rem;
+  color: var(--accent);
+}
+.sidebar-brand span {
+  display: inline-block;
+  padding-right: 1rem;
+}
+.sidebar-menu {
+  margin-top: 1rem;
+}
+.sidebar-menu li {
+  width: 100%;
+  margin-bottom: 1.7rem;
+  padding-left: 1rem;
+}
+.sidebar-menu a {
+  padding-left: 1rem;
+  display: block;
+  color: var(--accent);
+  font-size: 1.1rem;
+}
+.sidebar-menu a span:first-child {
+  font-size: 1.5rem;
+  padding-right: 1rem;
+}
+.sidebar-menu a.active {
+  background: var(--background);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  color: var(--accent);
+  border-radius: 30px 0px 0px 30px;
+}
+.main-content {
+  margin-left: 345px;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  left: 345px;
+  width: calc(100% - 345px);
+  top: 0;
+  z-index: 100;
+}
+header h2 {
+  color: var(--accent);
+}
+header label span {
+  font-size: 1.7rem;
+  padding-right: 1rem;
+}
+.search-wrapper {
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  overflow-x: hidden;
+}
+.search-wrapper span {
+  display: inline-block;
+  padding: 0rem 1rem;
+  font-size: 1.5rem;
+}
+.search-wrapper input {
+  height: 100%;
+  padding: 0.5rem;
+  border: none;
+  outline: none;
+}
+.user-wrapper {
+  display: flex;
+  align-items: center;
+}
+.user-wrapper img {
+  border-radius: 50%;
+  align-items: 1rem;
+}
+.user-wrapper small {
+  display: inline-block;
+  color: var(--text);
+}
+main {
+  margin-top: 85px;
+  padding: 2rem 1.5rem;
+  background: var(--background);
+  min-height: calc(100vh - 90px);
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2rem;
+  margin-top: 1rem;
+}
+.card-single {
+  display: flex;
+  justify-content: space-around;
+  background: var(--secondary);
+  padding: 2rem;
+  border-radius: 2px;
+}
+.card-single div:last-child span {
+  font-size: 3rem;
+  color: var(--accent);
+}
+.card-single div:first-child span {
+  color: var(--text);
+}
+.card-single:last-child span {
+  color: var(--accent);
+}
