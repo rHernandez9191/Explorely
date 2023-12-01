@@ -51,7 +51,7 @@ const RegistrarDatos = async () => {
     let sCantPersonas = inputCantPersonas.value;
     let sPrecio = inputPrecio.value;
     
-    let sFotoPerfil = null;
+    let sFotoPerfil = inputImgUser.src;
 
     //aca seguirian los subdocumentos version 1
     

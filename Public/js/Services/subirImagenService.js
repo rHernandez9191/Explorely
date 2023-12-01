@@ -3,8 +3,8 @@
 let imagen; 
 
 let widgetCloudinary = cloudinary.createUploadWidget({
-    cloudName: 'din5lexdv',
-    uploadPreset: 'sararepo'
+    cloudName: 'dnivxfsrs',
+    uploadPreset: 'CenfotecSemana8'
 }, (err, result)=> {
     if (!err && result && result.event ==='success'){
         console.log('Imgane subida', result.info);
