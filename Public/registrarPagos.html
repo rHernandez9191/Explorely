@@ -34,7 +34,7 @@
             required
           />
           <select id="tipo-tarjeta" name="tipo-tarjeta" required>
-            <option value="">-Seleccione-</option>
+            <option value="">-Seleccione Tipo de Tarjeta-</option>
             <option value="mastercard">MasterCard</option>
             <option value="amex">American Express</option>
             <option value="discover">Discover</option>
@@ -48,33 +48,10 @@
             placeholder="Ingrese el número de tarjeta"
             maxlength="16"
           />
+          <label for="lblfecha-vence" id="txt-fecha-vence">Fecha de Vencimiento</label>
+            <input type="date" id="lblfecha-vence" />
 
-          <input
-            type="number"
-            id="caducidad-dia"
-            name="caducidad-dia"
-            placeholder="Día"
-            maxlength="2"
-            size="2"
-          />
-          <input
-            type="number"
-            id="caducidad-mes"
-            name="caducidad-mes"
-            placeholder="Mes"
-            maxlength="2"
-            size="2"
-          />
-          <input
-            type="number"
-            id="caducidad-ano"
-            name="caducidad-ano"
-            placeholder="Año"
-            maxlength="2"
-            size="2"
-          />
-
-          <button type="button" class="btn" onclick="redireccionar()">
+          <button type="button" class="btn" id="btn-registrar" onclick="redireccionar()">
             Registrar
           </button>
         </form>
@@ -89,5 +66,7 @@
     </main>
     <script src="./js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./js/Controllers/GestionarTarjetaController.js"></script>
+    <script src="./js/utileria.js"></script>
   </body>
 </html>

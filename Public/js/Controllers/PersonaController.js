@@ -136,3 +136,7 @@ const ImprimirDatos = () => {
         celdaAcciones.appendChild(divBtns);
     }
 };
+
+function CargarPerfil(){
+    location.href = "PerfilCLiente.html?_id=" + listaPersonas[i]._id;
+  };

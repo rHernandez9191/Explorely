@@ -44,6 +44,20 @@ const ProcessPOST = async (pRouterName, pData, pSubDocumentos) => {
         } else {
             // aca se va a manejar los pSubDocumentos
         }
+    };
+    if (pRouterName == 'RegistrarSocio') {
+        if (res.resultado == false) {
+            switch (res.error.code) {
+                case 11000:
+                    res.msj = 'No se pudo registrar el negocio, ya que existe una persona con esa misma identificacion o correo';
+                    console.log('No se pudo registrar codigo 11000');
+                    break;
+                default:
+                    break;
+            }
+        } else {
+            // aca se va a manejar los pSubDocumentos
+        }
     }
     return res;
 }
@@ -54,6 +68,20 @@ const ProcessPUT = async (pRouterName, pData, pSubDocumentos) => {
             switch (res.error.code) {
                 case 11000:
                     res.msj = 'No se pudo actualizar la persona, ya que existe una persona con esa misma identificacion o correo';
+                    console.log('No se pudo registrar codigo 11000');
+                    break;
+                default:
+                    break;
+            }
+        } else {
+            // aca se va a manejar los pSubDocumentos
+        }
+    };
+    if (pRouterName == 'ModificarSocio') {
+        if (res.resultado == false) {
+            switch (res.error.code) {
+                case 11000:
+                    res.msj = 'No se pudo actualizar el negocio, ya que existe una persona con esa misma identificacion o correo';
                     console.log('No se pudo registrar codigo 11000');
                     break;
                 default:

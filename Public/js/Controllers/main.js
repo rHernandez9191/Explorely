@@ -52,3 +52,6 @@ document.addEventListener("DOMContentLoaded", function () {
     verificationCodeDiv.style.display = "block";
   });
 });
+
+/* funciones para botones de reservas, tarjetas, y perfil de cliente */
+

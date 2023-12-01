@@ -71,6 +71,22 @@ function resaltarInputInvalido(pinputID) {
 function ObtenerTipoServicio(ptipoId) {
     switch (ptipoId) {
         case 1:
+            return 'MasterCard';
+        case 2:
+            return 'AmericanExpress';
+        case 3:
+            return 'Discover';
+        case 4:
+            return 'Visa';
+
+        default:
+            return 'Sin Tarjeta';
+    }
+}
+
+function ObtenerTipoTarjeta(ptipoId) {
+    switch (ptipoId) {
+        case 1:
             return 'Hospedaje';
         case 2:
             return 'Transporte';
