@@ -1,221 +1,192 @@
-@import url("https://fonts.googleapis.com/css?family=Poppins:700|Poppins:400");
-:root {
-  --text: #020303;
-}
-:root {
-  --background: #f8fbfc;
-}
-:root {
-  --primary: #dcbcb2;
-}
-:root {
-  --secondary: #d6dfb9;
-}
-:root {
-  --accent: #8c5240;
-}
-* {
-  margin: 0;
-  padding: 0;
+
+input[type=text],
+select,
+input[type=number],
+input[type=date],
+input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
   box-sizing: border-box;
-  font-family: "Poppins";
-}
-body {
-  justify-content: center;
-  align-items: center;
-  background-image: url("/img/fondoRegistrarse.jpg");
-  background-size: cover;
-  min-height: 100vh;
 }
 
-header {
+input[type=submit],
+input[type=button] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover,
+input[type=button]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 5px;
+  /* background-color: #f2f2f2; */
+  /* padding: 12px; */
+}
+
+.btnsTabla {
+  background-color: #c1e046;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 3px 3px;
+}
+
+.btnsTabla:hover {
+  background-color: #4CAF50;
+  color: white;
+  padding: 4px 4px;
+  /* margin: 8px 0; */
+  /* border: none; */
+  /* border-radius: 4px; */
+  cursor: pointer;
+}
+
+#btnCrea {
+  text-align: right;
+  width: auto;
+  float: right;
+}
+
+#tblPersonas, #tblTarjetas {
+  width: 100%;
+  margin-top: 20px;
+  text-align: center;
+}
+
+body form {
+  width: fit-content;
+  margin: auto;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  /* width: 50%; */
+  padding: 10px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+
+/* The container */
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  padding: 20px 100px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+  background-color: white;
 }
-header .logo {
-  position: relative;
-  max-width: 80px;
+
+/* On mouse-over, add a grey background color */
+.container:hover input~.checkmark {
+  background-color: #ccc;
 }
-header h2 {
-  flex: 1;
+
+/* When the radio button is checked, add a blue background */
+.container input:checked~.checkmark {
+  background-color: #2196F3;
 }
-.carrito {
-  display: flex;
-  max-width: 35px;
-  height: 35px;
-  margin-right: 10px;
-}
-.hamburger {
-  position: relative;
-  display: block;
-  width: 50px;
-  appearance: none;
-  background: none;
-  outline: none;
-  border: none;
-  cursor: pointer;
-  margin-left: 10px;
-}
-.hamburger .barra,
-.hamburger::after,
-.hamburger::before {
-  width: 100%;
-  height: 5px;
-  background-color: var(--accent);
-  margin: 6px 0px;
-  transition: 0.3s;
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
   content: "";
-  display: block;
-}
-.hamburger.is-active::before {
-  transform: rotate(-45deg) translate(-9px, 6px);
-}
-.hamburger.is-active::after {
-  transform: rotate(45deg) translate(-9px, -7px);
-}
-.hamburger.is-active .barra {
-  opacity: 0;
-}
-.movil-nav {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 300px;
-  padding: 20px;
-  background-color: var(--background);
-  z-index: 999;
-  transition: opacity 0.3s ease-in-out;
-  opacity: 0;
   display: none;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
-.movil-nav.is-active {
+
+/* Show the indicator (dot/circle) when checked */
+.container input:checked~.checkmark:after {
   display: block;
 }
-.movil-nav a {
-  width: 100%;
-  max-width: 200px;
-  margin: 0 auto 16px;
-  display: block;
-  text-align: center;
-  margin-bottom: 16px;
-  padding: 12px 16px;
-  background-color: var(--accent);
-  color: var(--secondary);
-  text-decoration: none;
-}
-.movil-nav a:hover {
-  background-color: #a37466;
-}
-.carrito-popup {
-  display: none;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+
+/* Style the indicator (dot/circle) */
+.container .checkmark:after {
+  top: 9px;
+  left: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
   background: white;
-  width: 300px;
-  padding: 200px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-  z-index: 999;
-  transition: opacity 0.3s ease-in-out;
-  opacity: 0;
-}
-.formularioActualizar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 80vh;
-}
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  background-color: #d6dfb9;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  color: #8c5240;
-  border-radius: 10px;
-  padding: 30px;
-  box-sizing: border-box;
-}
-.wrapper h1 {
-  text-align: center;
-}
-#ttlFormulario {
-  text-align: center;
-  color: #8c5240;
-  margin-bottom: 20px;
-}
-form {
-  color: var(--accent);
-  max-width: 100%;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-}
-.formContainer {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 100%;
 }
 
-select,
-input,
-fieldset {
-  margin-bottom: 16px;
+.avatar {
+  vertical-align: middle;
+  width: 180px;
+  height: 180px;
+  /*border-radius: 50%;*/
+  background-image: url('../img/user-profile-placeholder-image-png.png');
+  background-size: cover;
 }
-
-.formIzquierda {
-  width: 48%;
-}
-.formDerecha {
-  width: 48%;
-}
-form input,
-form select {
-  width: 100%;
-  height: 100%;
-  background: transparent;
+.btnSubirFoto{  
+  width: 55%;
+  background-color: #6d8024;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
   border: none;
-  outline: none;
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  border-radius: 40px;
-  font-size: 16px;
-  color: var(--accent);
-  padding: 20px 45px 20px 20px;
-  box-sizing: border-box;
-}
-input::placeholder {
-  color: var(--accent);
-}
-.btn,
-.btnSubirFoto {
-  width: 100%;
-  height: 45px;
-  margin-bottom: 16px;
-  background-color: var(--accent);
-  border: none;
-  border-radius: 40px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
   cursor: pointer;
-  font-size: 16px;
-  font-weight: 600;
-  color: #f8fbfc;
 }
-#txtnegocio {
-  margin-bottom: 16px;
-  border-radius: 40px;
+
+#FiltroTablas, #divbtn{  
+  text-align: right;
 }
-#txtnegocio::placeholder {
-  text-align: center;
-  font-family: "Poppins", sans-serif;
-  color: var(--accent);
+#divbtn input[type=button]{
+  width: auto;
+  float: none;
+} 
+#FiltroTablas input[type=text]{  
+  width: auto;
+}
+
+nav{
+  text-align: right;
+  padding: 20px;
+  background-color: aquamarine;
+  opacity: 0.9;
 }

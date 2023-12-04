@@ -11,13 +11,13 @@ let inputEmail = document.getElementById('txtEmail');
 let inputPassword1 = document.getElementById('txtPass');
 let inputPassword2 = document.getElementById('txtPass2');
 let inputNacimiento = document.getElementById('txtnacimiento');
-let inputEdad = document.getElementById('txtedad');
-let inputRol = document.getElementById('txtRol');
-let inputEstado = document.getElementById('txtestado');
+let inputEdad = document.getElementById('txtEdad');
+let inputRol = 2;
+let inputEstado = 1;
 let input_id = document.getElementById('txt_id');
 let inputImgUser = document.getElementById('imgUser');
 
-const CargarDatos = (pPersona, pBtn) => {
+/*const CargarDatos = (pPersona, pBtn) => {
     if (pBtn == 'btnCrea') {
         document.getElementById('ttlInicio').innerHTML = 'Registrar Persona';
         document.getElementById('btnRegistrar').value = 'Registrar';
@@ -49,8 +49,8 @@ const CargarDatos = (pPersona, pBtn) => {
         inputEstado.value = pPersona.Estado;
         inputImgUser.src = pPersona.FotoPerfil;
         input_id.value = pPersona._id;
-    }
 };
+
 
 
 let queryString, urlParams, _id;
@@ -59,8 +59,8 @@ const IdentificarAccion = async () => {
     urlParams = new URLSearchParams(queryString);
 
     _id = urlParams.get('_id');
-    let nombre = urlParams.get('nombre');
-    console.log(nombre);
+    //let nombre = urlParams.get('nombre');
+    //console.log(nombre);
 
     if (_id != null && _id != undefined && _id == 'crear') {
         CargarDatos(null, 'btnCrea');
@@ -74,7 +74,7 @@ const IdentificarAccion = async () => {
         }
     }
 };
-IdentificarAccion();
+IdentificarAccion();*/
 
 
 
@@ -105,7 +105,7 @@ const RegistrarDatos = async () => {
 
     let s_id = input_id.value;
 
-    if (ValidarDatos(sTipoIdentificacion, sIdentificacion, sNombre, sApellido1, sApellido2, sexo, sEmail, sPass, sPassConfirmacion, dNacimiento, nEdad, nRol, nEstado, sFotoPerfil) == false) {
+    if (ValidarDatos(sTipoIdentificacion, sIdentificacion, sNombre, sApellido1, sApellido2, sexo, sEmail, sPass, sPassConfirmacion, dNacimiento, nEdad, nRol, nEstado /*sFotoPerfil*/) == false) {
         return;
     }
 
@@ -118,12 +118,12 @@ const RegistrarDatos = async () => {
         'Apellido1': sApellido1,
         'Apellido2': sApellido2,
         'Sexo': sexo,
-        'Nacimiento': new Date(dNacimiento),
         'Edad': nEdad,
         'Estado': nEstado,
         'Email': sEmail,
         'Password': sPass,
         'Rol': nRol,
+        'Nacimiento': new Date(dNacimiento),
         'FotoPerfil': sFotoPerfil
     };
 
@@ -144,88 +144,88 @@ const RegistrarDatos = async () => {
             text: res.msj,
             confirmButtonText: 'Ok'
         }).then(resSwetAlert => {
-            location.href = 'AdminPersonas.html'
+            location.href = 'PerfilCliente.html'
         });
     }
 };
 const ValidarDatos = (pTipoIdentificacion, pIdentificacion, pNombre, pApellido1, pApellido2, psexo, pEmail, pPass, pPassConfirmacion, pNacimiento, pEdad, pRol, pEstado, pFotoPerfil) => {
     if (pTipoIdentificacion == '' || pTipoIdentificacion == null || pTipoIdentificacion == undefined) {
-        resaltarLabelInvalido('lbltipoIdentificacion');
+        //resaltarLabelInvalido('lbltipoIdentificacion');
         resaltarInputInvalido('txttipoIdentificacion');
         ImprimirMsjsError('Por favor seleccione tipo de identificacion');
         return false;
     }
     if (pIdentificacion == '' || pIdentificacion == null || pIdentificacion == undefined) {
-        resaltarLabelInvalido('lblidentificacion');
+        //resaltarLabelInvalido('lblidentificacion');
         resaltarInputInvalido('txtidentificacion');
         ImprimirMsjsError('Por favor ingrese su identificacion');
         return false;
     }
     if (pNombre == '' || pNombre == null || pNombre == undefined) {
-        resaltarLabelInvalido('lblnombre');
+        //resaltarLabelInvalido('lblnombre');
         resaltarInputInvalido('txtnombre');
         ImprimirMsjsError('Por favor ingrese su Nombre');
         return false;
     }
     if (pApellido1 == '' || pApellido1 == null || pApellido1 == undefined) {
-        resaltarLabelInvalido('lblapellido1');
+       // resaltarLabelInvalido('lblapellido1');
         resaltarInputInvalido('txtapellido1');
         ImprimirMsjsError('Por favor ingrese su Primer Apellido');
         return false;
     }
     if (psexo == '' || psexo == null || psexo == undefined) {
-        resaltarLabelInvalido('lblSexo');
+        //resaltarLabelInvalido('lblSexo');
         resaltarInputInvalido('txtsexo');
         ImprimirMsjsError('Por favor indique su Sexo');
         return false;
     }
     if (pEmail == null || pEmail == '' || pEmail == undefined) {
-        resaltarLabelInvalido('lblEmail');
+       // resaltarLabelInvalido('lblEmail');
         resaltarInputInvalido('txtEmail');
         ImprimirMsjsError('Por favor ingrese su Correo');
         return false;
     }
     if (pPass == null || pPass == '' || pPass == undefined) {
-        resaltarLabelInvalido('lblPass');
+       // resaltarLabelInvalido('lblPass');
         resaltarInputInvalido('txtPass');
         ImprimirMsjsError('Por favor ingrese su Contraseña');
         return false;
     }
     if (pPassConfirmacion == null || pPassConfirmacion == '' || pPassConfirmacion == undefined) {
-        resaltarLabelInvalido('lblPass2');
+        //resaltarLabelInvalido('lblPass2');
         resaltarInputInvalido('txtPass2');
         ImprimirMsjsError('Por favor ingrese su Confrimacion de Contraseña');
         return false;
     }
     if (pPass != pPassConfirmacion) {
-        resaltarLabelInvalido('lblPass');
+       // resaltarLabelInvalido('lblPass');
         resaltarInputInvalido('txtPass');
-        resaltarLabelInvalido('lblPass2');
+        //resaltarLabelInvalido('lblPass2');
         resaltarInputInvalido('txtPass2');
         ImprimirMsjsError('Por favor ingrese ambas Contraseñas iguales');
         return false;
     }
     if (pNacimiento == '' || pNacimiento == null || pNacimiento == undefined || new Date(pNacimiento) >= new Date()) {
-        resaltarLabelInvalido('lblnacimiento');
+       // resaltarLabelInvalido('lblnacimiento');
         resaltarInputInvalido('txtnacimiento');
         ImprimirMsjsError('Por favor ingrese una fecha de nacimiento menor a hoy');
         return false;
     }
     if (pEdad == null || pEdad == undefined) {
         ImprimirMsjsError('Estimado usuario  la edad es requerido');
-        resaltarLabelInvalido('lbledad');
+       // resaltarLabelInvalido('lbledad');
         resaltarInputInvalido('txtedad');
         inputEdad.value = 0;
         return false;
     } else if (pEdad <= 0 || pEdad > 120) {
         ImprimirMsjsError('Por favor indique una edad valida entre 1 y 120 años');
-        resaltarLabelInvalido('lbledad');
+        //resaltarLabelInvalido('lbledad');
         resaltarInputInvalido('txtedad');
         inputEdad.value = 0;
         return false;
     }
     if (pRol == null || pRol == '' || pRol == undefined || pRol == 0) {
-        resaltarLabelInvalido('lblRol');
+       // resaltarLabelInvalido('lblRol');
         resaltarInputInvalido('txtRol');
         ImprimirMsjsError('Por favor indique un Rol');
         return false;

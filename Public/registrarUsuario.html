@@ -3,8 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Registrarse</title>
     <link rel="stylesheet" href="./css/registrarUsuario.css" />
+    <link rel="stylesheet" href="./js/Controllers/main.js" >
+    <title>Registrarse</title>
   </head>
 
   <body>
@@ -29,6 +30,7 @@
         <div class="formContainer">
           <div class="formIzquierda">
             <form action="">
+              <input type="hidden" id="txt_id">
               <select name="" id="txttipoIdentificacion">
                 <option value="">-Tipo de identificacion-</option>
                 <option value="1">Fisica</option>
@@ -79,6 +81,7 @@
           </div>
           <div class="formDerecha">
             <form action="">
+              <input type="text" id="txtEdad" placeholder="Edad" />
               <input type="text" id="txtEmail" placeholder="Email" />
               <input type="password" id="txtPass" placeholder="Contraseña" />
               <input
@@ -90,6 +93,7 @@
                 <legend id="#">Fecha de nacimiento</legend>
                 <input type="date" id="txtnacimiento" />
               </fieldset>
+              <img id="imgUser" class="avatar">
               <button
                 type="button"
                 class="btnSubirFoto"
@@ -97,7 +101,7 @@
               >
                 Foto del documeto de identidad
               </button>
-              <button type="button" class="btn" onclick="redireccionar()">
+              <button type="button" class="btn" id="btnRegistrar">
                 Registrar
               </button>
             </form>
@@ -105,10 +109,15 @@
         </div>
       </div>
     </main>
-    <script src="./js/validaciones.js"></script>
-    <script src="https://upload-widget.cloudinary.com/2.10.1/global/all.js"></script>
-    <script src="./js/subirImagenService.js"></script>
-    <script src="./js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://upload-widget.cloudinary.com/2.10.1/global/all.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./js/utileria.js"></script>
+    <script src="./js/Services/subirImagenService.js"></script>
+    <script src="./js/Services/GeneralService.js"></script>
+    <!--<script src="./js/validaciones.js"></script>-->
+    <!--<script src="./js/subirImagenService.js"></script>-->
+    <!--<script src="./js/main.js"></script>-->
+    <script src="./js/Controllers/GestionarPersonasController.js"></script>
   </body>
 </html>

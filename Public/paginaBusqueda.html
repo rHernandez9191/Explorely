@@ -5,10 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Inicio</title>
     <link rel="stylesheet" href="./css/paginaBusqueda.css" />
-<<<<<<< Updated upstream
-=======
     <link rel="stylesheet" href="./js/Controllers/main.js" />
->>>>>>> Stashed changes
   </head>
   <body>
     <header>
@@ -127,21 +124,17 @@
       <a href="index.html">Cerrar Sesion</a>
     </nav>
     <main>
-      <div class="opciones">
-        <div class="renta" id="a">
-          <div class="a">
+      <div class="opciones" id="divServicios">
+       <div class="renta" id="a">
+          <!--<div class="a" >
             <div class="info">
               <div class="card">
-                <a href="#">
-                  <img src="img/imagen1.webp">
-                </a>
+                <a href="#"><img src="img/imagen1.webp"></a>
               </div>
               <div class="lugar">
                 <div class="local"><span class="txtlugar">San José</span></div>
                 <div class="calificacion">
-                  <img src="./img/estrellaIcono.png" class="estrella" /><span
-                    >4,73</span
-                  >
+                  <img src="./img/estrellaIcono.png" class="estrella" /><span>4,73</span>
                 </div>
               </div>
               <div class="noche">
@@ -450,13 +443,15 @@
                 <span>$500 <span>noche</span></span>
               </div>
             </div>
-          </div>
-        </div>
+          </div> 
+        </div>-->
       </div>
     </main>
     <footer></footer>
-
-    <script src="./js/Controllers/main.js"></script>
-    <script src="./js/Controllers/PersonaController.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./js/utileria.js"></script>
+    <!--<script src="./js/Controllers/main.js"></script>-->
+    <script src="./js/Services/GeneralService.js"></script>
+    <script src="./js/Controllers/GestionarPaginaBusqueda.js"></script>
   </body>
 </html>
