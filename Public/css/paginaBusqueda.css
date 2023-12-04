@@ -333,3 +333,18 @@ img {
   width: 15px;
 }
 
+#carritoTitulo{
+    color: #8c5240;
+}
+
+#botonAgregar{
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  padding: 1px 1px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  
+  
+}
