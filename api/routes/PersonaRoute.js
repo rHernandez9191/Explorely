@@ -21,7 +21,9 @@ router.post('/RegistrarPersona', (req, res) => {
         Password: body.Password,
         Rol: body.Rol,
         Nacimiento: body.Nacimiento,
-        FotoPerfil: body.FotoPerfil
+        FotoPerfil: body.FotoPerfil,
+        Tarjetas: body.Tarjetas,
+        Reservas: body.Reservas
     });
 
     nuevaPersona.save()
