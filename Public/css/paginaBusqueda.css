@@ -341,10 +341,13 @@ img {
   background-color: var(--accent);
   color: white;
   border: none;
-  padding: 1px 1px;
+  padding: 5px 5px;
   border-radius: 5px;
   cursor: pointer;
   font-weight: bold;
   
-  
+}
+
+#botonAgregar:hover{
+  background-color: #a37466;
 }
