@@ -37,6 +37,7 @@ GetListaSocios();
            </div>
            <div class="lugar">
             <div class="local"><span class="txtlugar">Precio: </span>${listaPersonas[i].Precio}</div>
+            <button id="botonAgregar">Agregar al carrito</button>
            </div>
           </div>
          </div>
