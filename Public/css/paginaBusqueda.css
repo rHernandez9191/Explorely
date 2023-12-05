@@ -353,13 +353,20 @@ img {
   background-color: #a37466;
 }
 
-th{
+#tablaCarrito thead tr th{
   color: #8c5240;
-  font-size: x-large;
+  padding: 20px;
+  text-align: center;
+ 
 }
 
-#tituloCarrito1{
-  font-size: larger;
-  color: #8c5240;
+#tablaCarrito{
+  width: 100%;
 }
 
+#imgCarrito{
+  height: 4.5rem;
+  width: 4.5rem;
+  border-radius: 1rem;
+  margin-left: 5px;
+}

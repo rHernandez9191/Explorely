@@ -12,3 +12,4 @@ const GetListaSocios = async () => {
         return;
     }
 };
+
