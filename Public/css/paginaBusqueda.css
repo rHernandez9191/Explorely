@@ -45,6 +45,7 @@ header .logo {
   border-radius: 5px;
   cursor: pointer;
   font-weight: bold;
+  margin-right: 10px;
 }
 
 .button-buscar:hover {

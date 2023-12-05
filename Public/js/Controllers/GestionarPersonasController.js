@@ -97,8 +97,8 @@ const RegistrarDatos = async () => {
     let sPassConfirmacion = inputPassword2.value;
     let dNacimiento = inputNacimiento.value;
     let nEdad = Number(inputEdad.value);
-    let nRol = Number(inputRol.value);
-    let nEstado = Number(inputEstado.value);
+    let nRol = inputRol;
+    let nEstado = inputEstado;
     let sFotoPerfil = inputImgUser.src;
 
     //aca seguirian los subdocumentos version 1
@@ -144,7 +144,7 @@ const RegistrarDatos = async () => {
             text: res.msj,
             confirmButtonText: 'Ok'
         }).then(resSwetAlert => {
-            location.href = 'PerfilCliente.html'
+            location.href = 'paginaBusqueda.html'
         });
     }
 };
