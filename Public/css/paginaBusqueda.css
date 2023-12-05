@@ -366,3 +366,21 @@ img {
 #botonAgregar:hover{
   background-color: #a37466;
 }
+
+#tablaCarrito thead tr th{
+  color: #8c5240;
+  padding: 20px;
+  text-align: center;
+ 
+}
+
+#tablaCarrito{
+  width: 100%;
+}
+
+#imgCarrito{
+  height: 4.5rem;
+  width: 4.5rem;
+  border-radius: 1rem;
+  margin-left: 5px;
+}

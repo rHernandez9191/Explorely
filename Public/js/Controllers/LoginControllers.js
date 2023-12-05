@@ -32,7 +32,7 @@ const  RedireccionarUsuario = (PersonaDB) => {
         location.href = 'paginaBusqueda.html?_id=' + result._id;  //Alerta, agregué ID al enlace
     }
     if (nombreRol == 'Admin') {
-        location.href = 'indexAdminProvisional.html';
+        location.href = 'adminAdmi.html';
     }
 };
 

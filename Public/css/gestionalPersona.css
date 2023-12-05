@@ -1,0 +1,162 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:700|Poppins:400");
+:root {
+  --text: #020303;
+}
+:root {
+  --background: #f8fbfc;
+}
+:root {
+  --primary: #dcbcb2;
+}
+:root {
+  --secondary: #d6dfb9;
+}
+:root {
+  --accent: #8c5240;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh; 
+    padding-top: 100px; 
+}
+
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff; 
+    z-index: 1000; 
+}
+
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    background-color: #d6dfb9;
+    color: #8c5240;
+    padding: 30px; /* Ajusta según sea necesario */
+    box-sizing: border-box;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin-top: 370px; /* Ajusta según sea necesario */
+}
+
+.wrapper h1 {
+    text-align: center;
+}
+  
+.avatar{
+  background-image: url('../img/logo.png');
+  background-size: cover;
+  width: 80px;
+  height: 80px;
+  margin: auto;
+  margin-bottom: 4px;
+  border: solid #8c5240 1px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins";
+}
+
+body {
+  justify-content: center;
+  margin: 0;
+  align-items: center;
+  background-image: url("/img/fondoRegistrarse.jpg");
+  background-size: cover;
+  min-height: 100vh;
+}
+
+
+header h2 {
+  flex: 1;
+  text-align: center;
+}
+
+form input,
+form select {
+    width: 100%;
+    padding: 20px;  
+    box-sizing: border-box;  
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 40px;
+    font-size: 16px;
+    color: var(--accent);
+    margin-bottom: 16px;
+    outline: none;  /* Añadí esto para quitar el contorno predeterminado en algunos navegadores */
+}
+.formContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+select,
+input,
+fieldset {
+  margin-bottom: 16px;
+}
+
+form input,
+form select {
+  width: 100%;
+  height: 1000%;
+  background: transparent;
+  border: none;
+  outline: none;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 40px;
+  font-size: 16px;
+  color: var(--accent);
+  padding: 20px 45px 20px 20px;
+  box-sizing: border-box;
+}
+input::placeholder {
+  color: var(--accent);
+}
+
+.btn,
+.btnSubirFoto {
+    width: 100%;
+    height: 45px;
+    margin-bottom: 16px;
+    background-color: var(--accent);
+    border: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    color: #f8fbfc;
+}
+
+/* Estilos adicionales para la estructura de dos columnas */
+.row {
+    display: flex;
+    justify-content: center;
+}
+
+.column {
+    display: center ;
+    flex: 1;
+    margin-right: 200px; 
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
