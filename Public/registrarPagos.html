@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/pagos.css" />
-    <link rel="stylesheet" href="./js/main.js" />
     <title>Pagos</title>
   </head>
   <body>
@@ -51,7 +50,7 @@
           <label for="lblfecha-vence" id="txt-fecha-vence">Fecha de Vencimiento</label>
             <input type="date" id="lblfecha-vence" />
 
-          <button type="button" class="btn" id="btn-registrar" onclick="redireccionar()">
+          <button type="button" class="btn" id="btn-registrar">
             Registrar
           </button>
         </form>
@@ -64,9 +63,10 @@
         <a href="index.html">Cerrar Sesion</a>
       </nav>
     </main>
-    <script src="./js/main.js"></script>
+    <script src="./js/Controllers/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="./js/Controllers/GestionarTarjetaController.js"></script>
     <script src="./js/utileria.js"></script>
+    <script src="./js/Services/GeneralService.js"></script>
+    <script src="./js/Controllers/GestionarTarjetaController.js"></script> 
   </body>
 </html>

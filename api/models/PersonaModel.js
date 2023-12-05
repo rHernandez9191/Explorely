@@ -18,7 +18,7 @@ const schemaPersona = mongoose.Schema({
     Tarjetas:[
         {
            nombre: { type: String, required: true, unique: false },
-           tipoTarjeta: { type: Number, required: true, unique: false },
+           tipoTarjeta: { type: String, required: true, unique: false },
            numTarjeta: { type: String, required: true, unique: false },
            vencimiento: { type: String, required: true, unique: false } 
         }

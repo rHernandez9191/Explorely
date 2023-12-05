@@ -3,7 +3,7 @@
 let inputNombre = document.getElementById('titular');
 let inputTipoTarjeta = document.getElementById('tipo-tarjeta');
 let inputNumTarjeta = document.getElementById('numero-tarjeta');
-let inputFecha = document.getElementById('txt-fecha-vence');
+let inputFecha = document.getElementById('lblfecha-vence');
 let queryString, urlParams, _id, PersonaBD;
 let botonRegistrar = document.getElementById('btn-registrar');
 
@@ -16,7 +16,6 @@ const ObtenerPersona = async () => {
     if (res != null && res.resultado == true && res.PersonaBD != null) {
         PersonaBD = res.PersonaBD;
         inputNombre.value = PersonaBD.Nombre;
-        inputApellido.value = PersonaBD.Apellido1;
     } else {
         ImprimirMsjsError(res.msj);
     }
@@ -34,22 +33,22 @@ const GetUrlParams = async () => {
 GetUrlParams();
 
 const RegistrarDatos = async () => {
-    let sCVV = inputCVV.value;
+    let sCVV = inputFecha.value;
     let sNumTarjeta = inputNumTarjeta.value;
     let sNombre = inputNombre.value;
-    let sApellido = inputApellido.value;
+    let sTipoPtarjeta = inputTipoTarjeta.value;
     let s_id = _id;
 
-    if (ValidarInputs(sCVV, sNumTarjeta, sNombre, sApellido, s_id) == false) {
+    if (ValidarInputs(sCVV, sNumTarjeta, sNombre, sTipoPtarjeta, s_id) == false) {
         return;
     }
 
     let data = {
         '_id': s_id,
-        'Nombre': sNombre,
-        'Apellido': sApellido,
-        'NumeroTarjeta': sNumTarjeta,
-        'CVV': sCVV,
+        'nombre': sNombre,
+        'tipoTarjeta': sTipoPtarjeta,
+        'numTarjeta': sNumTarjeta,
+        'vencimiento': sCVV,
     };
 
     let res = await ProcessPOST('RegistrarTarjeta', data, null);
@@ -58,39 +57,32 @@ const RegistrarDatos = async () => {
             title: 'Excelente!',
             text: res.msj,
             icon: 'success',
-            confirmButtonText: 'Ok'
+            confirmButtonText: 'Volver'
         }).then(ress => {
-            location.href = 'AdminTarjetasPersonas.html?_id=' + _id;
+            location.href = 'PerfilCliente.html?_id=' + _id;
         });
     } else {
         ImprimirMsjsError(res.msj);
     }
 
 };
-botonRegistrar.addEventListener('click', RegistrarDatos);
 
-const ValidarInputs = (pCVV, pNumTarjeta, pNombre, pApellido, p_id) => {
+const ValidarInputs = (pCVV, pNumTarjeta, pNombre, p_id) => {
     if (pNombre == null || pNombre == '' || pNombre == undefined) {
-        resaltarLabelInvalido('lblNombre');
-        resaltarInputInvalido('txtNombre');
+        //resaltarLabelInvalido('lblNombre');
+        resaltarInputInvalido('titular');
         ImprimirMsjsError('Por favor ingrese nombre');
         return false;
     }  
-    if (pApellido == null || pApellido == '' || pApellido == undefined) {
-        resaltarLabelInvalido('lblApellido');
-        resaltarInputInvalido('txtApellido');
-        ImprimirMsjsError('Por favor ingrese apellido');
-        return false;
-    }  
     if (pNumTarjeta == null || pNumTarjeta == '' || pNumTarjeta == undefined) {
-        resaltarLabelInvalido('lblNumero');
-        resaltarInputInvalido('txtNumero');
+        //resaltarLabelInvalido('lblNumero');
+        resaltarInputInvalido('numero-tarjeta');
         ImprimirMsjsError('Por favor ingrese el número de tarjeta');
         return false;
     }  
     if (pCVV == null || pCVV == '' || pCVV == undefined) {
-        resaltarLabelInvalido('lblCVV');
-        resaltarInputInvalido('txtCVV');
+        //resaltarLabelInvalido('lblCVV');
+        resaltarInputInvalido('txt-fecha-vence');
         ImprimirMsjsError('por ingrese el CVV');
         return false;
     }  
@@ -100,3 +92,4 @@ const ValidarInputs = (pCVV, pNumTarjeta, pNombre, pApellido, p_id) => {
     }  
     return true;
 };
+botonRegistrar.addEventListener('click', RegistrarDatos);

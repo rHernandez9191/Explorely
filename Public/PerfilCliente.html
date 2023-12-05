@@ -3,56 +3,139 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Perfil</title>
-   
-    <link rel="stylesheet" href="./css/PerfilCLiente.css" />
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
+    <title>Inicio</title>
+    <link rel="stylesheet" href="./css/paginaBusqueda.css" />
     <link rel="stylesheet" href="./js/Controllers/main.js" />
   </head>
   <body>
-   
+    <header>
+      <div class="contenedor">
+        <a href="./carrito.html"><img src="./img/logo.png" alt="logo" class="logo" /></a>
+        <h2>EXPLORELY</h2>
+        <ul>
+          <button class="button-buscar" onclick="GetUrlAgregaTarjeta()">Agregar Tarjeta</button>
+          <label id="txtBienvenido"></label>
+        </ul>
+        <img src="./img/carritoCompras.png" class="carrito" alt="" />
+        <button class="hamburger">
+          <div class="barra"></div>
+        </button>
+      </div>
+      <div class="navegacion">
+        <ul class="navegacion-lista">
+          <li class="lista">
+            <a href="#">
+              <span class="icono"
+                ><img src="./img/hotelIcono.png" alt=""
+              /></span>
+              <span class="texto">Hospedaje</span>
+            </a>
+          </li>
+          <li class="lista">
+            <a href="#">
+              <span class="icono"
+                ><img src="./img/caminataIcono.png" alt=""
+              /></span>
+              <span class="texto">Caminatas</span>
+            </a>
+          </li>
+          <li class="lista">
+            <a href="#">
+              <span class="icono"
+                ><img src="./img/caballoIcono.png" alt=""
+              /></span>
+              <span class="texto">Cabalgata</span>
+            </a>
+          </li>
+          <li class="lista">
+            <a href="#">
+              <span class="icono"><img src="./img/atvIcono.png" alt="" /></span>
+              <span class="texto">Cuadraciclo</span>
+            </a>
+          </li>
+          <li class="lista">
+            <a href="#">
+              <span class="icono"
+                ><img src="./img/bicicletaIcon.png" alt=""
+              /></span>
+              <span class="texto">Ciclismo</span>
+            </a>
+          </li>
+          <li class="lista">
+            <a href="#">
+              <span class="icono"
+                ><img src="./img/termalesIcon.png" alt=""
+              /></span>
+              <span class="texto">Termales</span>
+            </a>
+          </li>
+          <li class="lista">
+            <a href="#">
+              <span class="icono"><img src="./img/etcIcono.png" alt="" /></span>
+              <span class="texto">Otros</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <div id="carrito-popup" class="carrito-popup">
+      <h2 id="tituloCarrito">Carrito</h2>
+      <p class="carritoVacio">Carrito Vacio</p>
+
+      <div class="carritoProductos">
+        <div class="carritoProducto">
+          <img class="carritoImg" src="./img/imagen1.webp" alt="">
+          <div class="ProductoDetalle">
+            <small>Detalles</small>
+            <p><h3>San Jose</h3></p>
+          </div>
+          <div class="carritoProductoPrecio">
+            <small>Precio</small>
+            <p>300$</p>
+          </div>
+          <button id="btnEliminar">Eliminar</button>
+          <button id="btnComprar">Comprar</button>
+        </div>
+        <div class="carritoProducto">
+          <img class="carritoImg" src="./img/imagen7.webp" alt="">
+          <div class="ProductoDetalle">
+            <small>Detalles</small>
+            <p><h3>La Fortuna</h3></p>
+          </div>
+          <div class="carritoProductoPrecio">
+            <small>Precio</small>
+            <p>315$</p>
+          </div>
+          <button type="button" id="btnEliminar">Eliminar</button>
+          <button type="button" id="btnComprar">Comprar</button>
+        </div>
+      
+      </div>     BtnHamburger
+    </div>
+    <nav class="movil-nav">
+      <button class="BtnHamburger" >Inicio</button>
+      <button class="BtnHamburger" onclick="GetUrlCliente()">Perfil</button>
+      <button class="BtnHamburger" >Reservas</button>
+      <button class="BtnHamburger" >Métodos de Pago</button>
+      <button class="BtnHamburger" >Registrar Negocio</button>
+      <button class="BtnHamburger" >Cerrar Sesion</button>
+    </nav>
     <main>
-      <h3>Administración de Personas</h3>
+      <div class="opciones" id="divServicios">
+        <div class="Tarjetas" id="Tarjetas">
 
-      <div id="divbtn">
-          <input type="button" id="btnCrea" onclick="location.href='registrarUsuario.html?_id=crear'" value="Registrar Persona">
+        </div> 
+        <div class="Hospedajes" id="Reservas">
+
+        </div>
       </div>
-      <div id="FiltroTablas">
-          <label for="txtFiltro">Filtrar</label>
-          <input type="text" id="txtFiltro">
-      </div>
-      <table id="tblPersonas">
-          <thead>
-              <tr>
-                  <th>Tipo de ID</th>
-                  <th>Identificación</th>
-                  <th>Nombre</th>
-                  <th>Correo</th>
-                  <th>Sexo</th>
-                  <th>Nacimiento</th>
-                  <th>Edad</th>
-                  <th>Estado</th>
-                  <th>Rol</th>
-                  <th>Acciones</th>
-              </tr>
-          </thead>
-          <tbody id="tbdPersonas">
-
-          </tbody>
-          <tfoot id="tftPersonas">
-
-          </tfoot>
-      </table>
-  </main>
+    </main>
     <footer></footer>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="js/Utileria.js"></script>
     <script src="./js/Services/GeneralService.js"></script>
     <script src="./js/Controllers/main.js"></script>
     <script src="./js/Controllers/PersonaController.js"></script>
-    <!--<script src="./js/MainPerfilCliente.js"></script>-->
+   
   </body>
 </html>

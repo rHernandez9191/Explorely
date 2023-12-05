@@ -68,7 +68,7 @@ function resaltarInputInvalido(pinputID) {
 
 //Utileria para los datos de socio
 
-function ObtenerTipoServicio(ptipoId) {
+function ObtenerTipoTarjeta(ptipoId) {
     switch (ptipoId) {
         case 1:
             return 'MasterCard';
@@ -84,7 +84,7 @@ function ObtenerTipoServicio(ptipoId) {
     }
 }
 
-function ObtenerTipoTarjeta(ptipoId) {
+function ObtenerTipoServicio(ptipoId) {
     switch (ptipoId) {
         case 1:
             return 'Hospedaje';

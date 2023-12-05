@@ -1,5 +1,6 @@
 'use strict';
 
+let queryString, urlParams, _id, PersonaBD;
 let listaPersonas = [];
 
 const GetListaSocios = async () => {
@@ -46,3 +47,13 @@ GetListaSocios();
          ContenedorServicios.append(div);
      };
  };
+
+ const GetUrlCliente = async () => {
+  queryString = window.location.search;
+  urlParams = new URLSearchParams(queryString);
+
+  _id = urlParams.get('_id');
+
+  location.href = './PerfilCliente.html?_id=' + _id;
+  
+};

@@ -90,8 +90,8 @@ header .logo {
 }
 .movil-nav {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 40%;
+  left: 80%;
   transform: translate(-50%, -50%);
   width: 300px;
   padding: 20px;
@@ -101,6 +101,7 @@ header .logo {
   opacity: 0;
   display: none;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
 }
 .movil-nav.is-active {
   display: block;
@@ -116,6 +117,18 @@ header .logo {
   background-color: var(--accent);
   color: var(--secondary);
   text-decoration: none;
+}
+
+.BtnHamburger{
+  width: 100%;
+  max-width: 200px;
+  margin: 0 auto 16px;
+  display: block;
+  text-align: center;
+  margin-bottom: 16px;
+  padding: 12px 16px;
+  background-color: var(--accent);
+  color: var(--secondary);
 }
 .movil-nav a:hover {
   background-color: #a37466;
@@ -280,6 +293,7 @@ header .logo {
  padding: 8px;
   border: solid #8c5240;
   border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 #b {
   display: flex;

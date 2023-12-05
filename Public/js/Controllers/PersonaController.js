@@ -1,11 +1,12 @@
 'use strict';
 
+let queryString, urlParams, _id, PersonaBD;
 let listaPersonas = [];
 const GetListaPersonas = async () => {
     let res = await ProcessGET('ListarPersonas', null);
     if (res != null && res.resultado == true) {
         listaPersonas = res.ListaPersonasBD;
-        ImprimirDatos();
+        CargarAgregarTarjeta();
     } else {
         ImprimirMsjsError(res.msj);
         return;
@@ -139,4 +140,15 @@ const ImprimirDatos = () => {
 
 function CargarPerfil(){
     location.href = "PerfilCLiente.html?_id=" + listaPersonas[i]._id;
-  };
+};
+
+const GetUrlAgregaTarjeta = async () => {
+    queryString = window.location.search;
+    urlParams = new URLSearchParams(queryString);
+  
+    _id = urlParams.get('_id');
+  
+    location.href = './registrarPagos.html?_id=' + _id;
+    
+};
+  

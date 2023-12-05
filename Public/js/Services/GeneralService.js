@@ -43,6 +43,12 @@ const ProcessPOST = async (pRouterName, pData, pSubDocumentos) => {
             }
         } else {
             // aca se va a manejar los pSubDocumentos
+            let dataIntereses = {
+                '_id': res.resultBD._id,
+                'Intereses': pSubDocumentos
+            }
+            let resIntereses = await ProcessAction('POST', 'RegistrarIntereses', dataIntereses);
+            console.log('RegistrarIntereses', resIntereses);
         }
     };
     if (pRouterName == 'RegistrarSocio') {
