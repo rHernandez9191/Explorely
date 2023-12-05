@@ -1,11 +1,6 @@
 'use strict';
 
-<<<<<<< Updated upstream
 let queryString, urlParams, _id, PersonaBD;
-=======
-
-
->>>>>>> Stashed changes
 let listaPersonas = [];
 const GetListaPersonas = async () => {
     let res = await ProcessGET('ListarPersonas', null);
@@ -17,16 +12,11 @@ const GetListaPersonas = async () => {
         return;
     }
 };
+
 GetListaPersonas();
 const ImprimirDatos = () => {
-    let tbody = document.getElementById('tblPersonas');
-    
-    if (tbody){
-        tbody.innerHTML = '';
-    }else{
-        console.error("Elemento tbdPersonas no encontrado");
-    }
-    
+    let tbody = document.getElementById('tbdPersonas');
+    tbody.innerHTML = '';
 
     for (let i = 0; i < listaPersonas.length; i++) {
 
