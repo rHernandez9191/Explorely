@@ -1,12 +1,14 @@
 'use strict';
 
 let queryString, urlParams, _id, PersonaBD;
+'use strict';
+
 let listaPersonas = [];
 const GetListaPersonas = async () => {
     let res = await ProcessGET('ListarPersonas', null);
     if (res != null && res.resultado == true) {
         listaPersonas = res.ListaPersonasBD;
-        CargarAgregarTarjeta();
+        ImprimirDatos();
     } else {
         ImprimirMsjsError(res.msj);
         return;
@@ -125,7 +127,7 @@ const ImprimirDatos = () => {
         btnTarjetas.title = 'Tarjetas';
         btnTarjetas.classList.add('btnsTabla');
         btnTarjetas.onclick = () => {
-            //location.href = 'AdminTarjetasPersonas.html?_id=' + listaPersonas[i]._id;
+            location.href = 'AdminTarjetasPersonas.html?_id=' + listaPersonas[i]._id;
         };
 
         let divBtns = document.createElement('div');

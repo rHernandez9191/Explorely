@@ -49,45 +49,41 @@
       <main>
         <h3>Administración de Personas</h3>
         <div id="divbtn">
-          <input type="button" id="btnCrea" onclick="location.href='gestionarPersona.html?_id=crear&nombre=sara'" value="Registrar Persona">
-        </div>
-        <div id="FiltroTablas">
+          <input type="button" id="btnCrea" onclick="location.href='GestionarPersona.html?_id=crear&nombre=limberth'" value="Registrar Persona">
+      </div>
+      <div id="FiltroTablas">
           <label for="txtFiltro">Filtrar</label>
           <input type="text" id="txtFiltro">
-        </div>
-        <table id="tblPersonas">
+      </div>
+      <table id="tblPersonas">
           <thead>
-            <tr>
-              <th>Tipo de ID</th>
-              <th>Identificación</th>
-              <th>Nombre</th>
-              <th>Apellido 1</th>
-              <th>Apellido 2</th>
-              <th>Sexo</th>
-              <th>Edad</th>
-              <th>Correo</th>
-              <th>Estado</th>
-              <th>Email</th>
-              <th>Rol</th>
-              <th>Nacimiento</th>
-              <th>Tarjetas</th>
-              <th>Acciones</th>
-            </tr>
+              <tr>
+                  <th>Tipo de ID</th>
+                  <th>Identificación</th>
+                  <th>Nombre</th>
+                  <th>Correo</th>
+                  <th>Sexo</th>
+                  <th>Nacimiento</th>
+                  <th>Edad</th>
+                  <th>Estado</th>
+                  <th>Rol</th>
+                  <th>Acciones</th>
+              </tr>
           </thead>
           <tbody id="tbdPersonas">
-            
 
           </tbody>
           <tfoot id="tftPersonas">
 
           </tfoot>
-        </table>
-      </main>
-      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+      </table>
+  </main>
+  <!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-      <script src="./js/utileria.js"></script>
-      <script src="./js/Services/GeneralService.js"></script>
-      <script src="./js/Controllers/PersonaController.js"></script>
-    </div>
-  </body>
+  <script src="js/utileria.js"></script>
+
+  <script src="./js/Services/GeneralService.js"></script>
+  <script src="./js/Controllers/PersonaController.js"></script>
+</body>
 </html>
