@@ -17,20 +17,23 @@ GetListaSocios()
 const contenedorCarrito = document.querySelector("#tablaCarrito")
 let btnAgregar = document.querySelector("botonAgregar")  
 
-function cargarReservas() {
+function cargarReservas(reservasElegidas) {
 
-    contenedorCarrito.innerHTML = ``;
+   // contenedorCarrito.innerHTML = "";
 
-    for (let i = 0; i < listaCarrito.length; i++) {
+    reservasElegidas.forEach(reserva => {
+
         const div = document.createElement("div");
         div.classList.add("fila");
         div.innerHTML =`<th id=""><img id="imgCarrito" src="${listaCarrito.FotoPerfil}" alt=""></th>
-        <th>${ObtenerProvincia(listaCarrito[i].Provincia)}</th>
-        <th>${listaCarrito[i].NombreEmpresa}</th>
-        <th>${listaCarrito[i].Precio}</th>
+        <th>${ObtenerProvincia(reserva[i].Provincia)}</th>
+        <th>${reserva[i].NombreEmpresa}</th>
+        <th>${reserva[i].Precio}</th>
         <th><button class="button-buscar">Quitar</button><button class="button-buscar">Reservar</button></th>`;
+        
         contenedorCarrito.append(div)
-    }};
+        
+    });
 
-console.log(btnAgregar)
 
+}
