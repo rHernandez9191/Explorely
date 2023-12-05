@@ -15,7 +15,7 @@ const GetListaSocios = async () => {
 
 GetListaSocios()
 const contenedorCarrito = document.querySelector("#tablaCarrito")
-let btnAgregar = document.querySelectorAll("botonAgregar")  
+let btnAgregar = document.querySelector("botonAgregar")  
 
 function cargarReservas() {
 
@@ -32,5 +32,5 @@ function cargarReservas() {
         contenedorCarrito.append(div)
     }};
 
-    console.log(btnAgregar)
+console.log(btnAgregar)
 
