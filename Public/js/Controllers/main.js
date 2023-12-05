@@ -1,5 +1,5 @@
 "use strict";
-document.addEventListener("DOMContentLoaded", function () {
+/*document.addEventListener("DOMContentLoaded", function () {
   const carritoIcon = document.querySelector(".carrito");
   const carritoPopup = document.getElementById("carrito-popup");
   let isPopupVisible = false;
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     isPopupVisible = !isPopupVisible;
   });
-});
+});*/
 document.addEventListener("DOMContentLoaded", function () {
   const menuBtn = document.querySelector(".hamburger");
   const movilMenu = document.querySelector(".movil-nav");
