@@ -352,3 +352,14 @@ img {
 #botonAgregar:hover{
   background-color: #a37466;
 }
+
+th{
+  color: #8c5240;
+  font-size: x-large;
+}
+
+#tituloCarrito1{
+  font-size: larger;
+  color: #8c5240;
+}
+
