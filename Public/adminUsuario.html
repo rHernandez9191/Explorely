@@ -4,10 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Explorely Admin Usuario</title>
-    <link
-      rel="stylesheet"
-      href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
-    />
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" />
     <link rel="stylesheet" href="/Public/css/admin.css" />
   </head>
   <body>
@@ -18,24 +15,16 @@
       <div class="sidebar-menu">
         <ul>
           <li>
-            <a href="admin.html"
-              ><span class="las la-igloo"></span><span>Dashboard</span></a
-            >
+            <a href="admin.html"><span class="las la-igloo"></span><span>Dashboard</span></a>
           </li>
           <li>
-            <a href="" class="active"
-              ><span class="las la-users"></span><span>User</span></a
-            >
+            <a href="" class="active"><span class="las la-users"></span><span>User</span></a>
           </li>
           <li>
-            <a href="adminReporteria.html"
-              ><span class="las la-users"></span><span>Reporteria</span></a
-            >
+            <a href="adminReporteria.html"><span class="las la-users"></span><span>Reporteria</span></a>
           </li>
           <li>
-            <a href="admin.html"
-              ><span class="las la-users"></span><span>Administracion</span></a
-            >
+            <a href="admin.html"><span class="las la-users"></span><span>Administracion</span></a>
           </li>
         </ul>
       </div>
@@ -57,7 +46,43 @@
           </div>
         </div>
       </header>
-      <main></main>
+      <main>
+        <h3>Administración de Personas</h3>
+        <div id="divbtn">
+          <input type="button" id="btnCrea" onclick="location.href='gestionarPersona.html?_id=crear&nombre=sara'" value="Registrar Persona">
+        </div>
+        <div id="FiltroTablas">
+          <label for="txtFiltro">Filtrar</label>
+          <input type="text" id="txtFiltro">
+        </div>
+        <table id="tblPersonas">
+          <thead>
+            <tr>
+              <th>Tipo de ID</th>
+              <th>Identificación</th>
+              <th>Nombre</th>
+              <th>Correo</th>
+              <th>Sexo</th>
+              <th>Nacimiento</th>
+              <th>Edad</th>
+              <th>Estado</th>
+              <th>Rol</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="tbdPersonas">
+
+          </tbody>
+          <tfoot id="tftPersonas">
+
+          </tfoot>
+        </table>
+      </main>
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+      <script src="./js/utileria.js"></script>
+      <script src="./js/Services/GeneralService.js"></script>
+      <script src="./js/Controllers/PersonaController.js"></script>
     </div>
   </body>
 </html>

@@ -5,28 +5,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./css/header.css">
-    <link rel="stylesheet" href="./css/Persona.css">
+    <title>Registrarse</title>
+    <link rel="stylesheet" href="./css/gestionalPersona.css">
+  
 </head>
 
 <body>
     <header>
         <nav>
-            <a href="indexAdminProvisional.html">Inicio</a>
-            <a href="adminPersonasProvisional.html">Personas</a>
-            <a href="iniciarSesion.html" onclick="CerrarSesion()">Cerrar Sesión</a>
+            <div>
+                <a href="admin.html">Inicio</a>
+                <a href="adminUsuario.html">Personas</a>
+                <a href="iniciarSesion.html" onclick="CerrarSesion()">Cerrar Sesión</a>
+
+            </div>
+            
         </nav>
     </header>
     <main>
-        <form action="">
-            <h3 id="ttlInicio">Registrar/Actualizar Persona</h3>
-
+        <div class="wrapper">
+            <h1 id="ttlInicio">Registrar/Actualizar Persona</h1>
+            <form action="">
             <input type="hidden" id="txt_id">
             <div class="row">
                 <div class="column">
-                    <div>
-                        <label for="txttipoIdentificacion" id="lbltipoIdentificacion">Tipo de Identiciación*</label>
+                    <!-- Columna Izquierda -->
+                    <!-- Tipo identificacion-->
+                    <div class="form-group">
+                        <label for="txttipoIdentificacion" id="lbltipoIdentificacion">Tipo de Identificación*</label>
                         <select id="txttipoIdentificacion">
                             <option value="">-Seleccione-</option>
                             <option value="1">Física</option>
@@ -35,8 +41,9 @@
                             <option value="4">Pasaporte</option>
                         </select>
                     </div>
-                    <div>
-                        <label for="txtidentificacion" id="lblidentificacion">Identificacion*</label>
+                    <!--identificacion-->
+                    <div class="form-group">
+                        <label for="txtidentificacion" id="lblidentificacion">Identificación*</label>
                         <input type="text" id="txtidentificacion">
                     </div>
                     <div>
@@ -67,28 +74,15 @@
                                 <span class="checkmark"></span>
                             </label>
                         </fieldset>
-                        <!-- <fieldset id="intereses">
-                            <legend id="lblInteres">Interes usuario</legend>
-                            <div>
-                                <label for="rbtHotel" class="">Hotel</label>        
-                                <input type="checkbox" id="rbtHotel" value="Hotel" name="rbtHotel">
-                            </div>
-                            <div>
-                                <label for="rbtVeterinaria" class="">Veterinaria</label>
-                                <input type="checkbox" id="rbtVeterinaria" value="Veterinaria" name="rbtVeterinaria">
-                            </div>
-                            <div>
-                                <label for="rbtMedicamentos" class="">Medicamentos</label>
-                                <input type="checkbox" id="rbtMedicamentos" value="Medicamentos" name="rbtMedicamentos">
-                            </div>
-                        </fieldset> -->
                     </div>
-                </div>
-                <div class="column">
                     <div>
                         <label for="txtEmail" id="lblEmail">Email</label>
                         <input type="text" id="txtEmail">
                     </div>
+
+                </div>
+                <div class="column">
+                    
                     <div>
                         <label for="txtPass" id="lblPass">Contraseña</label>
                         <input type="password" id="txtPass">
@@ -105,7 +99,6 @@
                         <label for="txtedad" id="lbledad">Edad*</label>
                         <input type="number" id="txtedad" min="0" max="120">
                     </div>
-
                     <div>
                         <label for="txtRol" id="lblRol">Rol</label>
                         <select name="" id="txtRol">
@@ -125,18 +118,27 @@
                         <img id="imgUser" class="avatar">
                         <button type="button" class="btnSubirFoto" onclick="AbrirCloudinary('imgUser')">Subir Foto</button>
                     </div>
+                    <div>
+                     <input type="button" id="btnRegistrar" value="Registrar">
+
+                    </div>
+                   
                 </div>
 
-                <input type="button" id="btnRegistrar" value="Registrar">
-        </form>
+            </div>
+            
+            </form>
+
+        </div>
+
     </main>
+
     <script src="https://upload-widget.cloudinary.com/2.4.17/global/all.js"></script>
-    <!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="js/Utileria.js"></script>
     <script src="./js/Services/SubirImagenService.js"></script>
     <script src="./js/Services/GeneralService.js"></script>
-    <script src="./js/Controllers/GestionarPersonaController.js"></script>
+    <script src="./js/Controllers/PersonaController.js"></script>
 </body>
 
 </html>
