@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administrador</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Panel de Administrador</h1>
+    </header>
+    <main>
+        <div class="container">
+            <form id="businessForm" class="wrapper">
+                <h1 id="ttlFormulario">Formulario de Negocio</h1>
+
+                <div class="formContainer">
+                    <div class="formIzquierda">
+                        <label for="businessName">Nombre del Negocio:</label>
+                        <input type="text" id="businessName" name="businessName" placeholder="Nombre del Negocio" required>
+
+                        <label for="businessInfo">Información del Negocio:</label>
+                        <textarea id="businessInfo" name="businessInfo" placeholder="Información del Negocio" required></textarea>
+                    </div>
+
+                    <div class="formDerecha">
+                        <label for="businessCategory">Categoría:</label>
+                        <select id="businessCategory" name="businessCategory">
+                            <option value="category1">Categoría 1</option>
+                            <option value="category2">Categoría 2</option>
+                            <option value="category3">Categoría 3</option>
+                        </select>
+
+                        <label for="businessLocation">Ubicación:</label>
+                        <input type="text" id="businessLocation" name="businessLocation" placeholder="Ubicación" required>
+                    </div>
+                </div>
+
+                <button class="btn" type="button" onclick="acceptRequest()">Aceptar</button>
+                <button class="btn" type="button" onclick="denyRequest()">Denegar</button>
+            </form>
+
+            <div class="business-lists">
+                <div class="accepted-list">
+                    <h2>Aceptados</h2>
+                    <ul id="acceptedList"></ul>
+                </div>
+                <div class="denied-list">
+                    <h2>Denegados</h2>
+                    <ul id="deniedList"></ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
