@@ -29,7 +29,7 @@ const  RedireccionarUsuario = (PersonaDB) => {
     let nombreRol = ObtenerRol(PersonaDB.Rol);
     let result = GetSesionActiva();
     if (nombreRol == 'Client') {
-        location.href = 'paginaBusqueda.html?_id=' + result._id;  //Alerta, agregué ID al enlace
+        location.href = 'paginaBusqueda.html?_id=' + result._id;
     }
     if (nombreRol == 'Admin') {
         location.href = 'adminAdmi.html';
