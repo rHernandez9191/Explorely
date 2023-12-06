@@ -63,6 +63,19 @@ header h2 {
   cursor: pointer;
   margin-left: 10px;
 }
+
+.BtnHamburger{
+  width: 100%;
+  max-width: 200px;
+  margin: 0 auto 16px;
+  display: block;
+  text-align: center;
+  margin-bottom: 16px;
+  padding: 12px 16px;
+  background-color: var(--accent);
+  color: var(--secondary);
+}
+
 .hamburger .barra,
 .hamburger::after,
 .hamburger::before {
@@ -85,8 +98,8 @@ header h2 {
 }
 .movil-nav {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 40%;
+  left: 80%;
   transform: translate(-50%, -50%);
   width: 300px;
   padding: 20px;

@@ -7,6 +7,8 @@ function ObtenerRol(pRol) {
             return 'Admin';
         case 2:
             return 'Client';
+        case 3:
+                return 'SuperAdmin';
     }
 }
 function ObtenerTipoIdentificacion(ptipoId) {

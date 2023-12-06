@@ -34,6 +34,9 @@ const  RedireccionarUsuario = (PersonaDB) => {
     if (nombreRol == 'Admin') {
         location.href = 'adminAdmi.html';
     }
+    if (nombreRol == 'SuperAdmin') {
+        location.href = 'admin.html?_id=' + result._id;
+    }
 };
 
 const IniciarSesion = async () => {
