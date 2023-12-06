@@ -40,11 +40,11 @@ GetListaSocios();
             <div class="local"><span class="txtlugar">Precio: </span>${listaPersonas[i].Precio}</div>
            
            </div>
-           <button class="botonAgregar" id="" >Agregar al carrito</button>
+           <button class="botonAgregar" id="botonAgregarCarrito" >Agregar al carrito</button>
           </div>
          </div>
          `;
-         
+
          ContenedorServicios.append(div);
      };
  };
