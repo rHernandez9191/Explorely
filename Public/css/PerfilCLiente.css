@@ -68,6 +68,7 @@ div {
 body form {
   width: fit-content;
   margin: auto;
+
 }
 
 body {
@@ -190,3 +191,4 @@ nav{
   background-color: aquamarine;
   opacity: 0.9;
 }
+

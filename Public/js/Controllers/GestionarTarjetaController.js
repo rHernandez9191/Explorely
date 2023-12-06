@@ -7,6 +7,7 @@ let inputFecha = document.getElementById('lblfecha-vence');
 let queryString, urlParams, _id, PersonaBD;
 let botonRegistrar = document.getElementById('btn-registrar');
 
+
 const ObtenerPersona = async () => {
     let params = {
         '_id': _id
@@ -92,4 +93,26 @@ const ValidarInputs = (pCVV, pNumTarjeta, pNombre, p_id) => {
     }  
     return true;
 };
+
+const GetUrlInicio = async () => {
+    queryString = window.location.search;
+    urlParams = new URLSearchParams(queryString);
+  
+    _id = urlParams.get('_id');
+  
+    location.href = './paginaBusqueda.html?_id=' + _id;
+    
+  };
+
+  const GetUrlPerfil2 = async () => {
+    queryString = window.location.search;
+    urlParams = new URLSearchParams(queryString);
+  
+    _id = urlParams.get('_id');
+  
+    location.href = './PerfilCliente.html?_id=' + _id;
+    
+  };
+
 botonRegistrar.addEventListener('click', RegistrarDatos);
+

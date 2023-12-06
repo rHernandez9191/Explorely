@@ -8,7 +8,7 @@ const GetListaPersonas = async () => {
     let res = await ProcessGET('ListarPersonas', null);
     if (res != null && res.resultado == true) {
         listaPersonas = res.ListaPersonasBD;
-        ImprimirDatos();
+        //ImprimirDatos();
     } else {
         ImprimirMsjsError(res.msj);
         return;
@@ -16,7 +16,7 @@ const GetListaPersonas = async () => {
 };
 
 GetListaPersonas();
-const ImprimirDatos = () => {
+/*const ImprimirDatos = () => {
     let tbody = document.getElementById('tbdPersonas');
     tbody.innerHTML = '';
 
@@ -138,7 +138,7 @@ const ImprimirDatos = () => {
 
         celdaAcciones.appendChild(divBtns);
     }
-};
+};*/
 
 function CargarPerfil(){
     location.href = "PerfilCLiente.html?_id=" + listaPersonas[i]._id;

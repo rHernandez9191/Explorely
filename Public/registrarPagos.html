@@ -11,6 +11,9 @@
       <div class="contenedor">
         <a href="#"><img src="./img/logo.png" alt="logo" class="logo" /></a>
         <h2>EXPLORELY</h2>
+        <ul>
+          <label id="txtBienvenido" class="Bienvenida"></label>
+        </ul>
         <img src="./img/carritoCompras.png" class="carrito" alt="" />
         <button class="hamburger">
           <div class="barra"></div>
@@ -56,11 +59,10 @@
         </form>
       </div>
       <nav class="movil-nav">
-        <button class="BtnHamburger">Inicio</button>
-        <button class="BtnHamburger" onclick="GetUrlPerfil()">Perfil</button>
-        <button class="BtnHamburger">Métodos de pago</button>
-        <button class="BtnHamburger">Registrar Negocio</button>
-        <button class="BtnHamburger">Cerrar Sesion</button>
+        <button class="BtnHamburger" onclick="GetUrlInicio()">Inicio</button>
+        <button class="BtnHamburger" onclick="GetUrlPerfil2()">Perfil</button>
+        <a href="./registrarNegocio.html">Registrar Negocio</a>
+        <button class="BtnHamburger" onclick="CerrarSesion()">Cerrar Sesion</button>
       </nav>
     </main>
     <script src="./js/Controllers/main.js"></script>
@@ -68,5 +70,6 @@
     <script src="./js/utileria.js"></script>
     <script src="./js/Services/GeneralService.js"></script>
     <script src="./js/Controllers/GestionarTarjetaController.js"></script> 
+    <script src="./js/Controllers/SesionController.js"></script>
   </body>
 </html>

@@ -29,13 +29,13 @@ const  RedireccionarUsuario = (PersonaDB) => {
     let nombreRol = ObtenerRol(PersonaDB.Rol);
     let result = GetSesionActiva();
     if (nombreRol == 'Client') {
-        location.href = 'paginaBusqueda.html?_id=' + result._id;
+        location.href = 'paginaBusqueda.html?_id=' + PersonaDB._id;
     }
     if (nombreRol == 'Admin') {
-        location.href = 'adminAdmi.html';
+        location.href = 'adminAdmi.html?_id=' + PersonaDB._id;
     }
     if (nombreRol == 'SuperAdmin') {
-        location.href = 'admin.html?_id=' + result._id;
+        location.href = 'admin.html?_id=' + PersonaDB._id;
     }
 };
 

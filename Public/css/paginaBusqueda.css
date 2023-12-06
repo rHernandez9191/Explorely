@@ -107,11 +107,12 @@ header .logo {
   display: block;
 }
 .movil-nav a {
-  width: 100%;
-  max-width: 200px;
+  width: 56%;
   margin: 0 auto 16px;
   display: block;
   text-align: center;
+  font-size: 13px;
+  border: solid black 2px;
   margin-bottom: 16px;
   padding: 12px 16px;
   background-color: var(--accent);

@@ -14,68 +14,15 @@
         <h2>EXPLORELY</h2>
         <ul>
           <button class="button-buscar" onclick="GetUrlAgregaTarjeta()">Agregar Tarjeta</button>
-          <label id="txtBienvenido"></label>
         </ul>
+        <label id="txtBienvenido"></label>
         <img src="./img/carritoCompras.png" class="carrito" alt="" />
         <button class="hamburger">
           <div class="barra"></div>
         </button>
       </div>
       <div class="navegacion">
-        <ul class="navegacion-lista">
-          <li class="lista">
-            <a href="#">
-              <span class="icono"
-                ><img src="./img/hotelIcono.png" alt=""
-              /></span>
-              <span class="texto">Hospedaje</span>
-            </a>
-          </li>
-          <li class="lista">
-            <a href="#">
-              <span class="icono"
-                ><img src="./img/caminataIcono.png" alt=""
-              /></span>
-              <span class="texto">Caminatas</span>
-            </a>
-          </li>
-          <li class="lista">
-            <a href="#">
-              <span class="icono"
-                ><img src="./img/caballoIcono.png" alt=""
-              /></span>
-              <span class="texto">Cabalgata</span>
-            </a>
-          </li>
-          <li class="lista">
-            <a href="#">
-              <span class="icono"><img src="./img/atvIcono.png" alt="" /></span>
-              <span class="texto">Cuadraciclo</span>
-            </a>
-          </li>
-          <li class="lista">
-            <a href="#">
-              <span class="icono"
-                ><img src="./img/bicicletaIcon.png" alt=""
-              /></span>
-              <span class="texto">Ciclismo</span>
-            </a>
-          </li>
-          <li class="lista">
-            <a href="#">
-              <span class="icono"
-                ><img src="./img/termalesIcon.png" alt=""
-              /></span>
-              <span class="texto">Termales</span>
-            </a>
-          </li>
-          <li class="lista">
-            <a href="#">
-              <span class="icono"><img src="./img/etcIcono.png" alt="" /></span>
-              <span class="texto">Otros</span>
-            </a>
-          </li>
-        </ul>
+        
       </div>
     </header>
     <div id="carrito-popup" class="carrito-popup">
@@ -118,7 +65,7 @@
       <button class="BtnHamburger" >Reservas</button>
       <button class="BtnHamburger" >Métodos de Pago</button>
       <button class="BtnHamburger" >Registrar Negocio</button>
-      <button class="BtnHamburger" >Cerrar Sesion</button>
+      <button class="BtnHamburger" onclick="CerrarSesion()">Cerrar Sesion</button>
     </nav>
     <main>
       <div class="opciones" id="divServicios">
@@ -136,6 +83,7 @@
     <script src="./js/Services/GeneralService.js"></script>
     <script src="./js/Controllers/main.js"></script>
     <script src="./js/Controllers/PersonaController.js"></script>
+    <script src="./js/Controllers/SesionController.js"></script>
    
   </body>
 </html>

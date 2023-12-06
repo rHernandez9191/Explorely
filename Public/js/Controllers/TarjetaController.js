@@ -12,80 +12,48 @@ const ObtenerPersona = async () => {
     if (res != null && res.resultado == true && res.PersonaBD != null) {
         PersonaBD = res.PersonaBD;
         listaTajetas = PersonaBD.Tarjetas;
-        ImprimirDatos();
+        cargarTarjetas();
     } else {
         ImprimirMsjsError(res.msj);
     }
 };
 
+ObtenerPersona();
+ const ContenedorServicios = document.querySelector("#Tarjetas");
 
-const ImprimirDatos = () => {
-    let tbody = document.getElementById('tbdTarjetas');
-    tbody.innerHTML = '';
+ function cargarTarjetas() {
+     for (let i = 0; i < listaTajetas.length; i++) {
+         const div = document.createElement("div");
+         div.classList.add("Tarjetas");
+         div.innerHTML =`
+         <div class="a">
+          <div class="info">
+          <div class="lugar">
+          <div class="local"><span class="txtlugar">Precio: </span>${listaTajetas[i].nombre}</div>
+         </div>
+           <div class="lugar">
+             <div class="local"><span class="txtlugar">${listaTajetas[i].tipoTarjeta}</span></div>
+           </div>
+           <div class="lugar">
+             <div class="local"><span class="txtlugar">Lugar: </span>${listaTajetas[i].numTarjeta}</div>
+           </div>
+           <div class="lugar">
+             <div class="local"><span class="txtlugar">Personas: </span>${listaTajetas[i].vencimiento}</div>
+           </div>
+          </div>
+         </div>
+         `;
+         ContenedorServicios.append(div);
+     };
+ };
 
-    for (let i = 0; i < listaTajetas.length; i++) {
-
-        let fila = tbody.insertRow();
-        let celdaNombre = fila.insertCell();
-        let celdaNumeroTarjeta = fila.insertCell();
-        let CeldaCvv = fila.insertCell();
-        let celdaAcciones = fila.insertCell();
-
-        celdaNombre.innerHTML = listaTajetas[i].Nombre + ' ' + listaTajetas[i].Apellido;
-        celdaNumeroTarjeta.innerHTML = listaTajetas[i].NumeroTarjeta;
-        CeldaCvv.innerHTML = listaTajetas[i].CVV;
-        
-       
-        let btnDelete = document.createElement('button');
-        btnDelete.type = 'button';
-        btnDelete.innerText = '🗑️';
-        btnDelete.title = 'ELIMINAR';
-        btnDelete.classList.add('btnsTabla');
-        btnDelete.onclick = async () => {
-            let confirmacion = false;
-            await Swal.fire({
-                title: 'Desea eliminar el registro de la tarjeta '+ listaTajetas[i].NumeroTarjeta,
-                icon: 'warning',
-                confirmButtonText: 'Confirmar',
-                denyButtonText: 'Cancelar',
-                showDenyButton: true
-            }).then((res) =>{
-                confirmacion = res.isConfirmed;
-            });
-
-            if (confirmacion == true) {
-                let data = {
-                    '_idPersona': PersonaBD._id,
-                    '_idTarjeta': listaTajetas[i]._id
-                };
-
-                let result = await ProcessDELETE('EliminarTarjetaPersona', data);
-                if (result != null && result.resultado == true) {
-                    ImprimirMsjsSuccess(result.msj);
-                } else {
-                    ImprimirMsjsError(result.msj);
-                }
-                await GetUrlParams();
-            }
-        };
-
-        let divBtns = document.createElement('div');
-        divBtns.appendChild(btnDelete);
-
-        celdaAcciones.appendChild(divBtns);
-    }
-};
-const GetUrlParams = async () => {
+ const GetUrlTarjetasCliente = async () => {
     queryString = window.location.search;
     urlParams = new URLSearchParams(queryString);
-
+  
     _id = urlParams.get('_id');
-
-    if (_id != null && _id != undefined) {
-        document.getElementById('btnCrea').onclick = () => {
-            location.href = './GestionarTarjetasPersona.html?_id=' + _id;
-        };
-        await ObtenerPersona();
-    }
+    location.href = './PerfilCliente.html?_id=' + _id;
+  
+    
 };
-GetUrlParams();
+GetUrlTarjetasCliente();

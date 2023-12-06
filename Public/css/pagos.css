@@ -114,20 +114,18 @@ header h2 {
   display: block;
 }
 .movil-nav a {
-  width: 100%;
-  max-width: 200px;
+  width: 57%;
   margin: 0 auto 16px;
   display: block;
   text-align: center;
+  font-size: 13px;
   margin-bottom: 16px;
   padding: 12px 16px;
   background-color: var(--accent);
   color: var(--secondary);
   text-decoration: none;
 }
-.movil-nav a:hover {
-  background-color: #a37466;
-}
+
 .carrito-popup {
   display: none;
   position: fixed;
@@ -146,7 +144,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 90vh;
 }
 
 .wrapper {
@@ -212,4 +210,8 @@ form button {
 }
 input::placeholder {
   color: var(--accent);
+}
+
+.Bienvenida{
+  margin-right: 200px;
 }
