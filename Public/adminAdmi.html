@@ -6,8 +6,7 @@
     <title>Explorely Admin Socios</title>
     <link
       rel="stylesheet"
-      href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
-    />
+      href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"/>
     <link rel="stylesheet" href="/Public/css/admin.css" />
   </head>
   <body>
@@ -34,7 +33,7 @@
           </li>
           <li>
             <a href="" class="active"
-              ><span class="las la-users"></span><span>Administracion</span></a
+              ><span class="las la-users"></span><span>Socios</span></a
             >
           </li>
         </ul>
@@ -59,24 +58,31 @@
       </header>
       <main>
         <h3>Administración de Socios</h3>
+        <div id="divbtn">
+          
+        </div>
         <div id="FiltroTablas">
           <label for="txtFiltro">Filtrar</label>
           <input type="text" id="txtFiltro">
       </div>
       <table id="tblSocios">
         <thead>
-          <tr>Tipo de servicio</tr>
-          <tr>Identificación</tr>
-          <tr>Nombre de la Empresa</tr>
-          <tr>Encargado 1</tr>
-          <tr>Encargado 2</tr>
-          <tr>Empresa</tr>
-          <tr>Constitución</tr>
-          <tr>Provincia</tr>
-          <tr>Canton</tr>
-          <tr>Descripción</tr>
-          <tr>Rol</tr>
-          <tr>Estado</tr>
+          <tr>
+            <th>Nombre de la Empresa</th>
+            <th>Tipo de servicio</th>
+            <th>Encargado 1</th>
+            <th>Encargado 2</th>
+            <th>Empresa</th>
+            <th>Constitución</th>
+            <th>Provincia</th>
+            <th>Canton</th>
+            <th>Descripción</th>
+            <th>Rol</th>
+            <th>Estado</th>
+            <th>Precio</th>
+            <th>Identificación</th>
+          </tr>
+          
         </thead>
         <tbody id="tbdSocios">
 

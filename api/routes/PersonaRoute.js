@@ -2,7 +2,7 @@
 
 const express = require('express');
 const router = express.Router();
-const Persona = require('../Models/PersonaModel');
+const Persona = require('./../models/PersonaModel');
 
 //CRUD
 //Create

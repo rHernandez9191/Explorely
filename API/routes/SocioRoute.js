@@ -2,7 +2,8 @@
 
 const express = require('express');
 const router = express.Router();
-const Socio = require('../Models/SocioModel');
+const Socio = require('./../models/SocioModel');
+const Resena = require('./../models/ResenaModel');
 
 //CRUD
 //Create
@@ -248,4 +249,52 @@ router.delete('/EliminarTarjetaPersona', (req, res) => {
     });
 });
 
+
+
+router.post('/RegistrarResena', (req, res) => {
+    let body = req.body;
+    let nuevaResena = new Resena({
+        IdSocio:body.IdSocio,
+        IdPersona:body.IdPersona,
+        Resena:body.Resena,
+    });
+
+    nuevaResena.save()
+        .then((resultBD) => {
+            res.json({
+                resultado: true,
+                msj: 'Registrado de manera correcta.',
+                resultBD
+            });
+        })
+        .catch((error) => {
+            res.json({
+                resultado: false,
+                msj: 'No se pudo registrar la reseña, ocurrio el siguiente error: ',
+                error
+            });
+        });
+});
+
+router.get('/ListarResenas', (req, res) => {
+    Resena.find()
+        .then((ListaResenaBD) => {
+            res.json({
+                resultado: true,
+                msj: 'Los datos se obtuvieron de manera correcta',
+                ListaResenaBD
+            });
+        })
+        .catch((error) => {
+            res.json({
+                resultado: false,
+                msj: 'No se pudo obtener la lista de reseñas, ocurrio el siguiente error: ',
+                error
+            });
+        });
+});
+
 module.exports = router;
+
+
+
