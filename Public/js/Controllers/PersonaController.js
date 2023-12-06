@@ -9,21 +9,20 @@ const GetListaPersonas = async () => {
     let res = await ProcessGET('ListarPersonas', null);
     if (res != null && res.resultado == true) {
         listaPersonas = res.ListaPersonasBD;
-        //ImprimirDatos();
+        ImprimirDatos();
     } else {
         ImprimirMsjsError(res.msj);
         return;
     }
 };
 GetListaPersonas();
-<<<<<<< Updated upstream
-/*const ImprimirDatos = () => {
-=======
+
+
+
 
 
 const ImprimirDatos = () => {
 
->>>>>>> Stashed changes
     let tbody = document.getElementById('tbdPersonas');
     tbody.innerHTML = '';
 
@@ -145,7 +144,7 @@ const ImprimirDatos = () => {
 
         celdaAcciones.appendChild(divBtns);
     }
-};*/
+};
 
 function CargarPerfil(){
     location.href = "PerfilCliente.html?_id=" + listaPersonas[i]._id;

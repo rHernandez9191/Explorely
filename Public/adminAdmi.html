@@ -1,78 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Explorely Admin Socios</title>
-    <link
-      rel="stylesheet"
-      href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"/>
-    <link rel="stylesheet" href="/Public/css/admin.css" />
-  </head>
-  <body>
-    <div class="sidebar">
-      <div class="sidebar-brand">
-        <h2><span class="Explorely">Explorely</span></h2>
-      </div>
-      <div class="sidebar-menu">
-        <ul>
-          <li>
-            <a href="admin.html"
-              ><span class="las la-igloo"></span><span>Dashboard</span></a
-            >
-          </li>
-          <li>
-            <a href="adminUsuario.html"
-              ><span class="las la-users"></span><span>User</span></a
-            >
-          </li>
-          <li>
-            <a href="adminReporteria.html"
-              ><span class="las la-users"></span><span>Reporteria</span></a
-            >
-          </li>
-          <li>
-            <a href="" class="active"
-              ><span class="las la-users"></span><span>Socios</span></a
-            >
-          </li>
-        </ul>
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Explorely Admin Socios</title>
+  <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"/>
+  <link rel="stylesheet" href="/Public/css/admin.css" />
+</head>
+<body>
+  <div class="sidebar">
+    <div class="sidebar-brand">
+      <h2><span class="Explorely">Explorely</span></h2>
     </div>
-    <div class="main-content">
-      <header>
-        <h2>
-          <label for=""> </label>
-          Dashboard
-        </h2>
-        <div class="search-wrapper">
-          <span class="las la-search"></span>
-          <input type="search" placeholder="Search here" />
+    <div class="sidebar-menu">
+      <ul>
+        <li>
+          <a href="admin.html"
+            ><span class="las la-igloo"></span><span>Dashboard</span></a
+          >
+        </li>
+        <li>
+          <a href="adminUsuario.html"
+            ><span class="las la-users"></span><span>User</span></a
+          >
+        </li>
+        <li>
+          <a href="adminReporteria.html"
+            ><span class="las la-users"></span><span>Reporteria</span></a
+          >
+        </li>
+        <li>
+          <a href="" class="active"
+            ><span class="las la-users"></span><span>Socios</span></a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="main-content">
+    <header>
+      <h2>
+        <label for=""> </label>
+        Dashboard
+      </h2>
+      <div class="search-wrapper">
+        <span class="las la-search"></span>
+        <input type="search" placeholder="Search here" />
+      </div>
+      <div class="user-wrapper">
+        <img src="/Public/img/logo.png" width="40px" height="40px" alt="" />
+        <div>
+          <h4>Administrador</h4>
         </div>
-        <div class="user-wrapper">
-          <img src="/Public/img/logo.png" width="40px" height="40px" alt="" />
-          <div>
-            <h4>Administrador</h4>
-          </div>
-        </div>
-      </header>
-      <main>
-        <h3>Administración de Socios</h3>
-        <div id="divbtn">
-          
-        </div>
-        <div id="FiltroTablas">
-          <label for="txtFiltro">Filtrar</label>
-          <input type="text" id="txtFiltro">
+      </div>
+    </header>
+    <main>
+      <h3>Administración de Socios</h3>
+      <div id="divbtn"></div>
+      <div id="FiltroTablas">
+        <label for="txtFiltro">Filtrar</label>
+        <input type="text" id="txtFiltro">
       </div>
       <table id="tblSocios">
         <thead>
           <tr>
-            <th>Nombre de la Empresa</th>
             <th>Tipo de servicio</th>
+            <th>Identificación</th>
+            <th>Nombre de la Empresa</th>
             <th>Encargado 1</th>
             <th>Encargado 2</th>
             <th>Empresa</th>
+            <th>Correo</th>
             <th>Constitución</th>
             <th>Provincia</th>
             <th>Canton</th>
@@ -80,27 +78,23 @@
             <th>Rol</th>
             <th>Estado</th>
             <th>Precio</th>
-            <th>Identificación</th>
+            <th>Cantidad de personas</th>
+            <th>Fotos</th>
           </tr>
-          
         </thead>
         <tbody id="tbdSocios">
-
+        
         </tbody>
         <tfoot id="tftSocios">
-
+        
         </tfoot>
       </table>
+    </main>
+  </div>
 
-
-  </main>
-    
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
   <script src="js/utileria.js"></script>
-
   <script src="./js/Services/GeneralService.js"></script>
   <script src="./js/Controllers/SocioController.js"></script>
-
-  </body>
+</body>
 </html>

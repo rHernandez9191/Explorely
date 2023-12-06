@@ -53,7 +53,7 @@ const ImprimirDatos = () => {
         let celdaPrecio = fila.insertCell();
         let celdaCantPersonas = fila.insertCell();
         let celdaFotoPerfil = fila.insertCell();
-        /*let celdaAcciones = fila.insertCell();*/
+        let celdaAcciones = fila.insertCell();
 
         celdaTipoServicio.innerHTML = ObtenerTipoServicio(listaSocios[i].TipoServicio);
         celdaIdentificacion.innerHTML = listaSocios[i].Identificacion;
@@ -75,8 +75,48 @@ const ImprimirDatos = () => {
         let fechaNac = new Date(listaSocios[i].FechaConstitucion.replace('Z', ''));
         celdaFechaConstitucion.innerHTML = fechaNac.getDate() + '/' + (fechaNac.getMonth() + 1) + '/' + fechaNac.getFullYear();
 
-    }
-    let btnInactivar = document.createElement('button');
+        let btnEdit = document.createElement('button');
+        btnEdit.type = 'button';
+        btnEdit.innerText = '✎';
+        btnEdit.title = 'EDITAR';
+        btnEdit.classList.add('btnsTabla');
+        btnEdit.onclick = () => {
+            location.href = 'GestionarPersona.html?_id=' + listaSocios[i]._id;
+        };
+
+        let btnDelete = document.createElement('button');
+        btnDelete.type = 'button';
+        btnDelete.innerText = '🗑️';
+        btnDelete.title = 'ELIMINAR';
+        btnDelete.classList.add('btnsTabla');
+        btnDelete.onclick = async () => {
+            let confirmacion = false;
+            await Swal.fire({
+                title: 'Desea eliminar el registro de ' + listaSocios[i].Nombre,
+                icon: 'warning',
+                confirmButtonText: 'Confirmar',
+                denyButtonText: 'Cancelar',
+                showDenyButton: true
+            }).then((res) =>{
+                confirmacion = res.isConfirmed;
+            });
+
+            if (confirmacion == true) {
+                let data = {
+                    '_id': listaSocios[i]._id
+                };
+
+                let result = await ProcessDELETE('EliminarSocio', data);
+                if (result != null && result.resultado == true) {
+                    ImprimirMsjsSuccess(result.msj);
+                } else {
+                    ImprimirMsjsError(result.msj);
+                }
+                await GetListaSocios();
+            }
+        };
+
+        let btnInactivar = document.createElement('button');
         btnInactivar.type = 'button';
         btnInactivar.innerText = 'Off';
         btnInactivar.title = 'INACTIVAR';
@@ -98,7 +138,7 @@ const ImprimirDatos = () => {
                     '_id': listaSocios[i]._id
                 };
 
-                let result = await ProcessPUT('InactivarSocio', data);
+                let result = await ProcessPUT('InactivarPersona', data);
                 if (result != null && result.resultado == true) {
                     ImprimirMsjsSuccess(result.msj);
                 } else {
@@ -106,12 +146,15 @@ const ImprimirDatos = () => {
                 }
                 await GetListaSocios();
             }
-            let divBtns = document.createElement('div');
-            divBtns.appendChild(btnInactivar);
-        
+        };
+
+        let divBtns = document.createElement('div');
+        divBtns.appendChild(btnEdit);
+        divBtns.appendChild(btnDelete);
+        divBtns.appendChild(btnInactivar);
 
         celdaAcciones.appendChild(divBtns);
-        }
+
+
+    }
 };
-
-
