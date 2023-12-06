@@ -3,10 +3,10 @@
 let listaCarrito = [];
 
 const GetListaSocios = async () => {
-    let res = await ProcessGET('BuscarSocioIdentificacion', null);
+    let res = await ProcessGET('ListarSocios', null);
     if (res != null && res.resultado == true) {
         listaCarrito = res.ListaSociosBD;
-        cargarReservas();
+        cargarServicios();
     } else {
         ImprimirMsjsError(res.msj);
         return;
@@ -15,25 +15,40 @@ const GetListaSocios = async () => {
 
 GetListaSocios()
 const contenedorCarrito = document.querySelector("#tablaCarrito")
-let btnAgregar = document.querySelector("botonAgregar")  
+let btnAgregar = document.querySelectorAll("botonAgregar")  
 
-function cargarReservas(reservasElegidas) {
+function cargarServicios(reservasElegidas) {
 
-   // contenedorCarrito.innerHTML = "";
+   //contenedorCarrito.innerHTML = "";
 
     reservasElegidas.forEach(reserva => {
 
         const div = document.createElement("div");
-        div.classList.add("fila");
-        div.innerHTML =`<th id=""><img id="imgCarrito" src="${listaCarrito.FotoPerfil}" alt=""></th>
-        <th>${ObtenerProvincia(reserva[i].Provincia)}</th>
-        <th>${reserva[i].NombreEmpresa}</th>
-        <th>${reserva[i].Precio}</th>
-        <th><button class="button-buscar">Quitar</button><button class="button-buscar">Reservar</button></th>`;
+        div.classList.add("filas");
+        div.innerHTML =`<div id="filas" class="filas">
+        <tr class="fila">
+          <th id=""><img id="imgCarrito" src="${reserva.FotoPerfil}" alt=""></th>
+          <th>${reserva.NombreEmpresa}</th>
+          <th>${reserva.Provincia}</th>
+          <th>${reserva.Precio}</th>
+          <th><button class="button-buscar">Quitar</button><button class="button-buscar" id= "${reserva.id}">Reservar</button></th>
+      </tr>
+      </div>`;
         
         contenedorCarrito.append(div)
         
     });
 
 
+}
+
+function ActualizarBnts () {
+    btnAgregar =  document.querySelectorAll("botonAgregar")
+}
+
+const reservasEnCarrito = []
+
+function AgregarAlCarrito(e) {
+    const id = e.currentTarget.id
+    console.log(id)
 }
