@@ -1,7 +1,7 @@
 'use strict';
 
 let queryString, urlParams, _id, PersonaBD;
-'use strict';
+
 
 let listaPersonas = [];
 const GetListaPersonas = async () => {

@@ -1,5 +1,8 @@
 'use strict';
 
+let queryString, urlParams, _id, PersonaBD;
+
+
 let listaSocios = [];
 const GetListaSocios = async () => {
     let res = await ProcessGET('ListarSocios', null);
@@ -37,7 +40,7 @@ const ImprimirDatos = () => {
         let celdaPrecio = fila.insertCell();
         let celdaCantPersonas = fila.insertCell();
         let celdaFotoPerfil = fila.insertCell();
-        let celdaAcciones = fila.insertCell();
+        /*let celdaAcciones = fila.insertCell();*/
 
         celdaTipoServicio.innerHTML = ObtenerTipoServicio(listaSocios[i].TipoServicio);
         celdaIdentificacion.innerHTML = listaSocios[i].Identificacion;
@@ -61,3 +64,5 @@ const ImprimirDatos = () => {
 
     }
 };
+
+
