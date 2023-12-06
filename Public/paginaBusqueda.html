@@ -1,105 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Inicio</title>
-    <link rel="stylesheet" href="./css/paginaBusqueda.css" />
 
-  </head>
-  <body>
-    <header>
-      <div class="contenedor">
-        <a href="./carrito.html"><img src="./img/logo.png" alt="logo" class="logo" /></a>
-        <h2>EXPLORELY</h2>
-        <ul>
-          <label id="txtBienvenido"></label>
-        </ul>
-        <a href="./carrito.html" target="_blank"><img src="./img/carritoCompras.png" class="carrito" alt="" /></a>
-        <button class="hamburger">
-          <div class="barra"></div>
-        </button>
-      </div>
-      <div class="navegacion">
-        <ul class="navegacion-lista">
-          <li class="lista">
-            <a href="#">
-              <span class="icono"
-                ><img src="./img/hotelIcono.png" alt=""
-              /></span>
-              <span class="texto">Hospedaje</span>
-            </a>
-          </li>
-          <li class="lista">
-            <a href="#">
-              <span class="icono"
-                ><img src="./img/caminataIcono.png" alt=""
-              /></span>
-              <span class="texto">Caminatas</span>
-            </a>
-          </li>
-          <li class="lista">
-            <a href="#">
-              <span class="icono"
-                ><img src="./img/caballoIcono.png" alt=""
-              /></span>
-              <span class="texto">Cabalgata</span>
-            </a>
-          </li>
-          <li class="lista">
-            <a href="#">
-              <span class="icono"><img src="./img/atvIcono.png" alt="" /></span>
-              <span class="texto">Cuadraciclo</span>
-            </a>
-          </li>
-          <li class="lista">
-            <a href="#">
-              <span class="icono"
-                ><img src="./img/bicicletaIcon.png" alt=""
-              /></span>
-              <span class="texto">Ciclismo</span>
-            </a>
-          </li>
-          <li class="lista">
-            <a href="#">
-              <span class="icono"
-                ><img src="./img/termalesIcon.png" alt=""
-              /></span>
-              <span class="texto">Termales</span>
-            </a>
-          </li>
-          <li class="lista">
-            <a href="#">
-              <span class="icono"><img src="./img/etcIcono.png" alt="" /></span>
-              <span class="texto">Otros</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </header>
-    <div id="carrito-popup" class="carrito-popup">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inicio</title>
+  <link rel="stylesheet" href="./css/paginaBusqueda.css" />
 
-        </div>
-      
-      </div>   
+</head>
+
+<body>
+  <header>
+    <div class="contenedor">
+      <a href="./carrito.html"><img src="./img/logo.png" alt="logo" class="logo" /></a>
+      <h2>EXPLORELY</h2>
+      <ul>
+        <label id="txtBienvenido"></label>
+      </ul>
+      <a href="./carrito.html" target="_blank"><img src="./img/carritoCompras.png" class="carrito" alt="" /></a>
+      <button class="hamburger">
+        <div class="barra"></div>
+      </button>
     </div>
-    <nav class="movil-nav">
-      <button class="BtnHamburger" onclick="GetUrlCliente()">Perfil</button>
-      <a href="./registrarNegocio.html">Registrar Negocio</a>
-      <button class="BtnHamburger" onclick="CerrarSesion()">Cerrar Sesion</button>
-    </nav>
-    <main>
-      <div class="opciones" id="divServicios">
-       <div class="renta" id="a">
-          
+    <div class="navegacion">
+      <ul class="navegacion-lista">
+        <li class="lista">
+          <a href="#">
+            <span class="icono"><img src="./img/hotelIcono.png" alt="" /></span>
+            <span class="texto">Hospedaje</span>
+          </a>
+        </li>
+        <li class="lista">
+          <a href="#">
+            <span class="icono"><img src="./img/caminataIcono.png" alt="" /></span>
+            <span class="texto">Caminatas</span>
+          </a>
+        </li>
+        <li class="lista">
+          <a href="#">
+            <span class="icono"><img src="./img/caballoIcono.png" alt="" /></span>
+            <span class="texto">Cabalgata</span>
+          </a>
+        </li>
+        <li class="lista">
+          <a href="#">
+            <span class="icono"><img src="./img/atvIcono.png" alt="" /></span>
+            <span class="texto">Cuadraciclo</span>
+          </a>
+        </li>
+        <li class="lista">
+          <a href="#">
+            <span class="icono"><img src="./img/bicicletaIcon.png" alt="" /></span>
+            <span class="texto">Ciclismo</span>
+          </a>
+        </li>
+        <li class="lista">
+          <a href="#">
+            <span class="icono"><img src="./img/termalesIcon.png" alt="" /></span>
+            <span class="texto">Termales</span>
+          </a>
+        </li>
+        <li class="lista">
+          <a href="#">
+            <span class="icono"><img src="./img/etcIcono.png" alt="" /></span>
+            <span class="texto">Otros</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </header>
+  <div id="carrito-popup" class="carrito-popup">
+
+  </div>
+
+  </div>
+  </div>
+  <nav class="movil-nav">
+    <button class="BtnHamburger" onclick="GetUrlCliente()">Perfil</button>
+    <a href="./registrarNegocio.html">Registrar Negocio</a>
+    <button class="BtnHamburger" onclick="CerrarSesion()">Cerrar Sesion</button>
+  </nav>
+  <main>
+    <div class="opciones" id="divServicios">
+      <div class="renta" id="a">
+
       </div>
-    </main>
-    <footer></footer>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="./js/utileria.js"></script>
-    <script src="./js/Controllers/main.js"></script>
-    <script src="./js/Services/GeneralService.js"></script>
-    <script src="./js/Controllers/GestionarPaginaBusqueda.js"></script>
-    <script src="./js/Controllers/SesionController.js"></script>
-  </body>
+  </main>
+  <footer></footer>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="./js/utileria.js"></script>
+  <script src="./js/Controllers/main.js"></script>
+  <script src="./js/Services/GeneralService.js"></script>
+  <script src="./js/Controllers/GestionarPaginaBusqueda.js"></script>
+  <script src="./js/Controllers/SesionController.js"></script>
+</body>
+
 </html>
