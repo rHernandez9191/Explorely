@@ -16,7 +16,14 @@ const GetListaPersonas = async () => {
     }
 };
 GetListaPersonas();
+<<<<<<< Updated upstream
 /*const ImprimirDatos = () => {
+=======
+
+
+const ImprimirDatos = () => {
+
+>>>>>>> Stashed changes
     let tbody = document.getElementById('tbdPersonas');
     tbody.innerHTML = '';
 
