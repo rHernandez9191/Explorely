@@ -45,7 +45,7 @@ function redireccionar() {
 document.addEventListener("DOMContentLoaded", function () {
   const passwordRecoveryDiv = document.getElementById("password-recovery");
   const verificationCodeDiv = document.getElementById("verification-code");
-  const verifyCodeButton = document.querySelector(".btn.verify-code");
+  const verifyCodeButton = document.querySelector("btn.verify-code");
   verificationCodeDiv.style.display = "none";
   verifyCodeButton.addEventListener("click", function () {
     passwordRecoveryDiv.style.display = "none";

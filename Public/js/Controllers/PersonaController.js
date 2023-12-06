@@ -1,32 +1,24 @@
 'use strict';
 
-<<<<<<< Updated upstream
 let queryString, urlParams, _id, PersonaBD;
-=======
+'use strict';
 
-
->>>>>>> Stashed changes
 let listaPersonas = [];
 const GetListaPersonas = async () => {
     let res = await ProcessGET('ListarPersonas', null);
     if (res != null && res.resultado == true) {
         listaPersonas = res.ListaPersonasBD;
-        CargarAgregarTarjeta();
+        ImprimirDatos();
     } else {
         ImprimirMsjsError(res.msj);
         return;
     }
 };
+
 GetListaPersonas();
 const ImprimirDatos = () => {
-    let tbody = document.getElementById('tblPersonas');
-    
-    if (tbody){
-        tbody.innerHTML = '';
-    }else{
-        console.error("Elemento tbdPersonas no encontrado");
-    }
-    
+    let tbody = document.getElementById('tbdPersonas');
+    tbody.innerHTML = '';
 
     for (let i = 0; i < listaPersonas.length; i++) {
 
@@ -135,7 +127,7 @@ const ImprimirDatos = () => {
         btnTarjetas.title = 'Tarjetas';
         btnTarjetas.classList.add('btnsTabla');
         btnTarjetas.onclick = () => {
-            //location.href = 'AdminTarjetasPersonas.html?_id=' + listaPersonas[i]._id;
+            location.href = 'AdminTarjetasPersonas.html?_id=' + listaPersonas[i]._id;
         };
 
         let divBtns = document.createElement('div');
