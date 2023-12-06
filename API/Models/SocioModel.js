@@ -1,5 +1,5 @@
 'use strict';
-
+const express = require('express');
 const mongoose = require('mongoose');
 const schemaSocio = mongoose.Schema({
     TipoServicio: { type: Number, required: true, unique: false },
@@ -20,5 +20,4 @@ const schemaSocio = mongoose.Schema({
     Precio: { type: String, required: true, unique: false },
     FotoPerfil: { type: String, required: false, unique: false }
 });
-
 module.exports = mongoose.model('Socio', schemaSocio, 'Socios');

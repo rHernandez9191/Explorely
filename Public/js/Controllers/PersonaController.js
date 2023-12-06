@@ -4,6 +4,7 @@ let queryString, urlParams, _id, PersonaBD;
 
 
 let listaPersonas = [];
+
 const GetListaPersonas = async () => {
     let res = await ProcessGET('ListarPersonas', null);
     if (res != null && res.resultado == true) {
@@ -14,7 +15,6 @@ const GetListaPersonas = async () => {
         return;
     }
 };
-
 GetListaPersonas();
 /*const ImprimirDatos = () => {
     let tbody = document.getElementById('tbdPersonas');
@@ -141,7 +141,7 @@ GetListaPersonas();
 };*/
 
 function CargarPerfil(){
-    location.href = "PerfilCLiente.html?_id=" + listaPersonas[i]._id;
+    location.href = "PerfilCliente.html?_id=" + listaPersonas[i]._id;
 };
 
 const GetUrlAgregaTarjeta = async () => {
