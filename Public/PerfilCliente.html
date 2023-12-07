@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Inicio</title>
     <link rel="stylesheet" href="./css/paginaBusqueda.css" />
-    <link rel="stylesheet" href="./js/Controllers/main.js" />
   </head>
   <body>
     <header>
@@ -61,7 +60,7 @@
     </div>
     <nav class="movil-nav">
       <button class="BtnHamburger" >Inicio</button>
-      <button class="BtnHamburger" onclick="GetUrlCliente()">Perfil</button>
+      <button class="BtnHamburger" onclick="GetUrlAgregaTarjeta()">Perfil</button>
       <button class="BtnHamburger" >Reservas</button>
       <button class="BtnHamburger" >Métodos de Pago</button>
       <button class="BtnHamburger" >Registrar Negocio</button>
@@ -81,10 +80,11 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="js/Utileria.js"></script>
     <script src="./js/Services/GeneralService.js"></script>
-    <script src="./js/Controllers/main.js"></script>
-    <!-- <script src="./js/Controllers/PersonaController.js"></script> -->
+    <script src="./js/Controllers/main.js"></script>  
     <script src="./js/Controllers/SesionController.js"></script>
     <script src="./js/Controllers/TarjetaController.js"></script>
+    <script src="./js/Controllers/AgregarTarjetaController.js"></script>
+    
    
   </body>
 </html>

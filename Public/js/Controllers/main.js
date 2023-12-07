@@ -46,11 +46,17 @@ document.addEventListener("DOMContentLoaded", function () {
   const passwordRecoveryDiv = document.getElementById("password-recovery");
   const verificationCodeDiv = document.getElementById("verification-code");
   const verifyCodeButton = document.querySelector("btn.verify-code");
-  verificationCodeDiv.style.display = "none";
-  verifyCodeButton.addEventListener("click", function () {
-    passwordRecoveryDiv.style.display = "none";
-    verificationCodeDiv.style.display = "block";
-  });
+  if (verifyCodeButton != null && verifyCodeButton != undefined){
+    verifyCodeButton.addEventListener("click", function () {
+      passwordRecoveryDiv.style.display = "none";
+      verificationCodeDiv.style.display = "block";
+    });
+  }
+  if (verificationCodeDiv != null && verificationCodeDiv != undefined){
+    verificationCodeDiv.style.display = "none";
+  }
+  
+  
 });
 
 /* funciones para botones de reservas, tarjetas, y perfil de cliente */

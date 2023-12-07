@@ -2,7 +2,6 @@
 
 let queryString, urlParams, _id, PersonaBD;
 
-
 let listaPersonas = [];
 
 const GetListaPersonas = async () => {
@@ -16,10 +15,6 @@ const GetListaPersonas = async () => {
     }
 };
 GetListaPersonas();
-
-
-
-
 
 const ImprimirDatos = () => {
 
@@ -150,7 +145,7 @@ function CargarPerfil(){
     location.href = "PerfilCliente.html?_id=" + listaPersonas[i]._id;
 };
 
-const GetUrlAgregaTarjeta = async () => {
+const GetUrlAgregaTarjeta2 = async () => {
     queryString = window.location.search;
     urlParams = new URLSearchParams(queryString);
   
