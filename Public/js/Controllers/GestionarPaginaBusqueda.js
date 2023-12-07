@@ -16,6 +16,7 @@ const GetListaSocios = async () => {
 
 GetListaSocios();
  const ContenedorServicios = document.querySelector("#divServicios");
+ let btnAgregarCarrito = document.querySelectorAll('.botonAgregar')
 
  function cargarServicios() {
      for (let i = 0; i < listaPersonas.length; i++) {
@@ -40,14 +41,34 @@ GetListaSocios();
             <div class="local"><span class="txtlugar">Precio: </span>${listaPersonas[i].Precio}</div>
            
            </div>
-           <button class="botonAgregar" id="botonAgregarCarrito" >Agregar al carrito</button>
+           <button onclick= "" class="botonAgregar" id="${listaPersonas[i]._id}" >Agregar al carrito</button>
           </div>
          </div>
          `;
 
          ContenedorServicios.append(div);
      };
+     actualizarbtnAgregar()
+    
  };
+
+ function actualizarbtnAgregar() {
+    btnAgregarCarrito = document.querySelectorAll('.botonAgregar')
+
+    btnAgregarCarrito.forEach(boton => {
+      boton.addEventListener("click", AgregarAlCarrito)
+    });
+ };
+
+const reservasEnCarrito = [];
+
+function AgregarAlCarrito(e) {
+
+  const idBoton = e.currentTarget.id
+  const reservaAgregada = e.currentTarget.Lugar
+  console.log(idBoton)
+  console.log(reservaAgregada)
+}
 
  const GetUrlCliente = async () => {
   queryString = window.location.search;
@@ -58,3 +79,5 @@ GetListaSocios();
   location.href = './PerfilCliente.html?_id=' + _id;
   
 };
+
+
