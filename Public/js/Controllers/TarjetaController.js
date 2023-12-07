@@ -18,7 +18,7 @@ const ObtenerPersona = async () => {
     }
 };
 
-ObtenerPersona();
+
  const ContenedorServicios = document.querySelector("#Tarjetas");
 
  function cargarTarjetas() {
@@ -52,8 +52,8 @@ ObtenerPersona();
     urlParams = new URLSearchParams(queryString);
   
     _id = urlParams.get('_id');
-    location.href = './PerfilCliente.html?_id=' + _id;
-  
+    
+  await ObtenerPersona();
     
 };
 GetUrlTarjetasCliente();
