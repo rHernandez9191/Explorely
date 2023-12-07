@@ -24,15 +24,15 @@ btnAgregarReserva.addEventListener('click', validar)
 
 
 function cargarReserva () {
-    listaPersonas.forEach(socio => {
+    reservasEnCarrito.forEach(reserva => {
     
         const div = document.createElement("div");
-        div.classList.add("fila");
+        div.classList.add("filas");
         div.innerHTML= `<tr class="fila">
-        <th id=""><img id="imgCarrito" src="${socio.FotoPerfil}" alt=""></th>
-        <th>${socio.Provincia}</th>
-        <th>${socio.NombreEmpresa}</th>
-        <th>${socio.Precio}}</th>
+        <th id=""><img id="imgCarrito" src="${reserva.FotoPerfil}" alt=""></th>
+        <th>${reserva.Provincia}</th>
+        <th>${reserva.NombreEmpresa}</th>
+        <th>${reserva.Precio}}</th>
         <th><button class="button-buscar">Quitar</button><button id="btnReservar" class="button-buscar">Reservar</button></th>
     </tr>`;
     

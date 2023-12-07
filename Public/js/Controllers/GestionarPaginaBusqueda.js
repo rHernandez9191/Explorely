@@ -65,9 +65,8 @@ const reservasEnCarrito = [];
 function AgregarAlCarrito(e) {
 
   const idBoton = e.currentTarget.id
-  const reservaAgregada = e.currentTarget.Lugar
   console.log(idBoton)
-  console.log(reservaAgregada)
+
 }
 
  const GetUrlCliente = async () => {
