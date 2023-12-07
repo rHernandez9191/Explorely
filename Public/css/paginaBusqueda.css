@@ -263,8 +263,17 @@ header .logo {
 }
 .navegacion ul li:hover a .texto {
   opacity: 1;
-  transform: translateY(10px);
+  transform: translateY(30px);
 }
+.icono{
+  display: block;
+  width: 100px ;
+}
+ .ul_titulo{
+  font-size: 30px;
+ }
+
+
 .navegacion {
   display: flex;
   justify-content: center;
@@ -279,15 +288,17 @@ header .logo {
 }
 .opciones {
   display: flex;
-  flex-direction: row;
-  
-  width: 1500px;
+  justify-content: space-around;
+  width:100%;
   box-sizing: border-box;
+  flex-wrap: wrap;
+
 }
 .renta {
   
   margin-left: 20px;
   margin-bottom: 10px;
+  width: 23%;
 }
 
 .a {
