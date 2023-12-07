@@ -30,7 +30,7 @@ function ObtenerEstado(pEstado){
     switch (pEstado) {
         case 1:
             return 'Activo';    
-        default:
+        case 2:
             return 'Inactivo';
     }
 
