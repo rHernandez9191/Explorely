@@ -79,7 +79,7 @@ const ObtenerPersona = async () => {
                 } else {
                     ImprimirMsjsError(result.msj);
                 }
-                await GetUrlTarjetasCliente();
+                await GetUrlTarjetasEliminadas();
             }
         };
         
@@ -104,11 +104,20 @@ const GetUrlInicio = async () => {
 
   _id = urlParams.get('_id');
 
-  if (_id != null && _id != undefined) {
-    document.getElementById('btnCrea').onclick = () => {
-        location.href = './GestionarTarjetasPersona.html?_id=' + _id;
-    }
- };
+
+        location.href = './paginaBusqueda.html?_id=' + _id;
+
   
+};
+
+const GetUrlTarjetasEliminadas = async () => {
+    queryString = window.location.search;
+    urlParams = new URLSearchParams(queryString);
+  
+    _id = urlParams.get('_id');
+    location.href = './PerfilCliente.html?_id=' + _id;
+    
+  await ObtenerPersona();
+    
 };
 GetUrlTarjetasCliente();
