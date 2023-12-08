@@ -17,7 +17,7 @@ let inputEstado = 1;
 let input_id = document.getElementById('txt_id');
 let inputImgUser = document.getElementById('imgUser');
 
-/*const CargarDatos = (pPersona, pBtn) => {
+const CargarDatos = (pPersona, pBtn) => {
     if (pBtn == 'btnCrea') {
         document.getElementById('ttlInicio').innerHTML = 'Registrar Persona';
         document.getElementById('btnRegistrar').value = 'Registrar';
@@ -74,7 +74,7 @@ const IdentificarAccion = async () => {
         }
     }
 };
-IdentificarAccion();*/
+IdentificarAccion();
 
 
 
@@ -231,6 +231,9 @@ const ValidarDatos = (pTipoIdentificacion, pIdentificacion, pNombre, pApellido1,
         return false;
     }
     return true;
-}
+    
+    
+};
+botonRegistrar.addEventListener('click', RegistrarDatos)
+};
 
-botonRegistrar.addEventListener('click', RegistrarDatos);

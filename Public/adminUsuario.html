@@ -15,16 +15,20 @@
       <div class="sidebar-menu">
         <ul>
           <li>
-            <a href="admin.html"><span class="las la-igloo"></span><span>Dashboard</span></a>
+            <a href="admin.html"><span class="las la-igloo"></span><span>Solicitudes</span></a>
           </li>
           <li>
-            <a href="" class="active"><span class="las la-users"></span><span>User</span></a>
+            <a href="" class="active"><span class="las la-users"></span><span>Usuarios</span></a>
           </li>
           <li>
             <a href="adminReporteria.html"><span class="las la-users"></span><span>Reporteria</span></a>
           </li>
           <li>
             <a href="adminAdmi.html"><span class="las la-users"></span><span>Socios</span></a>
+          </li>
+          <li>
+            <a href="iniciarSesion.html" onclick="CerrarSesion()"><span class="material-symbols-outlined">
+            </span><span>CerrarSesion</span></a>
           </li>
         </ul>
       </div>
@@ -48,9 +52,9 @@
       </header>
       <main>
         <h3>Administración de Personas</h3>
-        <div id="divbtn">
+        <!--<div id="divbtn">
           <input type="button" id="btnCrea" onclick="location.href='GestionarPersona.html?_id=crear&nombre=limberth'" value="Registrar Persona">
-        </div>
+        </div>-->
       <div id="FiltroTablas">
           <label for="txtFiltro">Filtrar</label>
           <input type="text" id="txtFiltro">

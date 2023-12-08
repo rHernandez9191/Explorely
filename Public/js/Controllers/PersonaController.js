@@ -1,26 +1,41 @@
 'use strict';
 
 let queryString, urlParams, _id, PersonaBD;
+let tbody = document.getElementById('tbdPersonas');
 
 let listaPersonas = [];
 
 const GetListaPersonas = async () => {
-    let res = await ProcessGET('ListarPersonas', null);
+    let res = await ProcessGET('/ListarPersonas', null);
     if (res != null && res.resultado == true) {
         listaPersonas = res.ListaPersonasBD;
         ImprimirDatos();
+        ImprimirLargoListaPersonas();
+        
     } else {
         ImprimirMsjsError(res.msj);
         return;
     }
 };
 GetListaPersonas();
+const ImprimirLargoListaPersonas = () => {
+    // Obtén el elemento donde mostrarás el mensaje
+    let mensajeElement = document.getElementById('largoListaPersonas');
 
+<<<<<<< Updated upstream
+=======
+    // Verifica si el elemento existe antes de actualizar su contenido
+    if (mensajeElement) {
+        mensajeElement.textContent = `La cantidad de usuarios es de: ${listaPersonas.length}`;
+    }
+};
+
+// Llama a ImprimirLargoListaPersonas
+ImprimirLargoListaPersonas();
+>>>>>>> Stashed changes
 const ImprimirDatos = () => {
-
     let tbody = document.getElementById('tbdPersonas');
     tbody.innerHTML = '';
-
     for (let i = 0; i < listaPersonas.length; i++) {
 
         let fila = tbody.insertRow();
@@ -47,14 +62,14 @@ const ImprimirDatos = () => {
         let fechaNac = new Date(listaPersonas[i].Nacimiento.replace('Z', ''));
         celdaNacimiento.innerHTML = fechaNac.getDate() + '/' + (fechaNac.getMonth() + 1) + '/' + fechaNac.getFullYear();
 
-        let btnEdit = document.createElement('button');
+        /*let btnEdit = document.createElement('button');
         btnEdit.type = 'button';
         btnEdit.innerText = '✎';
         btnEdit.title = 'EDITAR';
         btnEdit.classList.add('btnsTabla');
         btnEdit.onclick = () => {
             location.href = 'GestionarPersona.html?_id=' + listaPersonas[i]._id;
-        };
+        };*/
 
         
         let btnDelete = document.createElement('button');
@@ -87,6 +102,11 @@ const ImprimirDatos = () => {
                 }
                 await GetListaPersonas();
             }
+
+            let personasCountElement = document.getElementById('personasCount');
+            if (personasCountElement) {
+            personasCountElement.textContent = `Total personas: ${listaPersonas.length}`;
+    }
         };
 
         let btnInactivar = document.createElement('button');
@@ -121,7 +141,39 @@ const ImprimirDatos = () => {
             }
         };
 
-        
+        let btnActivar = document.createElement('button');
+        btnActivar.type = 'button';
+        btnActivar.innerText = 'On';
+        btnActivar.title = 'ACTIVAR';
+        btnActivar.classList.add('btnsTabla');
+        btnActivar.onclick = async () => {
+            let confirmacion = false;
+            await Swal.fire({
+                title: 'Desea activar el registro de ' + listaPersonas[i].Nombre,
+                icon: 'warning',
+                confirmButtonText: 'Confirmar',
+                denyButtonText: 'Cancelar',
+                showDenyButton: true
+            }).then((res) =>{
+                confirmacion = res.isConfirmed;
+            });
+
+            if (confirmacion == true) {
+                let data = {
+                    '_id': listaPersonas[i]._id
+                };
+
+                let result = await ProcessPUT('ActivarPersona', data);
+                if (result != null && result.resultado == true) {
+                    ImprimirMsjsSuccess(result.msj);
+                } else {
+                    ImprimirMsjsError(result.msj);
+                }
+                await GetListaPersonas();
+            }
+        };
+
+        /*
         let btnTarjetas = document.createElement('button');
         btnTarjetas.type = 'button';
         btnTarjetas.innerText = '💳';
@@ -129,17 +181,20 @@ const ImprimirDatos = () => {
         btnTarjetas.classList.add('btnsTabla');
         btnTarjetas.onclick = () => {
             location.href = 'AdminTarjetasPersonas.html?_id=' + listaPersonas[i]._id;
-        };
+        };*/
 
         let divBtns = document.createElement('div');
-        divBtns.appendChild(btnEdit);
+        //divBtns.appendChild(btnEdit);
         divBtns.appendChild(btnDelete);
         divBtns.appendChild(btnInactivar);
-        divBtns.appendChild(btnTarjetas);
+        divBtns.appendChild(btnActivar);
+        //divBtns.appendChild(btnTarjetas);
 
         celdaAcciones.appendChild(divBtns);
     }
 };
+
+//ImprimirDatos();
 
 function CargarPerfil(){
     location.href = "PerfilCliente.html?_id=" + listaPersonas[i]._id;
@@ -154,4 +209,6 @@ const GetUrlAgregaTarjeta2 = async () => {
     location.href = './registrarPagos.html?_id=' + _id;
     
 };
+
+
   
