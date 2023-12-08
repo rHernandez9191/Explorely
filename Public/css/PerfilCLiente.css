@@ -164,14 +164,7 @@ header .logo {
   margin-top: 10px;
 }
 
-#btnEliminar {
-  color: #f8fbfc;
-  border-radius: 5px;
-  background-color: #dcbcb2;
-  border: none;
-  padding: 8px;
-  cursor: pointer;
-}
+
 #btnComprar{
   color: #f8fbfc;
   border-radius: 5px;
@@ -182,9 +175,7 @@ header .logo {
   margin: 5px;
 }
 
-#btnEliminar:hover, #btnComprar:hover{
-  background-color: #8c5240;
-}
+
 
 .carritoImg {
   height: 4.5rem;
@@ -401,6 +392,7 @@ img {
    flex-direction: row;
    width: 350px;
    margin-bottom: 50px;
+   background-color: #e2ad9d;
  }
 
  .opciones {
@@ -441,4 +433,12 @@ img {
   font-weight: 600;
   text-align: center;
   font-size: 30px;
+}
+
+.btnsTabla{
+  
+  margin-bottom: 20px;
+  margin-right: 20px;
+  height: 40px;
+ 
 }

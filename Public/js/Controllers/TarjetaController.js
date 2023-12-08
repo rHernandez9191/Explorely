@@ -18,17 +18,17 @@ const ObtenerPersona = async () => {
     }
 };
 
-
  const ContenedorServicios = document.querySelector("#Tarjetas");
+ 
 
  function cargarTarjetas() {
+    
      for (let i = 0; i < listaTajetas.length; i++) {
          const div = document.createElement("div");
          div.classList.add("Tarjetas");
          div.innerHTML =`
-         <div class="a">
+         <div class="a" >
           <div class="fotoTarjeta">
-
           </div>
           <div>
            <div class="info">
@@ -48,7 +48,44 @@ const ObtenerPersona = async () => {
           </div>
          </div>
          `;
-         ContenedorServicios.append(div);
+
+         const btnEliminar = document.querySelector("#btnEliminar");
+        let btnDelete = document.createElement('button');
+        btnDelete.type = 'button';
+        btnDelete.innerText = '🗑️';
+        btnDelete.title = listaTajetas[i].numTarjeta + ' / ' + listaTajetas[i].tipoTarjeta;
+        btnDelete.classList.add('btnsTabla');
+        btnDelete.onclick = async () => {
+            let confirmacion = false;
+            await Swal.fire({
+                title: 'Desea eliminar el registro de la tarjeta '+ listaTajetas[i].numTarjeta,
+                icon: 'warning',
+                confirmButtonText: 'Confirmar',
+                denyButtonText: 'Cancelar',
+                showDenyButton: true
+            }).then((res) =>{
+                confirmacion = res.isConfirmed;
+            });
+
+            if (confirmacion == true) {
+                let data = {
+                    '_idPersona': PersonaBD._id,
+                    '_idTarjeta': listaTajetas[i]._id
+                };
+
+                let result = await ProcessDELETE('EliminarTarjetaPersona', data);
+                if (result != null && result.resultado == true) {
+                    ImprimirMsjsSuccess(result.msj);
+                } else {
+                    ImprimirMsjsError(result.msj);
+                }
+                await GetUrlTarjetasCliente();
+            }
+        };
+        
+        ContenedorServicios.append(div);
+        btnEliminar.append(btnDelete)
+        
      };
  };
 
@@ -67,7 +104,11 @@ const GetUrlInicio = async () => {
 
   _id = urlParams.get('_id');
 
-  location.href = './paginaBusqueda.html?_id=' + _id;
+  if (_id != null && _id != undefined) {
+    document.getElementById('btnCrea').onclick = () => {
+        location.href = './GestionarTarjetasPersona.html?_id=' + _id;
+    }
+ };
   
 };
 GetUrlTarjetasCliente();
