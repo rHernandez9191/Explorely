@@ -317,6 +317,16 @@ router.get('/ListarResenas', (req, res) => {
         });
 });
 
+router.get('/SociosActivos', async (req, res) => {
+    try {
+      const sociosActivos = await Socio.find({ Estado: '1' });
+      res.json(sociosActivos);
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ mensaje: 'Error al obtener los socios activos.' });
+    }
+  });
+
 module.exports = router;
 
 
