@@ -17,13 +17,6 @@ const GetListaCarrito = async () => {
     }
 };
 
-let validar = () => {
-    console.log("Funciona el boton")
-}
-
-btnAgregarReserva.addEventListener('click', validar)
-
-
 function cargarReserva() {
     listaCarrito .forEach(reserva => {
 

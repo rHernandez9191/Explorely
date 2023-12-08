@@ -83,7 +83,8 @@ GetListaSocios();
  }
 
  function QuitarReserva(){
-  localStorage.removeItem()
+  LimpiarSesionActiva()
+  console.log("se quito?")
  }
 
 const reservasEnCarrito = [];
