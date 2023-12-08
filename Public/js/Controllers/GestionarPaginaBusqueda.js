@@ -82,9 +82,9 @@ GetListaSocios();
   console.log("Funciona")
  }
 
- function QuitarReserva(){
-  
-  console.log("se quito?")
+function QuitarReserva(){
+  localStorage.removeItem(listaCarrito.Precio)
+  console.log(listaCarrito)
  }
 
 const reservasEnCarrito = [];
