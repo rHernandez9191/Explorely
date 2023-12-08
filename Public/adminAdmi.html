@@ -16,23 +16,26 @@
       <ul>
         <li>
           <a href="admin.html"
-            ><span class="las la-igloo"></span><span>Dashboard</span></a
+            ><span class="las la-igloo"></span><span>Solicitudes</span></a
           >
         </li>
         <li>
           <a href="adminUsuario.html"
-            ><span class="las la-users"></span><span>User</span></a
+            ><span class="las la-users"></span><span>Usuarios</span></a
           >
         </li>
         <li>
-          <a href="adminReporteria.html"
-            ><span class="las la-users"></span><span>Reporteria</span></a
+          <a href="adminReporteria.html"><span class="las la-users"></span><span>Reporteria</span></a
           >
         </li>
         <li>
           <a href="" class="active"
             ><span class="las la-users"></span><span>Socios</span></a
           >
+        </li>
+        <li>
+          <a href="iniciarSesion.html" onclick="CerrarSesion()"><span class="material-symbols-outlined">
+          </span><span>CerrarSesion</span></a>
         </li>
       </ul>
     </div>
@@ -56,11 +59,10 @@
     </header>
     <main>
       <h3>Administración de Socios</h3>
-      <div id="divbtn"></div>
-      <div id="FiltroTablas">
-        <label for="txtFiltro">Filtrar</label>
-        <input type="text" id="txtFiltro">
-      </div>
+      <div id="divBtns"></div>
+      <label for="txtFiltro">Filtrar</label>
+      <input type="search" id="txtFiltro">
+      
       <table id="tblSocios">
         <thead>
           <tr>
@@ -68,18 +70,17 @@
             <th>Identificación</th>
             <th>Nombre de la Empresa</th>
             <th>Encargado 1</th>
-            <th>Encargado 2</th>
             <th>Empresa</th>
             <th>Correo</th>
             <th>Constitución</th>
             <th>Provincia</th>
-            <th>Canton</th>
-            <th>Descripción</th>
-            <th>Rol</th>
             <th>Estado</th>
+            <th>Rol</th>
             <th>Precio</th>
-            <th>Cantidad de personas</th>
-            <th>Fotos</th>
+            <th>Cant.
+              personas</th>
+            <th>Acciones</th>
+            
           </tr>
         </thead>
         <tbody id="tbdSocios">
@@ -96,5 +97,6 @@
   <script src="js/utileria.js"></script>
   <script src="./js/Services/GeneralService.js"></script>
   <script src="./js/Controllers/SocioController.js"></script>
+ 
 </body>
 </html>

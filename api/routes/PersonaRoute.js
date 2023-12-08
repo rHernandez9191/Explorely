@@ -43,23 +43,26 @@ router.post('/RegistrarPersona', (req, res) => {
         });
 });
 //Read
-router.get('/ListarPersonas', (req, res) => {
-    Persona.find()
-        .then((ListaPersonasBD) => {
-            res.json({
-                resultado: true,
-                msj: 'Los datos se obtuvieron de manera correcta',
-                ListaPersonasBD
-            });
-        })
-        .catch((error) => {
-            res.json({
-                resultado: false,
-                msj: 'No se pudo obtener la lista de personas, ocurrio el siguiente error: ',
-                error
-            });
+router.get('/ListarPersonas', async (req, res) => {
+    try {
+        const listaPersonasBD = await Persona.find();
+        const cantidadPersonas = listaPersonasBD.length;
+
+        res.json({
+            resultado: true,
+            msj: 'Los datos se obtuvieron de manera correcta',
+            cantidadPersonas: cantidadPersonas,
+            ListaPersonasBD: listaPersonasBD
         });
+    } catch (error) {
+        res.json({
+            resultado: false,
+            msj: 'No se pudo obtener la lista de personas, ocurrió el siguiente error: ',
+            error
+        });
+    }
 });
+
 router.get('/BuscarPersonaIdentificacion', (req, res) => {
     let param = req.query;
 
@@ -161,6 +164,29 @@ router.put('/InactivarPersona', (req, res) => {
     Persona.updateOne({ _id: body._id }, {
         $set: {
             Estado: 0
+        }
+    })
+        .then((info) => {
+            res.json({
+                resultado: true,
+                msj: 'Los datos se actualizaron de manera correcta',
+                info
+            });
+        })
+        .catch((error) => {
+            res.json({
+                resultado: false,
+                msj: 'No se pudo actualizar a la persona, ocurrio el siguiente error: ',
+                error
+            });
+        });
+});
+
+router.put('/ActivarPersona', (req, res) => {
+    let body = req.body;
+    Persona.updateOne({ _id: body._id }, {
+        $set: {
+            Estado: 1
         }
     })
         .then((info) => {

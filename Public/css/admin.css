@@ -29,7 +29,7 @@ body {
   text-decoration: none;
 }
 .sidebar {
-  width: 345px;
+  width: 230px;
   position: fixed;
   top: 0;
   left: 0;
@@ -72,7 +72,7 @@ body {
   border-radius: 30px 0px 0px 30px;
 }
 .main-content {
-  margin-left: 345px;
+  margin-left: 300px;
 }
 header {
   display: flex;
@@ -151,4 +151,101 @@ main {
 }
 .card-single:last-child span {
   color: var(--accent);
+}
+table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  
+}
+
+#tblPersonas thead th:nth-child(1) {
+  width: 6%;
+}
+
+#tblPersonas thead th:nth-child(2) {
+  width: 12%;
+}
+
+#tblPersonas thead th:nth-child(3) {
+  width: 24%;
+}
+
+#tblPersonas thead th:nth-child(4) {
+  width: 26.4%;
+}
+#tblPersonas thead th:nth-child(5) {
+  width: 12%;
+}
+#tblPersonas thead th:nth-child(6) {
+  width: 12%;
+}
+#tblPersonas thead th:nth-child(7) {
+  width: 5%;
+}
+#tblPersonas thead th:nth-child(8) {
+  width: 10%;
+}
+
+#tblPersonas thead th:nth-child(9) {
+  width: 12.7%;
+}
+#tblPersonas thead th:nth-child(10) {
+  width: 12%;
+}
+
+
+
+
+#tblSocios thead th:nth-child(1) {
+  width: 19%;
+}
+
+#tblSocios thead th:nth-child(2) {
+  width: 17%;
+}
+
+#tblSocios thead th:nth-child(3) {
+  width: 11.8%;
+}
+
+#tblSocios thead th:nth-child(4) {
+  width: 11%;
+}
+#tblSocios thead th:nth-child(5) {
+  width: 15%;
+}
+#tblSocios thead th:nth-child(6) {
+  width: 29%;
+}
+#tblSocios thead th:nth-child(7) {
+  width: 16%;
+}
+#tblSocios thead th:nth-child(8) {
+  width: 18%;
+}
+
+#tblSocios thead th:nth-child(9) {
+  width:10%;
+}
+#tblSocios thead th:nth-child(10) {
+  width:10%;
+}
+#tblSocios thead th:nth-child(11) {
+  width:12%;
+}
+#tblSocios thead th:nth-child(12) {
+  width:7%;
+}
+#tblSocios thead th:nth-child(13) {
+  width:12%;
+}
+
+
+.hidden-table {
+  display: none;
+}
+
+.visible-table {
+  display: table; /* or display: block; */
 }

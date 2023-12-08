@@ -181,6 +181,29 @@ router.put('/InactivarSocio', (req, res) => {
             });
         });
 });
+
+router.put('/ActivarSocio', (req, res) => {
+    let body = req.body;
+    Socio.updateOne({ _id: body._id }, {
+        $set: {
+            Estado: 1
+        }
+    })
+        .then((info) => {
+            res.json({
+                resultado: true,
+                msj: 'Los datos se actualizaron de manera correcta',
+                info
+            });
+        })
+        .catch((error) => {
+            res.json({
+                resultado: false,
+                msj: 'No se pudo actualizar a la persona, ocurrio el siguiente error: ',
+                error
+            });
+        });
+});
 //Delete
 router.delete('/EliminarSocio', (req, res) => {
     let body = req.body;
