@@ -130,11 +130,17 @@ function AplicarReserva(e) {
     console.log("Guardado",coleccionServicios);
     localStorage.removeItem('ElementosReserva');
     localStorage.setItem('ElementosReserva', JSON.stringify(coleccionServicios));
-   
+    GetUrlReservcacio();
   }
   
-
-
+  const GetUrlReservcacio = async () => {
+    queryString = window.location.search;
+    urlParams = new URLSearchParams(queryString);
+  
+    _id = urlParams.get('_id');
+    location.href = './finalizarReserva.html?_id=' + _id;
+    
+  };
 
 
 GetListaCarrito();
