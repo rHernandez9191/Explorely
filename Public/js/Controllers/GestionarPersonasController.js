@@ -144,7 +144,7 @@ const RegistrarDatos = async () => {
             text: res.msj,
             confirmButtonText: 'Ok'
         }).then(resSwetAlert => {
-            location.href = 'paginaBusqueda.html'
+            location.href = 'index.html'
         });
     }
 };
