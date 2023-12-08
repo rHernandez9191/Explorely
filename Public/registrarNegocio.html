@@ -27,74 +27,78 @@
     <a href="index.html">Cerrar Sesion</a>
   </nav>
   <main>
-    <div class="wrapper">
-      <h1 id="ttlFormulario">Registrar Negocio</h1>
-      <div class="formContainer">
-        <div class="formIzquierda">
-          <form action="">
-            <input type="hidden" id="txt_id">
-            <select id="txtTipoServicio">
-              <option value="">-Seleccione-</option>
-              <option value="1">Hospedaje</option>
-              <option value="2">Transporte</option>
-              <option value="3">Alimentacion</option>
-              <option value="4">Aventura</option>
-            </select>
-            <input type="text" id="txtidentificacion" placeholder="Identificacion" />
-            <input type="text" id="txtNombreEmpresa" placeholder="Nombre de Empresa" />
-            <input type="text" id="txtEncargado1" placeholder="Encargado pricipal" />
-            <input type="text" id="txtEncargado2" placeholder="Encargado secundario" />
-            <select id="txtempresa">
-              <option value="1">Empresa Pequeña</option>
-              <option value="2">Empresa Mediana</option>
-              <option value="3">PYME</option>
-            </select>
-            <input type="email" id="txtEmail" placeholder="Email" />
-            <input type="password" id="txtPass" placeholder="Contraseña" />
-            <input type="password" id="txtPass2" placeholder="Confirmar Contraseña" />
-            <img id="imgUser" class="avatar">
-            <button type="button" class="btnSubirFoto" onclick="AbrirCloudinary('imgUser')">
-              Subir Foto
-            </button>
-          </form>
-        </div>
-        <div class="formDerecha">
-          <form action="">
-            <label for="lblConstitucion" id="txtConstitucion">Fecha de Constitucion</label>
-            <input type="date" id="lblConstitucion" />
-            <select id="slctProvincia">
-              <option value="">-Provincia-</option>
-              <option value="1">San José</option>
-              <option value="2">Alajuela</option>
-              <option value="3">Cartago</option>
-              <option value="4">Heredia</option>
-              <option value="5">Guanacaste</option>
-              <option value="6">Puntarenas</option>
-              <option value="7">Limón</option>
-            </select>
-            <input type="text" id="txtCanton" placeholder="Canton" />
-            <label for="txtestado">Estado</label>
-            <select name="" id="txtestado">
-              <option value="1" checked>Activo</option>
-              <option value="0">Inactivo</option>
-            </select>
-            <label for="txtRol" id="lblRol">Rol</label>
-            <select name="" id="txtRol">
-              <option value="" checked>--Seleccione--</option>
-              <option value="1" checked>Administrador</option>
-              <option value="2">Cliente</option>
-            </select>
-            <input type="text" id="txtprecio" placeholder="Precio por noche o servicio (Colones)" />
-            <input type="text" id="txtCantPersonas" placeholder="Cantidad de personas" />
-            <textarea name="" id="txtDescripcion" cols="30" rows="10" placeholder="Descripción de su negocio"
-              required></textarea>
-            <button type="button" class="btn" id="btnRegistrar">
-              Registrar
-            </button>
-          </form>
+    <div class="negocio">
+      <div class="wrapper">
+        <h1 id="ttlFormulario">Registrar Negocio</h1>
+        <div class="formContainer">
+          <div class="formIzquierda">
+            <form action="">
+              <input type="hidden" id="txt_id">
+              <select id="txtTipoServicio">
+                <option value="">-Seleccione-</option>
+                <option value="1">Hospedaje</option>
+                <option value="2">Transporte</option>
+                <option value="3">Alimentacion</option>
+                <option value="4">Aventura</option>
+              </select>
+              <input type="text" id="txtidentificacion" placeholder="Identificacion" />
+              <input type="text" id="txtNombreEmpresa" placeholder="Nombre de Empresa" />
+              <input type="text" id="txtEncargado1" placeholder="Encargado pricipal" />
+              <input type="text" id="txtEncargado2" placeholder="Encargado secundario" />
+              <select id="txtempresa">
+                <option value="1">Empresa Pequeña</option>
+                <option value="2">Empresa Mediana</option>
+                <option value="3">PYME</option>
+              </select>
+              <input type="email" id="txtEmail" placeholder="Email" />
+              <input type="password" id="txtPass" placeholder="Contraseña" />
+              <input type="password" id="txtPass2" placeholder="Confirmar Contraseña" />
+              <img id="imgUser" class="avatar">
+              <button type="button" class="btnSubirFoto" onclick="AbrirCloudinary('imgUser')">
+                Subir Foto
+              </button>
+            </form>
+          </div>
+          <div class="formDerecha">
+            <form action="">
+              <label for="lblConstitucion" id="txtConstitucion">Fecha de Constitucion</label>
+              <input type="date" id="lblConstitucion" />
+              <select id="slctProvincia">
+                <option value="">-Provincia-</option>
+                <option value="1">San José</option>
+                <option value="2">Alajuela</option>
+                <option value="3">Cartago</option>
+                <option value="4">Heredia</option>
+                <option value="5">Guanacaste</option>
+                <option value="6">Puntarenas</option>
+                <option value="7">Limón</option>
+              </select>
+              <input type="text" id="txtCanton" placeholder="Canton" />
+              <label for="txtestado">Estado</label>
+              <select name="" id="txtestado">
+                <option value="1" checked>Activo</option>
+                <option value="0">Inactivo</option>
+              </select>
+              <label for="txtRol" id="lblRol">Rol</label>
+              <select name="" id="txtRol">
+                <option value="" checked>--Seleccione--</option>
+                <option value="1" checked>Administrador</option>
+                <option value="2">Cliente</option>
+              </select>
+              <input type="text" id="txtprecio" placeholder="Precio por noche o servicio (Colones)" />
+              <input type="text" id="txtCantPersonas" placeholder="Cantidad de personas" />
+              <textarea name="" id="txtDescripcion" cols="30" rows="10" placeholder="Descripción de su negocio"
+                required></textarea>
+              <button type="button" class="btn" id="btnRegistrar">
+                Registrar
+              </button>
+            </form>
+          </div>
         </div>
       </div>
+
     </div>
+    
   </main>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="https://upload-widget.cloudinary.com/2.10.1/global/all.js"></script>
@@ -102,6 +106,7 @@
   <script src="./js/utileria.js"></script>
   <script src="./js/Services/subirImagenService.js"></script>
   <script src="./js/Services/GeneralService.js"></script>
+  <script src="./js/Controllers/SocioController.js"></script>
   <script src="./js/Controllers/GestionoSocioController.js"></script>
 </body>
 

@@ -35,13 +35,6 @@ const RegistrarDatos = async () => {
     let sNombreNegocio = inputNombreEmpresa.value;
     let sEncargado1 = inputEncargado1.value;
     let sEncargado2 = inputEncargado2.value;
-    //let sexo = null;
-    /*for (let i = 0; i < inputsSexo.length; i++) {
-        if (inputsSexo[i].checked == true) {
-            sexo = inputsSexo[i].value;
-            break;
-        }
-    }*/
     let sEmail = inputEmail.value;
     let sPass = inputPassword1.value;
     let sPassConfirmacion = inputPassword2.value;
@@ -203,36 +196,5 @@ const ValidarDatos = (pTipoServicio, pIdentificacion, pNombreEmpresa, pEncargado
     return true;
 }
 
-// main.js (or where you handle client-side logic)
-
-const mostrarNegociosActivos = async () => {
-    try {
-        const response = await fetch('/SociosActivos');
-        const negociosActivos = await response.json();
-
-        // Supposedly, you have a container in your HTML with the id 'divServicios'
-        const contenedorNegocios = document.getElementById('Servicio');
-        contenedorNegocios.innerHTML = ''; // Clear the container before adding new businesses
-
-        // Filter only the active businesses (Estado: 1)
-        const negociosActivosFiltrados = negociosActivos.filter(socios => socios.Estado === 1);
-
-        negociosActivosFiltrados.forEach((socios) => {
-            // Create HTML elements and add business information to the container
-            const elementoNegocio = document.createElement('div');
-            elementoNegocio.innerHTML = `
-            `;
-
-            contenedorNegocios.appendChild(elementoNegocio);
-        });
-    } catch (error) {
-        console.error('Error fetching and displaying active businesses:', error);
-    }
-};
-
-// Call the function to display active businesses when the page loads
-mostrarNegociosActivos();
-
-  
 
 botonRegistrar.addEventListener('click', RegistrarDatos);

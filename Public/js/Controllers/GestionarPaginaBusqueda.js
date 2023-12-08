@@ -124,6 +124,46 @@ function AgregarAlCarrito(e) {
   
 };
 
+/*const mostrarNegociosActivos = async () => {
+  try {
+      const response = await fetch('/SociosActivos');
+      const negociosActivos = await response.json();
 
+      // Filter the list to include only active businesses (status = 1)
+      const negociosActivosFiltrados = negociosActivos.filter(socio => parseInt(socio.Estado, 10) === 1);
 
+      // Supposedly, you have a container in your HTML with the id 'divServicios'
+      const contenedorNegocios = document.getElementById('divServicios');
+      contenedorNegocios.innerHTML = ''; // Clear the container before adding new businesses
 
+      negociosActivosFiltrados.forEach((socio) => {
+          const elementoNegocio = document.createElement('div');
+          elementoNegocio.innerHTML = `
+          <div class="a">
+              <div class="info">
+                  <div class="card">
+                      <a href="#"><img src="${socio.FotoPerfil}"></a>
+                  </div>
+                  <div class="lugar">
+                      <div class="local"><span class="txtlugar">${socio.NombreEmpresa}</span></div>
+                  </div>
+                  <div class="lugar">
+                      <div class="local"><span class="txtlugar">Lugar: </span>${ObtenerProvincia(socio.Provincia)}</div>
+                  </div>
+                  <div class="lugar">
+                      <div class="local"><span class="txtlugar">Personas: </span>${socio.CantPersonas}</div>
+                  </div>
+                  <div class="lugar">
+                      <div class="local"><span class="txtlugar">Precio: </span>${socio.Precio}</div>
+                  </div>
+                  <button onclick="" class="botonAgregar" id="${socio._id}">Agregar al carrito</button>
+              </div>
+          </div>
+          `;
+
+          contenedorNegocios.appendChild(elementoNegocio);
+      });
+  } catch (error) {
+      console.error('Error fetching and displaying active businesses:', error);
+  }
+};*/

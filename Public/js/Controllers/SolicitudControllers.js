@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
         //let celdaCanton = fila.insertCell();
         //let celdaDescripcion = fila.insertCell();
         let celdaEstado = fila.insertCell();
-        let celdaRol = fila.insertCell();
+        //let celdaRol = fila.insertCell();
         let celdaPrecio = fila.insertCell();
         let celdaCantPersonas = fila.insertCell();
         //let celdaFotoPerfil = fila.insertCell();
@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function() {
         //celdaCanton.innerHTML = listaSocios[i].Canton;
         //celdaDescripcion.innerHTML = listaSocios[i].Descripcion;
         celdaEstado.innerHTML = ObtenerEstado(listaSocios[i].Estado);
-        celdaRol.innerHTML = ObtenerRol(listaSocios[i].Rol);
+        //celdaRol.innerHTML = ObtenerRol(listaSocios[i].Rol);
         celdaPrecio.innerHTML = ObtenerPrecio(listaSocios[i].Precio);
         celdaCantPersonas.innerHTML = ObtenerCantPersonas(listaSocios[i].CantPersonas);
         //celdaFotoPerfil.innerHTML = ObtenerFotoPerfil(listaSocios[i].FotoPerfil);
@@ -99,15 +99,15 @@ document.addEventListener('DOMContentLoaded', function() {
         let fechaNac = new Date(listaSocios[i].FechaConstitucion.replace('Z', ''));
         celdaFechaConstitucion.innerHTML = fechaNac.getDate() + '/' + (fechaNac.getMonth() + 1) + '/' + fechaNac.getFullYear();
 
-        let btnDelete = document.createElement('button');
-        btnDelete.type = 'button';
-        btnDelete.innerText = '🗑️';
-        btnDelete.title = 'ELIMINAR';
-        btnDelete.classList.add('btnsTabla');
-        btnDelete.onclick = async () => {
+        let btnNoAceptar = document.createElement('button');
+        btnNoAceptar.type = 'button';
+        btnNoAceptar.innerText = '❌';
+        btnNoAceptar.title = 'No Aceptar';
+        btnNoAceptar.classList.add('btnsTabla');
+        btnNoAceptar.onclick = async () => {
     let confirmacion = false;
     await Swal.fire({
-        title: 'Desea eliminar el registro de ' + listaSocios[i].NombreEmpresa,
+        title: 'Desea no aceptar el registro de ' + listaSocios[i].NombreEmpresa,
         icon: 'warning',
         confirmButtonText: 'Confirmar',
         denyButtonText: 'Cancelar',
@@ -130,12 +130,12 @@ document.addEventListener('DOMContentLoaded', function() {
         await GetListaSocios();
     }
     };
-        let btnInactivar = document.createElement('button');
-        btnInactivar.type = 'button';
-        btnInactivar.innerText = 'Off';
-        btnInactivar.title = 'INACTIVAR';
-        btnInactivar.classList.add('btnsTabla');
-        btnInactivar.onclick = async () => {
+        let btnDeshabilitar = document.createElement('button');
+        btnDeshabilitar.type = 'button';
+        btnDeshabilitar.innerText = '👻';
+        btnDeshabilitar.title = 'INACTIVAR';
+        btnDeshabilitar.classList.add('btnsTabla');
+        btnDeshabilitar.onclick = async () => {
             let confirmacion = false;
             await Swal.fire({
                 title: 'Desea inactivar el registro de ' + listaSocios[i].NombreEmpresa,
@@ -162,15 +162,15 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         };
 
-        let btnActivar = document.createElement('button');
-        btnActivar.type = 'button';
-        btnActivar.innerText = 'On';
-        btnActivar.title = 'ACTIVAR';
-        btnActivar.classList.add('btnsTabla');
-        btnActivar.onclick = async () => {
+        let btnAceptar = document.createElement('button');
+        btnAceptar.type = 'button';
+        btnAceptar.innerText = '✅';
+        btnAceptar.title = 'Aceptar';
+        btnAceptar.classList.add('btnsTabla');
+        btnAceptar.onclick = async () => {
             let confirmacion = false;
             await Swal.fire({
-                title: 'Desea activar el registro de ' + listaSocios[i].NombreEmpresa,
+                title: 'Desea aceptar el registro de ' + listaSocios[i].NombreEmpresa,
                 icon: 'warning',
                 confirmButtonText: 'Confirmar',
                 denyButtonText: 'Cancelar',
@@ -196,9 +196,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
         let divBtns = document.createElement('div');
         //divBtns.appendChild(btnEdit);
-        divBtns.appendChild(btnDelete);
-        divBtns.appendChild(btnInactivar);
-        divBtns.appendChild(btnActivar);
+        divBtns.appendChild(btnNoAceptar);
+        divBtns.appendChild(btnDeshabilitar);
+        divBtns.appendChild(btnAceptar);
 
         celdaAcciones.appendChild(divBtns);
 
