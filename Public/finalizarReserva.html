@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/ReservaFinal.css" />
 
     <title>Reservas2</title>
   </head>
@@ -29,25 +29,16 @@
       <a href="index.html">Cerrar Sesion</a>
     </nav>
     <main>
-      <div class="columna-izquierda">
-        <div class="caja-comentarios"></div>
-
-        <div class="caja-precio"></div>
-        <div class="caja-input">
-          <input
-            type="number"
-            placeholder="Seleccione la cantidad de personas"
-          />
-          <button class="button-reservar">Reservar</button>
-        </div>
+      <div class="opciones" id="divServicios">
+       
+          
       </div>
-      <div class="columna-derecha">
-        <div class="imagen-carrusel"></div>
-        <div class="info-hotel">
-          <p></p>
-        </div>
-      </div>
-      <div></div>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/Utileria.js"></script>
+    <script src="./js/Services/GeneralService.js"></script>
+    <script src="./js/Controllers/main.js"></script>  
+    <!-- <script src="./js/Controllers/SesionController.js"></script> -->
+    <script src="./js/Controllers/Reserva.js"></script>
   </body>
 </html>

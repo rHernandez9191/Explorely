@@ -11,6 +11,8 @@ const GetListaCarrito = async () => {
         listaCarrito = obtenerElemetosCarrito(   res.ListaSociosBD);
         
         cargarReserva();
+        
+        
     } else {
         ImprimirMsjsError(res.msj);
         return;
@@ -27,13 +29,24 @@ function cargarReserva() {
         <th>${ObtenerProvincia(reserva.Provincia)}</th>
         <th>${reserva.NombreEmpresa}</th>
         <th>${reserva.Precio}</th>
-        <th><button id="btnQuitar" class="button-buscar">Quitar</button><button id="btnReservar" class="button-buscar">Reservar</button></th>`;
+        <th><button id="btnQuitar" class="button-buscar">Quitar</button><button id="${listaPersonas[i]._id}" class="button-buscar">Reservar</button></th>`;
 
         fila.appendChild(div)
 
     });
-    actualizarbtnReserva()
-    actualizarbtnQuitar()
+    actualizarbtnReserva();
+    actualizarbtnQuitar();
+    
+    
+   
+}
+
+function actualizarbtnReserva(){
+
+    btnAgregarReserva = document.querySelectorAll('.button-buscar')
+    btnAgregarReserva.forEach(btn => {
+      btn.addEventListener('click', AgregarAReservas)
+    })
 }
 
 function obtenerElemetosCarrito(listaServicios) {
@@ -58,9 +71,35 @@ function obtenerElemetosCarrito(listaServicios) {
 return elementosEncontrados;
 }
 
+function AgregarAReservas(e) {
+
+    const idBoton = e.currentTarget.id
+    console.log("id elemento",idBoton);
+  
+  
+    let elementosReserva  = localStorage.getItem('ElementosReserva');
+    let coleccionServicios = [];
+    if(elementosReserva == null){
+      console.log("No hay elementos");
+      coleccionServicios = [];
+      localStorage.setItem('ElementosReserva', JSON.stringify(coleccionServicios));
+    }else{
+      console.log("Si hay elementos");
+  
+    coleccionServicios = JSON.parse( localStorage.getItem('ElementosReserva'));
+  
+    }
+    coleccionServicios.push(idBoton);
+    console.log("Guardado",coleccionServicios);
+    localStorage.removeItem('ElementosReserva');
+    localStorage.setItem('ElementosReserva', JSON.stringify(coleccionServicios));
+    
+  }
 
 GetListaCarrito();
 cargarReserva();
+
+
 
 
 

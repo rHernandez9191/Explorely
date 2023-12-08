@@ -80,6 +80,8 @@ GetListaSocios();
 
  function AplicarReserva(){
   console.log("Funciona")
+  GetUrlReservas();
+  
  }
 
 function QuitarReserva(){
@@ -111,7 +113,7 @@ function AgregarAlCarrito(e) {
   console.log("Guardado",coleccionServicios);
   localStorage.removeItem('ElementosCarrito');
   localStorage.setItem('ElementosCarrito', JSON.stringify(coleccionServicios));
- 
+  
 }
 
  const GetUrlCliente = async () => {
@@ -121,6 +123,24 @@ function AgregarAlCarrito(e) {
   _id = urlParams.get('_id');
 
   location.href = './PerfilCliente.html?_id=' + _id;
+  
+};
+
+const GetUrlReservas = async () => {
+  queryString = window.location.search;
+  urlParams = new URLSearchParams(queryString);
+
+  _id = urlParams.get('_id');
+  location.href = './finalizarReserva.html?_id=' + _id;
+  
+};
+
+const GetUrlCarrito = async () => {
+  queryString = window.location.search;
+  urlParams = new URLSearchParams(queryString);
+
+  _id = urlParams.get('_id');
+  location.href = './carrito.html?_id=' + _id;
   
 };
 

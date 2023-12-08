@@ -120,4 +120,13 @@ const GetUrlTarjetasEliminadas = async () => {
   await ObtenerPersona();
     
 };
+
+const GetUrlCarritoPerfil = async () => {
+    queryString = window.location.search;
+    urlParams = new URLSearchParams(queryString);
+  
+    _id = urlParams.get('_id');
+    location.href = './carrito.html?_id=' + _id;
+    
+  };
 GetUrlTarjetasCliente();

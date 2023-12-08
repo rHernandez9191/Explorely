@@ -7,20 +7,28 @@
     <title>Tu carrito</title>
 </head>
 <body>
-    <header>
-        <div class="contenedor">
-          <a href="paginaBusqueda.html"><img src="./img/logo.png" alt="logo" class="logo" /></a>
-          <h2>EXPLORELY</h2>
-          <ul>
-          </ul>
-          <img src=""  alt="" />
-          <div>
+  <header>
+    <div class="contenedor">
+      <a href="./carrito.html"><img src="./img/logo.png" alt="logo" class="logo" /></a>
+      <h2>EXPLORELY</h2>
+      <ul>
+        <label id="txtBienvenido" class="ul_titulo"></label>
+      </ul>
+      <button class="hamburger">
+        <div class="barra"></div>
+      </button>
+    </div>
+    
+  </header>
+    </div>   
 
-          </div>
-            <div class="barra"></div>
-        </div>
-       
-      </header>
+  </div>
+  <div id="Servicio">
+  <nav class="movil-nav">
+    <button class="BtnHamburger" onclick="GetUrlCliente()">Perfil</button>
+    <button class="BtnHamburger" onclick="CerrarSesion()">Cerrar Sesion</button>
+  </nav>
+  </div>
       <h1 id="carritoTitulo">Tu carrito</h1>
       <table id="tablaCarrito">
         <thead>
@@ -44,7 +52,9 @@
          
           </tbody>
       </table>
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
       <script src="./js/utileria.js"></script>
+      <script src="./js/Controllers/main.js"></script>
       <script src="./js/Services/GeneralService.js"></script>
       <script src="./js/Controllers/GestionarPaginaBusqueda.js"></script>
       <script src="../Public/js/Controllers/carritoControler.js"></script>
