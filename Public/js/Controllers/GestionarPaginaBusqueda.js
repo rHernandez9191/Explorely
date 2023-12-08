@@ -83,7 +83,6 @@ GetListaSocios();
  }
 
  function QuitarReserva(){
-  LimpiarSesionActiva()
   console.log("se quito?")
  }
 
