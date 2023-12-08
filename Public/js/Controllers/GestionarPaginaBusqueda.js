@@ -1,46 +1,58 @@
-'use strict';
+"use strict";
 
 let queryString, urlParams, _id, PersonaBD;
 let listaPersonas = [];
 
 const GetListaSocios = async () => {
-    let res = await ProcessGET('ListarSocios', null);
-    if (res != null && res.resultado == true) {
-        listaPersonas = res.ListaSociosBD;
-        cargarServicios();
-    } else {
-        ImprimirMsjsError(res.msj);
-        return;
-    }
+  let res = await ProcessGET("ListarSocios", null);
+  if (res != null && res.resultado == true) {
+    listaPersonas = res.ListaSociosBD;
+    cargarServicios();
+  } else {
+    ImprimirMsjsError(res.msj);
+    return;
+  }
 };
 
 GetListaSocios();
+<<<<<<< Updated upstream
  const ContenedorServicios = document.querySelector("#divServicios");
  let btnAgregarCarrito = document.querySelectorAll('.botonAgregar')
  let btnAgregarReserva = document.querySelector('#btnReservar')
  let btnQuitarReserva = document.querySelector('#btnQuitar') 
+=======
+const ContenedorServicios = document.querySelector("#divServicios");
+>>>>>>> Stashed changes
 
- function cargarServicios() {
-     for (let i = 0; i < listaPersonas.length; i++) {
-         const div = document.createElement("div");
-         div.classList.add("renta");
-         div.innerHTML =`
+function cargarServicios() {
+  for (let i = 0; i < listaPersonas.length; i++) {
+    const div = document.createElement("div");
+    div.classList.add("renta");
+    div.innerHTML = `
          <div class="a">
           <div class="info">
-           <div class="card">
+           <div class="card"  id="negocio1" onclick="cargarPaginaFinalizarReserva('negocio1')">
              <a href="#"><img src="${listaPersonas[i].FotoPerfil}"></a>
            </div>
            <div class="lugar">
-             <div class="local"><span class="txtlugar">${listaPersonas[i].NombreEmpresa}</span></div>
+             <div class="local"><span class="txtlugar">${
+               listaPersonas[i].NombreEmpresa
+             }</span></div>
            </div>
            <div class="lugar">
-             <div class="local"><span class="txtlugar">Lugar: </span>${ObtenerProvincia(listaPersonas[i].Provincia)}</div>
+             <div class="local"><span class="txtlugar">Lugar: </span>${ObtenerProvincia(
+               listaPersonas[i].Provincia
+             )}</div>
            </div>
            <div class="lugar">
-             <div class="local"><span class="txtlugar">Personas: </span>${listaPersonas[i].CantPersonas}</div>
+             <div class="local"><span class="txtlugar">Personas: </span>${
+               listaPersonas[i].CantPersonas
+             }</div>
            </div>
            <div class="lugar">
-            <div class="local"><span class="txtlugar">Precio: </span>${listaPersonas[i].Precio}</div>
+            <div class="local"><span class="txtlugar">Precio: </span>${
+              listaPersonas[i].Precio
+            }</div>
            
            </div>
            <button onclick= "" class="botonAgregar" id="${listaPersonas[i]._id}" >Agregar al carrito</button>
@@ -48,6 +60,7 @@ GetListaSocios();
          </div>
          `;
 
+<<<<<<< Updated upstream
          ContenedorServicios.append(div);
      };
      actualizarbtnAgregar()
@@ -117,13 +130,19 @@ function AgregarAlCarrito(e) {
 }
 
  const GetUrlCliente = async () => {
+=======
+    ContenedorServicios.append(div);
+  }
+}
+
+const GetUrlCliente = async () => {
+>>>>>>> Stashed changes
   queryString = window.location.search;
   urlParams = new URLSearchParams(queryString);
 
-  _id = urlParams.get('_id');
+  _id = urlParams.get("_id");
 
-  location.href = './PerfilCliente.html?_id=' + _id;
-  
+  location.href = "./PerfilCliente.html?_id=" + _id;
 };
 
 const GetUrlReservas = async () => {
