@@ -22,8 +22,7 @@ const ImprimirLargoListaPersonas = () => {
     // Obtén el elemento donde mostrarás el mensaje
     let mensajeElement = document.getElementById('largoListaPersonas');
 
-<<<<<<< Updated upstream
-=======
+
     // Verifica si el elemento existe antes de actualizar su contenido
     if (mensajeElement) {
         mensajeElement.textContent = `La cantidad de usuarios es de: ${listaPersonas.length}`;
@@ -32,7 +31,7 @@ const ImprimirLargoListaPersonas = () => {
 
 // Llama a ImprimirLargoListaPersonas
 ImprimirLargoListaPersonas();
->>>>>>> Stashed changes
+
 const ImprimirDatos = () => {
     let tbody = document.getElementById('tbdPersonas');
     tbody.innerHTML = '';
