@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Inicio</title>
-    <link rel="stylesheet" href="./css/paginaBusqueda.css" />
+    <link rel="stylesheet" href="./css/PerfilCLiente.css" />
   </head>
   <body>
     <header>
@@ -20,55 +20,25 @@
           <div class="barra"></div>
         </button>
       </div>
-      <div class="navegacion">
-        
-      </div>
+
     </header>
     <div id="carrito-popup" class="carrito-popup">
       <h2 id="tituloCarrito">Carrito</h2>
       <p class="carritoVacio">Carrito Vacio</p>
 
       <div class="carritoProductos">
-        <div class="carritoProducto">
-          <img class="carritoImg" src="./img/imagen1.webp" alt="">
-          <div class="ProductoDetalle">
-            <small>Detalles</small>
-            <p><h3>San Jose</h3></p>
-          </div>
-          <div class="carritoProductoPrecio">
-            <small>Precio</small>
-            <p>300$</p>
-          </div>
-          <button id="btnEliminar">Eliminar</button>
-          <button id="btnComprar">Comprar</button>
-        </div>
-        <div class="carritoProducto">
-          <img class="carritoImg" src="./img/imagen7.webp" alt="">
-          <div class="ProductoDetalle">
-            <small>Detalles</small>
-            <p><h3>La Fortuna</h3></p>
-          </div>
-          <div class="carritoProductoPrecio">
-            <small>Precio</small>
-            <p>315$</p>
-          </div>
-          <button type="button" id="btnEliminar">Eliminar</button>
-          <button type="button" id="btnComprar">Comprar</button>
+        <div class="carritoProducto">  
         </div>
       
-      </div>     BtnHamburger
+      </div>     
     </div>
     <nav class="movil-nav">
-      <button class="BtnHamburger" >Inicio</button>
-      <button class="BtnHamburger" onclick="GetUrlAgregaTarjeta()">Perfil</button>
-      <button class="BtnHamburger" >Reservas</button>
-      <button class="BtnHamburger" >Métodos de Pago</button>
-      <button class="BtnHamburger" >Registrar Negocio</button>
+      <button class="BtnHamburger" onclick="GetUrlInicio()">Inicio</button>
       <button class="BtnHamburger" onclick="CerrarSesion()">Cerrar Sesion</button>
     </nav>
     <main>
       <div class="opciones" id="divServicios">
-        <div class="Tarjetas" id="Tarjetas">
+        <div class="TarjetasDisplay" id="Tarjetas">
 
         </div> 
         <div class="Hospedajes" id="Reservas">

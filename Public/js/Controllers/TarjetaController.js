@@ -27,18 +27,23 @@ const ObtenerPersona = async () => {
          div.classList.add("Tarjetas");
          div.innerHTML =`
          <div class="a">
-          <div class="info">
-          <div class="lugar">
-          <div class="local"><span class="txtlugar">Precio: </span>${listaTajetas[i].nombre}</div>
-         </div>
-           <div class="lugar">
+          <div class="fotoTarjeta">
+
+          </div>
+          <div>
+           <div class="info">
+            <div class="lugar">
+             <div class="local"><span class="txtlugar">Titular: </span>${listaTajetas[i].nombre}</div>
+            </div>
+            <div class="lugar">
              <div class="local"><span class="txtlugar">${listaTajetas[i].tipoTarjeta}</span></div>
-           </div>
-           <div class="lugar">
-             <div class="local"><span class="txtlugar">Lugar: </span>${listaTajetas[i].numTarjeta}</div>
-           </div>
-           <div class="lugar">
-             <div class="local"><span class="txtlugar">Personas: </span>${listaTajetas[i].vencimiento}</div>
+            </div>
+            <div class="lugar">
+             <div class="local"><span class="txtlugar">Número: </span>${listaTajetas[i].numTarjeta}</div>
+            </div>
+            <div class="lugar">
+             <div class="local"><span class="txtlugar">Vencimiento: </span>${listaTajetas[i].vencimiento}</div>
+            </div>
            </div>
           </div>
          </div>
@@ -55,5 +60,14 @@ const ObtenerPersona = async () => {
     
   await ObtenerPersona();
     
+};
+const GetUrlInicio = async () => {
+  queryString = window.location.search;
+  urlParams = new URLSearchParams(queryString);
+
+  _id = urlParams.get('_id');
+
+  location.href = './paginaBusqueda.html?_id=' + _id;
+  
 };
 GetUrlTarjetasCliente();
