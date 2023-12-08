@@ -24,7 +24,7 @@ function cargarReserva() {
         div.classList.add("fila");
         div.innerHTML = `
         <th id=""><img id="imgCarrito" src="${reserva.FotoPerfil}" alt=""></th>
-        <th>${reserva.Provincia}</th>
+        <th>${ObtenerProvincia(reserva.Provincia)}</th>
         <th>${reserva.NombreEmpresa}</th>
         <th>${reserva.Precio}</th>
         <th><button id="btnQuitar" class="button-buscar">Quitar</button><button id="btnReservar" class="button-buscar">Reservar</button></th>`;

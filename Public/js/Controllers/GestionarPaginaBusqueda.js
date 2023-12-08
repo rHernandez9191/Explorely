@@ -83,6 +83,7 @@ GetListaSocios();
  }
 
  function QuitarReserva(){
+  
   console.log("se quito?")
  }
 
