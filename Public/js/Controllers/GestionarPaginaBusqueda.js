@@ -17,6 +17,8 @@ const GetListaSocios = async () => {
 GetListaSocios();
  const ContenedorServicios = document.querySelector("#divServicios");
  let btnAgregarCarrito = document.querySelectorAll('.botonAgregar')
+ let btnAgregarReserva = document.querySelector('#btnReservar')
+ let btnQuitarReserva = document.querySelector('#btnQuitar') 
 
  function cargarServicios() {
      for (let i = 0; i < listaPersonas.length; i++) {
@@ -60,6 +62,30 @@ GetListaSocios();
     });
  };
 
+ function actualizarbtnReserva(){
+
+  btnAgregarReserva = document.querySelectorAll('#btnReservar')
+  btnAgregarReserva.forEach(btn => {
+    btn.addEventListener('click', AplicarReserva)
+  })
+ }
+
+ function actualizarbtnQuitar(){
+
+  btnQuitarReserva = document.querySelectorAll('#btnQuitar')
+  btnQuitarReserva.forEach(btn => {
+    btn.addEventListener('click', QuitarReserva)
+  })
+ }
+
+ function AplicarReserva(){
+  console.log("Funciona")
+ }
+
+ function QuitarReserva(){
+  localStorage.removeItem()
+ }
+
 const reservasEnCarrito = [];
 
 function AgregarAlCarrito(e) {
@@ -96,5 +122,7 @@ function AgregarAlCarrito(e) {
   location.href = './PerfilCliente.html?_id=' + _id;
   
 };
+
+
 
 

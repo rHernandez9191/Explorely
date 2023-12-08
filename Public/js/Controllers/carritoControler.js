@@ -1,7 +1,6 @@
 'use strict'
 
 const fila = document.querySelector('#carritoFilas')
-const btnAgregarReserva = document.querySelector('#btnReservar')
 
 let listaCarrito = [];
 
@@ -35,11 +34,13 @@ function cargarReserva() {
         <th>${reserva.Provincia}</th>
         <th>${reserva.NombreEmpresa}</th>
         <th>${reserva.Precio}</th>
-        <th><button class="button-buscar">Quitar</button><button id="btnReservar" class="button-buscar">Reservar</button></th>`;
+        <th><button id="btnQuitar" class="button-buscar">Quitar</button><button id="btnReservar" class="button-buscar">Reservar</button></th>`;
 
         fila.appendChild(div)
 
     });
+    actualizarbtnReserva()
+    actualizarbtnQuitar()
 }
 
 function obtenerElemetosCarrito(listaServicios) {
@@ -67,3 +68,6 @@ return elementosEncontrados;
 
 GetListaCarrito();
 cargarReserva();
+
+
+
