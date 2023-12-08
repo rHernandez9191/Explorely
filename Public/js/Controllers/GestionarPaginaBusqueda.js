@@ -65,8 +65,26 @@ const reservasEnCarrito = [];
 function AgregarAlCarrito(e) {
 
   const idBoton = e.currentTarget.id
-  console.log(idBoton)
+  console.log("id elemento",idBoton);
 
+
+  let elementosCarrito  = localStorage.getItem('ElementosCarrito');
+  let coleccionServicios = [];
+  if(elementosCarrito == null){
+    console.log("No hay elementos");
+    coleccionServicios = [];
+    localStorage.setItem('ElementosCarrito', JSON.stringify(coleccionServicios));
+  }else{
+    console.log("Si hay elementos");
+
+  coleccionServicios = JSON.parse( localStorage.getItem('ElementosCarrito'));
+
+  }
+  coleccionServicios.push(idBoton);
+  console.log("Guardado",coleccionServicios);
+  localStorage.removeItem('ElementosCarrito');
+  localStorage.setItem('ElementosCarrito', JSON.stringify(coleccionServicios));
+ 
 }
 
  const GetUrlCliente = async () => {
