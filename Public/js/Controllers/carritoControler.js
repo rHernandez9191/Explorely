@@ -144,8 +144,22 @@ function AplicarReserva(e) {
 
 
 GetListaCarrito();
-cargarReserva();
 
+
+function reservar(idReserva) {
+  const reserva = listaCarrito.find(reserva => reserva._id === idReserva);
+
+  
+  $.post('/RegistrarReserva', reserva, function(response) {
+      if (response.resultado) {
+          alert('Reserva registrada correctamente');
+        
+          window.location.href = 'PerfilCliente.html';
+      } else {
+          alert('Error al registrar la reserva: ' + response.msj);
+      }
+  });
+}
 
 
 
