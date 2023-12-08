@@ -288,7 +288,7 @@ header .logo {
 }
 .opciones {
   display: flex;
-  justify-content: space-around;
+  justify-content:space-between;
   width:100%;
   box-sizing: border-box;
   flex-wrap: wrap;
@@ -303,7 +303,7 @@ header .logo {
 
 .a {
  padding: 8px;
-  border: solid #8c5240;
+  border: solid #8c5240 1px;
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }

@@ -435,3 +435,10 @@ img {
   text-decoration: none;
   border: solid black 1px;
 }
+.ReservasTarjetas{
+  color: #8c5240;
+  font-family: "Poppins";
+  font-weight: 600;
+  text-align: center;
+  font-size: 30px;
+}
