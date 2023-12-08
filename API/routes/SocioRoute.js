@@ -22,7 +22,7 @@ router.post('/RegistrarSocio', (req, res) => {
         Provincia: body.Provincia,
         Canton: body.Canton,
         Descripcion: body.Descripcion,
-        Estado: 1,
+        Estado: 2,
         Rol: body.Rol,
         CantPersonas: body.CantPersonas,
         Precio: body.Precio,

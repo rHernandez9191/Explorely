@@ -33,6 +33,10 @@ router.post('/RegistrarPersona', (req, res) => {
                 msj: 'Registrado de manera correcta.',
                 resultBD
             });
+
+            let nombreCompleto = resultBD.Nombre + ' ' + resultBD.Apellido1 + ' ' + resultBD.Apellido2;
+            let correo = resultBD.Email;
+            mailer.EnviarEmail(nombreCompleto, correo);
         })
         .catch((error) => {
             res.json({
