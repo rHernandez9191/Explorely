@@ -9,6 +9,7 @@
       href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
     />
     <link rel="stylesheet" href="/Public/css/admin.css" />
+    
   </head>
   <body>
     <div class="sidebar">
@@ -19,27 +20,34 @@
         <ul>
           <li>
             <a href="admin.html"
-              ><span class="las la-igloo"></span><span>Dashboard</span></a
+              ><span class="las la-igloo"></span><span>Solicitudes</span></a
             >
           </li>
           <li>
             <a href="adminUsuario.html"
-              ><span class="las la-users"></span><span>User</span></a
+              ><span class="las la-users"></span><span>Usuarios</span></a
             >
           </li>
           <li>
             <a href="" class="active"
-              ><span class="las la-users"></span><span>Reporteria</span></a
-            >
+              ><span class="las la-users"></span><span>Reporteria</span></a>
           </li>
           <li>
             <a href="adminAdmi.html"
-              ><span class="las la-users"></span><span>Administracion</span></a
-            >
+              ><span class="las la-users"></span><span>Socios</span></a>
+          </li>
+          <li>
+            <a href="iniciarSesion.html" onclick="CerrarSesion()">
+              <span class="material-symbols-outlined">
+                </span>
+              </span><span>CerrarSesion</span></a>
           </li>
         </ul>
       </div>
     </div>
+
+
+
     <div class="main-content">
       <header>
         <h2>
@@ -57,20 +65,90 @@
           </div>
         </div>
       </header>
+
+
+
       <main>
-        <table id="collectionTable">
+
+        <table class="hidden-table">
           <thead>
-            <tr>
-              <th>Collection Name</th>
-              <th>Number of Elements</th>
-            </tr>
+              <tr>
+
+              </tr>
           </thead>
-          <tbody id="collectionInfo"></tbody>
-        </table>
-        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-        <script src="./js/Controllers/ReporteriaController.js"></script>
-        
-      </main>
+          <tbody id="tbdPersonas">
+
+          </tbody>
+          <tfoot>
+
+          </tfoot>
+      </table>
+
+      <table class="hidden-table">
+        <thead>
+            <tr>
+
+            </tr>
+        </thead>
+        <tbody id="tbdSocios">
+
+        </tbody>
+        <tfoot id="tftSocios">
+
+        </tfoot id="tftSocios">
+    </table>
+
+    <div>
+      <p id="largoListaPersonas"></p>
     </div>
+    <div>
+      <p id="largoListaSocios"></p>
+    </div>
+
+    <div class="visible-table">
+      <table id="myTable">
+          <thead>
+              <tr>
+                 
+                  <!-- Add more headers as needed -->
+              </tr>
+          </thead>
+          <tbody id="tbdSocios">
+              <!-- Add table body content here -->
+            
+              <!-- Add more rows as needed -->
+          </tbody>
+          <tfoot id="tftSocios">
+              <!-- Add table footer content here -->
+          </tfoot>
+      </table>
+  
+      
+  </div>
+
+      
+        
+
+      </main>
+       <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+      <script src="js/utileria.js"></script>
+      <script src="./js/Services/GeneralService.js"></script>
+      <script src="./js/Controllers/PersonaController.js"></script>
+      <script src="./js/Controllers/SocioController.js"></script>
+
+  
+      <!--<script>
+        document.addEventListener('DOMContentLoaded', function () {
+          GetListaSocios();
+        
+          // Optional: You can add event listeners or perform additional setup here
+          // For example, if you want to filter data when the user changes the provinciaFilter
+          let provinciaFilter = document.getElementById('provinciaFilter');
+          provinciaFilter.addEventListener('change', function () {
+            filtrarPorProvincia(); // Call your filter function here
+          });
+        });
+      </script>-->
   </body>
 </html>
