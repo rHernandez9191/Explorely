@@ -27,7 +27,7 @@ function cargarReserva() {
         <th>${ObtenerProvincia(reserva.Provincia)}</th>
         <th>${reserva.NombreEmpresa}</th>
         <th>${reserva.Precio}</th>
-        <th><button id="btnQuitar" class="button-buscar">Quitar</button><button id="btnReservar" class="button-buscar">Reservar</button></th>`;
+        <th><button id="btnQuitar" class="button-buscar">Quitar</button><button id="${reserva._id}" class="button-buscar agregar-rsv">Reservar</button></th>`;
 
         fila.appendChild(div)
 
@@ -35,6 +35,16 @@ function cargarReserva() {
     actualizarbtnReserva()
     actualizarbtnQuitar()
 }
+
+function actualizarbtnReserva(){
+
+    btnAgregarReserva = document.querySelectorAll('.agregar-rsv')
+    btnAgregarReserva.forEach(btn => {
+      btn.addEventListener('click', AplicarReserva)
+    })
+   }
+
+
 
 function obtenerElemetosCarrito(listaServicios) {
     let elementosCarrito = localStorage.getItem('ElementosCarrito');
@@ -57,6 +67,35 @@ function obtenerElemetosCarrito(listaServicios) {
     );
 return elementosEncontrados;
 }
+
+
+function AplicarReserva(e) {
+
+    const idBoton = e.currentTarget.id
+    console.log("id elemento",idBoton);
+  
+  
+    let elementosReserva  = localStorage.getItem('ElementosReserva');
+    let coleccionServicios = [];
+    if(elementosReserva == null){
+      console.log("No hay elementos");
+      coleccionServicios = [];
+      localStorage.setItem('ElementosReserva', JSON.stringify(coleccionServicios));
+    }else{
+      console.log("Si hay elementos");
+  
+    coleccionServicios = JSON.parse( localStorage.getItem('ElementosReserva'));
+  
+    }
+    coleccionServicios.push(idBoton);
+    console.log("Guardado",coleccionServicios);
+    localStorage.removeItem('ElementosReserva');
+    localStorage.setItem('ElementosReserva', JSON.stringify(coleccionServicios));
+   
+  }
+  
+
+
 
 
 GetListaCarrito();
