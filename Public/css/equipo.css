@@ -70,6 +70,19 @@ header .contenedor p {
 .miembro p {
   color: var(--secondary);
 }
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 0;
+
+  color: #f8fbfc;
+}
+
+header h1 {
+}
 .equipo-container p {
   color: #f8fbfc;
 }
