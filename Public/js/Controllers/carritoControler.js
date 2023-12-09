@@ -30,7 +30,7 @@ function cargarReserva() {
         <th>${reserva.NombreEmpresa}</th>
         <th>${reserva.Precio}</th>
 
-        <th><button id="btnQuitar" class="button-buscar">Quitar</button><button id="${reserva._id}" class="button-buscar agregar-rsv">Reservar</button></th>`;
+        <th><button id="${reserva._id}" class="button-buscar agregar-rsv">Reservar</button></th>`;
 
 
         fila.appendChild(div)
