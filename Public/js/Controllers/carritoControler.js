@@ -30,7 +30,7 @@ function cargarReserva() {
         <th>${reserva.NombreEmpresa}</th>
         <th>${reserva.Precio}</th>
 
-        <th><button id="btnQuitar" class="button-buscar">Quitar</button><button id="${reserva._id}" class="button-buscar agregar-rsv">Reservar</button></th>`;
+        <th><button id="${reserva._id}" class="button-buscar agregar-rsv">Reservar</button></th>`;
 
 
         fila.appendChild(div)
@@ -130,16 +130,36 @@ function AplicarReserva(e) {
     console.log("Guardado",coleccionServicios);
     localStorage.removeItem('ElementosReserva');
     localStorage.setItem('ElementosReserva', JSON.stringify(coleccionServicios));
-   
+    GetUrlReservcacio();
   }
   
-
-
+  const GetUrlReservcacio = async () => {
+    queryString = window.location.search;
+    urlParams = new URLSearchParams(queryString);
+  
+    _id = urlParams.get('_id');
+    location.href = './finalizarReserva.html?_id=' + _id;
+    
+  };
 
 
 GetListaCarrito();
-cargarReserva();
 
+
+function reservar(idReserva) {
+  const reserva = listaCarrito.find(reserva => reserva._id === idReserva);
+
+  
+  $.post('/RegistrarReserva', reserva, function(response) {
+      if (response.resultado) {
+          alert('Reserva registrada correctamente');
+        
+          window.location.href = 'PerfilCliente.html';
+      } else {
+          alert('Error al registrar la reserva: ' + response.msj);
+      }
+  });
+}
 
 
 

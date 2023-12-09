@@ -16,7 +16,7 @@ router.post('/RegistrarPersona', (req, res) => {
         Apellido2: body.Apellido2,
         Sexo: body.Sexo,
         Edad: body.Edad,
-        Estado: 2,
+        Estado: 1,
         Email: body.Email,
         Password: body.Password,
         Rol: body.Rol,
@@ -33,6 +33,7 @@ router.post('/RegistrarPersona', (req, res) => {
                 msj: 'Registrado de manera correcta.',
                 resultBD
             });
+            
         })
         .catch((error) => {
             res.json({
@@ -163,7 +164,7 @@ router.put('/InactivarPersona', (req, res) => {
     let body = req.body;
     Persona.updateOne({ _id: body._id }, {
         $set: {
-            Estado: 0
+            Estado: 2
         }
     })
         .then((info) => {

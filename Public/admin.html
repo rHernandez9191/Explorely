@@ -57,15 +57,48 @@
           <input type="search" placeholder="Search here" />
         </div>
         <div class="user-wrapper">
-          <img src="/Public/img/logo.png" width="40px" height="40px" alt="" />
-          <div>
-            <h4>Administrador</h4>
-          </div>
         </div>
       </header>
       <main>
+        <h3>Administración de Socios</h3>
+        <h4 class="instruccion">Aquí estan los negocios que se han querido registrar a Explorely</h4>
+        <div id="divBtns"></div>
+        <label for="txtFiltro">Filtrar</label>
+        <input type="search" id="txtFiltro">
         
+        <table id="tblSocios">
+          <thead>
+            <tr>
+              <th>Tipo de servicio</th>
+              <th>Identificación</th>
+              <th>Nombre de la Empresa</th>
+              <th>Encargado 1</th>
+              <th>Empresa</th>
+              <th>Correo</th>
+              <th>Constitución</th>
+              <th>Provincia</th>
+              <th>Estado</th>
+              
+              <th>Precio</th>
+              <th>Cant.
+                personas</th>
+              <th>Acciones</th>
+              
+            </tr>
+          </thead>
+          <tbody id="tbdSocios">
+          
+          </tbody>
+          <tfoot id="tftSocios">
+          
+          </tfoot>
+        </table>
       </main>
     </div>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="js/utileria.js"></script>
+  <script src="./js/Services/GeneralService.js"></script>
+  <script src="./js/Controllers/SolicitudControllers.js"></script>
+  
   </body>
 </html>

@@ -29,6 +29,7 @@
       <a href="index.html">Cerrar Sesion</a>
     </nav>
     <main>
+<<<<<<< HEAD
       <div class="opciones" id="divServicios">
        
           
@@ -47,12 +48,33 @@
       </div>
       <div></div>
 >>>>>>> Stashed changes
+=======
+      <form id="formReserva">
+        <label for="fechaInicio">Fecha de inicio:</label>
+        <input type="date" id="fechaInicio" required>
+        <label for="fechaFin">Fecha de fin:</label>
+        <input type="date" id="fechaFin" required>
+        <button type="button" onclick="confirmarReserva()">Confirmar Reserva</button>
+      </form>
+      <table id="tablaReservas" border="1">
+        <thead>
+            <tr>
+                <th>Nombre del servicio</th>
+                <th>Tipo de servicio</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        </tbody>
+    </table>
+>>>>>>> 27f0b8250f03957036cae3161ef6036a1c3c3107
     </main>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="js/Utileria.js"></script>
     <script src="./js/Services/GeneralService.js"></script>
-    <script src="./js/Controllers/main.js"></script>  
+    <script src="./js/Controllers/main.js"></script> 
+    <script src="./js/Controllers/FinalizarReserva.js"></script>
     <!-- <script src="./js/Controllers/SesionController.js"></script> -->
-    <script src="./js/Controllers/Reserva.js"></script>
+    <!--<script src="./js/Controllers/Reserva.js"></script>-->
   </body>
 </html>

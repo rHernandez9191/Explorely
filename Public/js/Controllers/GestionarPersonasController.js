@@ -45,11 +45,13 @@ const CargarDatos = (pPersona, pBtn) => {
         inputPassword1.value = pPersona.Password;
         inputPassword2.value = pPersona.Password;
         inputEdad.value = pPersona.Edad;
-        inputRol.value = pPersona.Rol;
-        inputEstado.value = pPersona.Estado;
+        inputRol = pPersona.Rol;
+        inputEstado = pPersona.Estado;
         inputImgUser.src = pPersona.FotoPerfil;
         input_id.value = pPersona._id;
+    }
 };
+
 
 
 
@@ -235,5 +237,5 @@ const ValidarDatos = (pTipoIdentificacion, pIdentificacion, pNombre, pApellido1,
     
 };
 botonRegistrar.addEventListener('click', RegistrarDatos)
-};
+
 

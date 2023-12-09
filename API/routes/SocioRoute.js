@@ -22,7 +22,7 @@ router.post('/RegistrarSocio', (req, res) => {
         Provincia: body.Provincia,
         Canton: body.Canton,
         Descripcion: body.Descripcion,
-        Estado: 1,
+        Estado: 2,
         Rol: body.Rol,
         CantPersonas: body.CantPersonas,
         Precio: body.Precio,
@@ -163,7 +163,7 @@ router.put('/InactivarSocio', (req, res) => {
     let body = req.body;
     Socio.updateOne({ _id: body._id }, {
         $set: {
-            Estado: 0
+            Estado: 2
         }
     })
         .then((info) => {
@@ -274,15 +274,22 @@ router.delete('/EliminarTarjetaPersona', (req, res) => {
 
 
 
-router.post('/RegistrarResena', (req, res) => {
+router.post('/RegistrarReserva', (req, res) => {
     let body = req.body;
-    let nuevaResena = new Resena({
+    let nuevaReserva = new Reserva({
         IdSocio:body.IdSocio,
+        TipoServicio: body.TipoServicio,
+        Identificacion: body.Identificacion,
+        NombreEmpresa: body.NombreEmpresa,
         IdPersona:body.IdPersona,
-        Resena:body.Resena,
+        Provincia: body.Provincia,
+        CantPersonas: body.CantPersonas,
+        Precio:body.Precio,
+        IdPersona:body.IdPersona,
+        Reserva:body.Reserva,
     });
 
-    nuevaResena.save()
+    nuevaReserva.save()
         .then((resultBD) => {
             res.json({
                 resultado: true,
@@ -299,19 +306,19 @@ router.post('/RegistrarResena', (req, res) => {
         });
 });
 
-router.get('/ListarResenas', (req, res) => {
-    Resena.find()
-        .then((ListaResenaBD) => {
+router.get('/ListarReservas', (req, res) => {
+    Reserva.find()
+        .then((ListaReservaBD) => {
             res.json({
                 resultado: true,
                 msj: 'Los datos se obtuvieron de manera correcta',
-                ListaResenaBD
+                ListaReservaBD
             });
         })
         .catch((error) => {
             res.json({
                 resultado: false,
-                msj: 'No se pudo obtener la lista de reseñas, ocurrio el siguiente error: ',
+                msj: 'No se pudo obtener la lista de reservas, ocurrio el siguiente error: ',
                 error
             });
         });
