@@ -31,7 +31,7 @@ function cargarReserva() {
         <th>${reserva.Precio}</th>
 
 
-        <th><button id="btnQuitar" class="button-buscar">Quitar</button><button onClick="AplicarReserva(this)" id="${reserva._id}" class="button-buscar agregar-rsv">Reservar</button></th>`;
+        <th><button onClick="AplicarReserva(this)" id="${reserva._id}" class="button-buscar agregar-rsv">Reservar</button></th>`;
 
 
 
