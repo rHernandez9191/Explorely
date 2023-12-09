@@ -129,28 +129,17 @@ main {
   background: var(--background);
   min-height: calc(100vh - 90px);
 }
-.cards {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 2rem;
-  margin-top: 1rem;
-}
-.card-single {
+.container {
   display: flex;
-  justify-content: space-around;
-  background: var(--secondary);
-  padding: 2rem;
-  border-radius: 2px;
+  justify-content: space-between;
+  gap: 5px;
 }
-.card-single div:last-child span {
-  font-size: 3rem;
-  color: var(--accent);
-}
-.card-single div:first-child span {
-  color: var(--text);
-}
-.card-single:last-child span {
-  color: var(--accent);
+.card {
+  background-color: #dcbcb2;
+  padding: 2px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(102, 54, 54, 0.1);
+  margin: 3px; /* Adjust the margin value as needed */
 }
 table {
   table-layout: fixed;
@@ -202,18 +191,18 @@ table {
 }
 
 #tblSocios thead th:nth-child(2) {
-  width: 17%;
+  width:20%;
 }
 
 #tblSocios thead th:nth-child(3) {
-  width: 11.8%;
+  width: 12%;
 }
 
 #tblSocios thead th:nth-child(4) {
   width: 11%;
 }
 #tblSocios thead th:nth-child(5) {
-  width: 15%;
+  width: 13%;
 }
 #tblSocios thead th:nth-child(6) {
   width: 29%;

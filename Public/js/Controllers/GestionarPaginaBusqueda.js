@@ -85,7 +85,7 @@ GetListaSocios();
  }
 
 function QuitarReserva(){
-  localStorage.removeItem(listaCarrito.Precio)
+  localStorage.clear()
   console.log(listaCarrito)
  }
 
