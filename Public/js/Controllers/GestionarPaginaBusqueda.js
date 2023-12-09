@@ -15,14 +15,12 @@ const GetListaSocios = async () => {
 };
 
 GetListaSocios();
-<<<<<<< Updated upstream
+
  const ContenedorServicios = document.querySelector("#divServicios");
  let btnAgregarCarrito = document.querySelectorAll('.botonAgregar')
  let btnAgregarReserva = document.querySelector('#btnReservar')
  let btnQuitarReserva = document.querySelector('#btnQuitar') 
-=======
-const ContenedorServicios = document.querySelector("#divServicios");
->>>>>>> Stashed changes
+
 
 function cargarServicios() {
   for (let i = 0; i < listaPersonas.length; i++) {
@@ -60,7 +58,7 @@ function cargarServicios() {
          </div>
          `;
 
-<<<<<<< Updated upstream
+
          ContenedorServicios.append(div);
      };
      actualizarbtnAgregar()
@@ -130,13 +128,7 @@ function AgregarAlCarrito(e) {
 }
 
  const GetUrlCliente = async () => {
-=======
-    ContenedorServicios.append(div);
-  }
-}
 
-const GetUrlCliente = async () => {
->>>>>>> Stashed changes
   queryString = window.location.search;
   urlParams = new URLSearchParams(queryString);
 
