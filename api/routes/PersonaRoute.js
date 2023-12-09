@@ -272,4 +272,25 @@ router.delete('/EliminarTarjetaPersona', (req, res) => {
     });
 });
 
+router.delete('/EliminarReserva', (req, res) => {
+    let body = req.body;
+    Persona.updateOne({ _id: body._idPersona }, {
+        $pull: {
+            Reserva: { _id: body._idReserva }
+        }
+    }).then((info) => {
+        res.json({
+            resultado: true,
+            msj: 'Reserva eliminada de manera correcta',
+            info
+        });
+    }).catch((error) => {
+        res.json({
+            resultado: false,
+            msj: 'Ocurrio un error y no se pudo eliminar la tarjeta',
+            error
+        });
+    });
+});
+
 module.exports = router;

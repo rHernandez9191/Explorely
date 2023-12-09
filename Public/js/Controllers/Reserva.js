@@ -1,14 +1,15 @@
 'use strict'
 
-const fila = document.querySelector('#carritoFilas')
+let queryString, urlParams, _id, PersonaBD;
+const filaReservas = document.querySelector('#carritoFilas')
 
 let listaCarrito = [];
 
-const GetListaCarrito = async () => {
+const GetListaReserva = async () => {
     let res = await ProcessGET('ListarSocios', null);
     if (res != null && res.resultado == true) {
       
-        listaCarrito = obtenerElemetosCarrito(   res.ListaSociosBD);
+      //  listaCarrito = obtenerElemetosCarrito(res.ListaSociosBD);
         
         cargarReserva();
         
@@ -18,6 +19,7 @@ const GetListaCarrito = async () => {
         return;
     }
 };
+
 
 function cargarReserva() {
     listaCarrito .forEach(reserva => {
@@ -33,12 +35,23 @@ function cargarReserva() {
         <th><button id="btnQuitar" class="button-buscar">Quitar</button><button id="${reserva._id}" class="button-buscar agregar-rsv">Reservar</button></th>`;
 
 
-        fila.appendChild(div)
+        filaReservas.appendChild(div)
 
     });
     
-    actualizarbtnReserva();
-    actualizarbtnQuitar();
+    //actualizarbtnReserva();
+    //actualizarbtnQuitar();
     
 }
+
+const GetUrlVolverInicio = async () => {
+    queryString = window.location.search;
+    urlParams = new URLSearchParams(queryString);
+  
+    _id = urlParams.get('_id');
+    location.href = './paginaBusqueda.html?_id=' + _id;
+};
+
+  
+GetListaReserva();
 cargarReserva();

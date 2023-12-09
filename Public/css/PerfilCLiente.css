@@ -373,6 +373,15 @@ img {
   margin-right: 20px;
 }
 
+.fotoServicio{
+  background: url("../img/servicio.png");
+  background-size: cover;
+  width: 90px;
+  height: 90px;
+  padding: 10px;
+  margin-right: 20px;
+}
+
 .TarjetasDisplay{
   height: 95%;
   width: 49%;
@@ -436,6 +445,13 @@ img {
 }
 
 .btnsTabla{
+  
+  margin-bottom: 20px;
+  margin-right: 20px;
+  height: 40px;
+ 
+}
+.btnsTablaR{
   
   margin-bottom: 20px;
   margin-right: 20px;

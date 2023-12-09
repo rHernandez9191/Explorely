@@ -22,23 +22,38 @@
       <!-- Contenido del cuadro emergente -->
     </div>
     <nav class="movil-nav">
-      <a href="paginaBusqueda.html">Inicio</a>
-      <a href="reservas.html">Reservas</a>
-      <a href="registrarPagos.html">Metodos de Pago</a>
-      <a href="registrarNegocio.html">Regitrar negocios</a>
-      <a href="index.html">Cerrar Sesion</a>
+      <a href="#" onclick="GetUrlVolverInicio()">Inicio</a>
     </nav>
     <main>
-      <div class="opciones" id="divServicios">
-       
+      <h1 id="carritoTitulo">Reservar</h1>
+      <table id="tablaCarrito">
+        <thead>
+            <tr>
+              <th id="">Imagen</th>
+              <th scope="col">lugar</th>
+              <th scope="col">Nombre de empresa</th>
+              <th scope="col">Precio</th>
+            </tr>
+          </thead>
+          <tbody id="carritoFilas" class="filas">
           
-      </div>
+              <tr class="fila">
+                <th id=""></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th><button id="btnReservar" class=></button></th>
+            </tr>
+            
+         
+          </tbody>
+      </table>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="js/Utileria.js"></script>
     <script src="./js/Services/GeneralService.js"></script>
     <script src="./js/Controllers/main.js"></script>  
-    <!-- <script src="./js/Controllers/SesionController.js"></script> -->
+    <script src="./js/Controllers/SesionController.js"></script> 
     <script src="./js/Controllers/Reserva.js"></script>
   </body>
 </html>
