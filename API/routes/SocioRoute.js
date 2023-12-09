@@ -163,7 +163,7 @@ router.put('/InactivarSocio', (req, res) => {
     let body = req.body;
     Socio.updateOne({ _id: body._id }, {
         $set: {
-            Estado: 0
+            Estado: 2
         }
     })
         .then((info) => {
