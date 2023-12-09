@@ -7,3 +7,8 @@ function obtenerDescripcionNegocio(idNegocio) {
   let descripcion = obtenerDescripcionPorID(idNegocio);
   return descripcion;
 }
+document.addEventListener("DOMContentLoaded", function () {
+  let params = new URLSearchParams(window.location.search);
+  let descripcionNegocio = params.get("descripcion");
+  document.getElementById("infoHotel").innerText = descripcionNegocio;
+});

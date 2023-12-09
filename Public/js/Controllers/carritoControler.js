@@ -30,20 +30,22 @@ function cargarReserva() {
         <th>${reserva.NombreEmpresa}</th>
         <th>${reserva.Precio}</th>
 
-        <th><button id="${reserva._id}" class="button-buscar agregar-rsv">Reservar</button></th>`;
+
+        <th><button id="btnQuitar" class="button-buscar">Quitar</button><button onClick="AplicarReserva(this)" id="${reserva._id}" class="button-buscar agregar-rsv">Reservar</button></th>`;
+
 
 
         fila.appendChild(div)
 
     });
-    actualizarbtnReserva();
-    actualizarbtnQuitar();
+    //actualizarbtnReserva();
+    //actualizarbtnQuitar();
     
     
    
 }
 
-function actualizarbtnReserva(){
+/*function actualizarbtnReserva(){
 
     btnAgregarReserva = document.querySelectorAll('.button-buscar')
     btnAgregarReserva.forEach(btn => {
@@ -53,12 +55,12 @@ function actualizarbtnReserva(){
 
 function actualizarbtnReserva(){
 
-    btnAgregarReserva = document.querySelectorAll('.agregar-rsv')
-    btnAgregarReserva.forEach(btn => {
+    btnReservar = document.querySelectorAll('.agregar-rsv')
+    btnReservar.forEach(btn => {
       btn.addEventListener('click', AplicarReserva)
     })
    }
-
+*/
 
 
 function obtenerElemetosCarrito(listaServicios) {
@@ -110,11 +112,12 @@ function AgregarAReservas(e) {
 
 function AplicarReserva(e) {
 
-    const idBoton = e.currentTarget.id
+    console.log("id elemento",e.id);
+    const idBoton = e.id
     console.log("id elemento",idBoton);
   
   
-    let elementosReserva  = localStorage.getItem('ElementosReserva');
+    /*let elementosReserva  = localStorage.getItem('ElementosReserva');
     let coleccionServicios = [];
     if(elementosReserva == null){
       console.log("No hay elementos");
@@ -129,16 +132,16 @@ function AplicarReserva(e) {
     coleccionServicios.push(idBoton);
     console.log("Guardado",coleccionServicios);
     localStorage.removeItem('ElementosReserva');
-    localStorage.setItem('ElementosReserva', JSON.stringify(coleccionServicios));
-    GetUrlReservcacio();
+    localStorage.setItem('ElementosReserva', JSON.stringify(coleccionServicios));*/
+    GetUrlReservcacio(e.id);
   }
   
-  const GetUrlReservcacio = async () => {
-    queryString = window.location.search;
-    urlParams = new URLSearchParams(queryString);
+  const GetUrlReservcacio = async (id) => {
+    var queryString = window.location.search;
+    var urlParams = new URLSearchParams(queryString);
   
-    _id = urlParams.get('_id');
-    location.href = './finalizarReserva.html?_id=' + _id;
+    var _id = urlParams.get('_id');
+    location.href = './finalizarReserva.html?_id=' + id;
     
   };
 

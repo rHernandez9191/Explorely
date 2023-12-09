@@ -1,86 +1,83 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:700|Poppins:400");
 
 :root {
-    --text: #020303;
+  --text: #020303;
 }
 
 :root {
-    --background: #f8fbfc;
+  --background: #f8fbfc;
 }
 
 :root {
-    --primary: #dcbcb2;
+  --primary: #dcbcb2;
 }
 
 :root {
-    --secondary: #d6dfb9;
+  --secondary: #d6dfb9;
 }
 
 :root {
-    --accent: #8c5240;
+  --accent: #8c5240;
 }
 
 body {
-    background-color: var(--background);
-    font-family: "Poppins";
-    font-weight: 400;
-    width: 99%;
-    margin: 0;
-    padding: 0;
+  background-color: black;
+  font-family: "Poppins";
+  font-weight: 400;
+  width: 99%;
+  margin: 0;
+  padding: 0;
 }
 
 header .contenedor {
-    top: 0;
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: var(--accent);
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--accent);
 }
 
 header .contenedor h1 {
-    font-size: 24px;
+  font-size: 24px;
 }
 
 header .contenedor p {
-    font-size: 16px;
-    color: var(--secondary);
+  font-size: 16px;
+  color: var(--secondary);
 }
 
 .equipo-container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .miembro {
-    text-align: center;
-    width: 200px;
-    margin: 20px;
-}
-
-.miembro img {
-    width: 100%;
-    height: auto;
-    border-radius: 50%;
+  text-align: center;
+  width: 200px;
+  margin: 20px;
 }
 
 .miembro h3 {
-    margin: 10px 0;
-    font-size: 18px;
-    color: var(--text);
+  margin: 10px 0;
+  font-size: 18px;
+  color: var(--text);
 }
 
 .miembro p {
-    color: var(--secondary);
+  color: var(--secondary);
 }
-
-
-.foto {
-
-    width: 30px;
-    height: 30px;
-
+.equipo-container p {
+  color: #f8fbfc;
+}
+.equipo-container h3 {
+  color: #d6dfb9;
+}
+.equipo-container img {
+  object-fit: contain;
+  width: 200px;
+  height: 200px;
 }
